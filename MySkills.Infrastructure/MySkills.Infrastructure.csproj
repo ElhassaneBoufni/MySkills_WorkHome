@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!--<Import Project="..\MySkills.CodeAnalysis.targets" />-->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MySkills.Application\MySkills.Application.csproj" />
+    <ProjectReference Include="..\MySkills.Common\MySkills.Common.csproj" />
+  </ItemGroup>
+
+</Project>
