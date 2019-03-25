@@ -138,11 +138,20 @@ namespace MySkills.WebUI
                 options.UseSqlServer(Configuration.GetConnectionString("MySkillsDatabase")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // the API’s can be accessed from any origin globally
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // inject CORS into a container
+            app.UseCors(options => options.AllowAnyOrigin());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -161,6 +170,7 @@ namespace MySkills.WebUI
                     template: "{controller}/{action=Index}/{id?}");
             });
         }
+
     }
 
 }
