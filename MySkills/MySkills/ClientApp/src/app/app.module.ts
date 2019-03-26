@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material';
+import {MatStepperModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -30,17 +31,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     MatToolbarModule,
+    MatStepperModule,
     FormsModule,
-    
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      
       { path: 'compETcertif', component: CompETcertifComponent },
       { path: 'profil', component: ProfilComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'faq', component: FaqComponent },
-
-
     ]),
     BrowserAnimationsModule
   ],
