@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule, MatCardModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +13,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -30,6 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     MatToolbarModule,
+    MatCardModule,
+    MDBBootstrapModule.forRoot(),
     FormsModule,
     
     RouterModule.forRoot([
@@ -43,8 +46,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     ]),
     BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+    schemas: [NO_ERRORS_SCHEMA ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,134 @@
 
 
-<mat-toolbar>Home</mat-toolbar>
+<!--  <mat-toolbar>Bienvenue</mat-toolbar> -->
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan lighten-1" [containerInside]="false">
+    <mdb-navbar-brand> <a class="navbar-brand"> Bienvenue</a></mdb-navbar-brand>
+</mdb-navbar>
 <br />
 <br />
+<h2> Home </h2>
+
+<br />
+<br />
+
+<div class="intro">
+    <mat-card>
+        <mat-card-content>
+            <mat-card-title><h3> Interactive Skill Matrix: </h3>  </mat-card-title>
+            <br />
+            <div class="rounded float-left">
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                congue felis in faucibus.
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                congue felis in faucibus.
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                congue felis in faucibus.
+            </div>
+
+            
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="format">
+   
+    <mat-card>
+        <mat-card-content>
+            <mat-card-title> Témoignages formateurs </mat-card-title>
+            <br />
+            <br />
+                <div class="col-lg-10 col-xk-8">
+                    <div class="media d-block d-md-flex">
+                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                            
+                            <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                                <h6 class="mt-0 font-weight-bold blue-text"> Karim Herrati </h6>
+                                Cras sit amet nibh libero, in gravida nulla.
+
+
+                            </div>
+                        
+                    </div>
+                    <br />
+
+                    <div class="media d-block d-md-flex">
+                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                            <h6 class="mt-0 font-weight-bold blue-text"> Mohammed Alaoui </h6>
+                            Cras sit amet nibh libero, in gravida nulla.
+
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="media d-block d-md-flex">
+                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                            <h6 class="mt-0 font-weight-bold blue-text"> Samia Berrada </h6>
+                            Cras sit amet nibh libero, in gravida nulla.   
+                        </div>
+                    </div>
+
+                </div>
+            <br />
+            <br />
+            
+            <button type="button" class="rounded float-right" mdbBtn color="primary" mdbWavesEffect> Devenir formateur</button>
+        </mat-card-content>
+    </mat-card>
+
+
+    <mat-card>
+        <mat-card-content>
+            <mat-card-title> Quelques liens utiles !</mat-card-title>
+            <br />
+            <br />
+            <ul class="list-unstyled">
+                <li class="media">
+                    <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+                    <div class="media-body">
+                        <h6 class="mt-0 font-weight-bold"> Lien Slack</h6>
+                    </div>
+                </li>
+                <br />
+
+                
+                <li class="media">
+                    <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+                    <div class="media-body">
+                        <h6 class="mt-0 font-weight-bold"> Lien Yammer</h6>
+                    </div>
+                </li>
+                <br />
+                <li class="media">
+                    <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+                    <div class="media-body">
+                        <h6 class="mt-0 font-weight-bold"> Lien MyLearning</h6>
+                    </div>
+                </li>
+                <br />
+
+                <li class="media">
+                    <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+                    <div class="media-body">
+                        <h6 class="mt-0 font-weight-bold"> Lien Linkedin</h6>
+                    </div>
+                </li>
+
+            </ul>
+
+            
+           
+            <button type="button" class="rounded float-right" mdbBtn color="primary" mdbWavesEffect> Proposer un lien</button>
+        </mat-card-content>
+    </mat-card>
+</div>
+
