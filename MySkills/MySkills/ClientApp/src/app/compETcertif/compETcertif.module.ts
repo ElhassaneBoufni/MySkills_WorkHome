@@ -5,10 +5,15 @@ import { CompetenceViewComponent } from './competence-view/competence-view.compo
 import { ManagAndSuppViewComponent } from './manag-and-supp-view/manag-and-supp-view.component';
 import { CertifViewComponent } from './certif-view/certif-view.component';
 import { CompEtCertifRoutingModule } from './compETcertif-routing.module';
+import { MaterialModule } from '../../material.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
+        MaterialModule,
+        ReactiveFormsModule,
         CompEtCertifRoutingModule
     ],
     declarations: [
@@ -16,9 +21,6 @@ import { CompEtCertifRoutingModule } from './compETcertif-routing.module';
         CompetenceViewComponent,
         ManagAndSuppViewComponent,
         CertifViewComponent
-    ],
-    exports: [
-        CompETcertifComponent
     ]
 })
 export class CompETcertifModule {}
