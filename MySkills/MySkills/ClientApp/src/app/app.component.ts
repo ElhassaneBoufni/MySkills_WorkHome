@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
     title = 'app';
     restItems: any=[];
-    restItemsUrl = 'http://localhost:52468/api/notes/getall';   
+    restItemsUrl = 'http://localhost:52468/api/notes/getall';
 
     constructor(private http: HttpClient) { }
 
