@@ -1,13 +1,22 @@
+<!--  <mat-toolbar>Bienvenue</mat-toolbar>
 
 
-<!--  <mat-toolbar>Bienvenue</mat-toolbar> -->
 
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan lighten-1" [containerInside]="false">
-    <mdb-navbar-brand> <a class="navbar-brand"> Bienvenue</a></mdb-navbar-brand>
-</mdb-navbar>
+    <mdb-breadcrumb>
+        <mdb-breadcrumb-item class="active">Bienvenue</mdb-breadcrumb-item>
+
+        <a class="navbar-nav ml-auto nav-flex-icons"><mdb-icon fas icon="bell"></mdb-icon></a>
+
+        <mdb-icon fas icon="user-alt"></mdb-icon>
+        Nom Prénom
+
+    </mdb-breadcrumb>
+    -->
+
+
 <br />
 <br />
-<h2> Home </h2>
+<h4 style="color:DodgerBlue"> Home </h4>
 
 <br />
 <br />
@@ -15,21 +24,45 @@
 <div class="intro">
     <mat-card>
         <mat-card-content>
-            <mat-card-title><h3> Interactive Skill Matrix: </h3>  </mat-card-title>
-            <br />
-            <div class="rounded float-left">
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                congue felis in faucibus.
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                congue felis in faucibus.
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                congue felis in faucibus.
+            <div style="color:DodgerBlue">
+                <mat-card-title><h4> My Skills : </h4>  </mat-card-title>
             </div>
 
-            
+            <br />
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-7">
+                    <p>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                        vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                        congue felis in faucibus.
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                        vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                        congue felis in faucibus.
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                        vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                        congue felis in faucibus.
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-lg-5">
+                    <div class="view overlay rounded z-depth-2 waves-light" mdbWavesEffect>
+                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(34).jpg" alt="Sample image">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+
+
         </mat-card-content>
     </mat-card>
 </div>
@@ -39,56 +72,60 @@
 <br />
 
 <div class="format">
-   
+
     <mat-card>
         <mat-card-content>
-            <mat-card-title> Témoignages formateurs </mat-card-title>
+            <div style="color:DodgerBlue">
+                <mat-card-title> Témoignages formateurs </mat-card-title>
+            </div>
             <br />
             <br />
-                <div class="col-lg-10 col-xk-8">
-                    <div class="media d-block d-md-flex">
-                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
-                            
-                            <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                                <h6 class="mt-0 font-weight-bold blue-text"> Karim Herrati </h6>
-                                Cras sit amet nibh libero, in gravida nulla.
+            <div class="col-lg-10 col-xk-8">
+                <div class="media d-block d-md-flex">
+                    <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+
+                    <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                        <h6 class="mt-0 font-weight-bold blue-text"> Karim Herrati </h6>
+                        Cras sit amet nibh libero, in gravida nulla.
 
 
-                            </div>
-                        
-                    </div>
-                    <br />
-
-                    <div class="media d-block d-md-flex">
-                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
-                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                            <h6 class="mt-0 font-weight-bold blue-text"> Mohammed Alaoui </h6>
-                            Cras sit amet nibh libero, in gravida nulla.
-
-                        </div>
-                    </div>
-                    <br />
-
-                    <div class="media d-block d-md-flex">
-                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
-                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                            <h6 class="mt-0 font-weight-bold blue-text"> Samia Berrada </h6>
-                            Cras sit amet nibh libero, in gravida nulla.   
-                        </div>
                     </div>
 
                 </div>
+                <br />
+
+                <div class="media d-block d-md-flex">
+                    <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                    <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                        <h6 class="mt-0 font-weight-bold blue-text"> Mohammed Alaoui </h6>
+                        Cras sit amet nibh libero, in gravida nulla.
+
+                    </div>
+                </div>
+                <br />
+
+                <div class="media d-block d-md-flex">
+                    <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                    <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                        <h6 class="mt-0 font-weight-bold blue-text"> Samia Berrada </h6>
+                        Cras sit amet nibh libero, in gravida nulla.
+                    </div>
+                </div>
+
+            </div>
             <br />
             <br />
-            
-            <button type="button" class="rounded float-right" mdbBtn color="primary" mdbWavesEffect> Devenir formateur</button>
+
+            <button mdbBtn type="button" color="primary" rounded="true" outline="true" class="rounded float-right" mdbWavesEffect> Devenir formateur</button>
         </mat-card-content>
     </mat-card>
 
 
     <mat-card>
         <mat-card-content>
-            <mat-card-title> Quelques liens utiles !</mat-card-title>
+            <div style="color:DodgerBlue">
+                <mat-card-title> Quelques liens utiles !</mat-card-title>
+            </div>
             <br />
             <br />
             <ul class="list-unstyled">
@@ -100,7 +137,7 @@
                 </li>
                 <br />
 
-                
+
                 <li class="media">
                     <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
                     <div class="media-body">
@@ -125,10 +162,11 @@
 
             </ul>
 
-            
-           
+
+
             <button type="button" class="rounded float-right" mdbBtn color="primary" mdbWavesEffect> Proposer un lien</button>
         </mat-card-content>
     </mat-card>
 </div>
+
 
