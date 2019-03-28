@@ -9,13 +9,28 @@
   cursor: pointer;
   padding: 10px 16px;
   border-radius: 4px;
+  color:white;
+  border-left : 3px solid transparent;
 }
+.main-nav {
+  background-color: #0070ad;
+}
+
 .main-nav li .fa {
   margin-right: 10px;
 }
+
 .main-nav li.link-active a,
 .main-nav li.link-active a:hover,
-.main-nav li.link-active a:focus {
+.main-nav li.link-active a:focus
+{
+  border-left: 3px solid red;
+}
+.main-nav li.link-active a,
+.main-nav li.link-active a:hover,
+.main-nav li.link-active a:focus,
+.main-nav li.nav-item:hover,
+.main-nav li.nav-item:focus {
   background-color: #4189C7;
   color: white;
 }

@@ -1,13 +1,18 @@
+<h4 style="color:DodgerBlue"> Compétences & Certifications </h4>
 
-<mat-toolbar> Comp�tences & Certifications </mat-toolbar>
+<div class="container">
+    <div class="row">
 
-<nav mat-tab-nav-bar>
-    <a mat-tab-link
-    *ngFor="let link of navLinks"
-    [routerLink]="link.link"
-    routerLinkActive #rla="routerLinkActive"
-    [active]="rla.isActive">
-        {{link.label}}
-    </a>
-</nav>
-<router-outlet></router-outlet>
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link
+            *ngFor="let link of navLinks"
+            [routerLink]="link.link"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+                {{link.label}}
+            </a>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+           
