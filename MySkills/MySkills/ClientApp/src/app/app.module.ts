@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CompETcertifModule } from './compETcertif';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
