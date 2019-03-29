@@ -47,13 +47,15 @@
     <mat-drawer mode="side" opened>
 
         <div class='main-nav'>
-            <nav class='navbar navbar-expand-lg navbar-dark bg-dark d-flex flex-column'>
+            <nav class='navbar navbar-expand-lg d-flex flex-column'>
                 <div class="navbar-header p-0">
                     <a class='navbar-brand' [routerLink]='["/"]'>Logo</a>
                     <button type='button' class='navbar-toggler' data-toggle='collapse' data-target='#navbarNav' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
                         <span class='sr-only'>Toggle navigation</span>
                         <span class='navbar-toggler-icon'></span>
                     </button>
+                    <br />
+                    <br />
                     <div id="navbarNav" class='navbar-collapse collapse p-0' [ngClass]='{ "in": isExpanded }'>
                         <ul class='nav navbar-nav flex-column'>
                             <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
@@ -69,7 +71,7 @@
                             </li>
                             <li class="nav-item" [routerLinkActive]='["link-active"]'>
                                 <a [routerLink]='["/compETcertif"]' class="nav-link" (click)='collapse()'>
-                                    Compétences & certifications
+                                    Comp&eacute;tences & certifications
                                 </a>
                             </li>
                             <li class="nav-item" [routerLinkActive]='["link-active"]'>
