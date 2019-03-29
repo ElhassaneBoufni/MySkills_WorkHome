@@ -24,7 +24,7 @@
 .main-nav li.link-active a:hover,
 .main-nav li.link-active a:focus
 {
-  border-left: 3px solid red;
+  border-left: 3px solid #ff304c;
 }
 .main-nav li.link-active a,
 .main-nav li.link-active a:hover,
@@ -36,7 +36,7 @@
 }
 @media (min-width: 768px) {
   .main-nav {
-    width: calc(25% - 30px);
+    width: calc(25.4% - 30px);
     min-width: 180px;
   }
   .main-nav .navbar {
