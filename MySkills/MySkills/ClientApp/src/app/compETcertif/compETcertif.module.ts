@@ -7,6 +7,8 @@ import { CertifViewComponent } from './certif-view/certif-view.component';
 import { CompEtCertifRoutingModule } from './compETcertif-routing.module';
 import { MaterialModule } from '../../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SoftSkillsViewComponent } from './soft-skills-view/soft-skills-view.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
     imports: [
@@ -14,13 +16,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
         FormsModule,
         MaterialModule,
         ReactiveFormsModule,
-        CompEtCertifRoutingModule
+        CompEtCertifRoutingModule,
+        MDBBootstrapModule.forRoot()
     ],
     declarations: [
         CompETcertifComponent,
         CompetenceViewComponent,
         ManagAndSuppViewComponent,
-        CertifViewComponent
+        CertifViewComponent,
+        SoftSkillsViewComponent
     ]
 })
 export class CompETcertifModule {}

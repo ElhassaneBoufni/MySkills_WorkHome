@@ -1,0 +1,35 @@
+.mat-tab-nav-bar {
+    width: 100%;
+    background-color: white;
+    border: 0;
+}
+
+.mat-tab-link {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 60px;
+    font-family: ubuntu;
+    font-weight: bold;
+    font-size: 20px;
+    color: #5A5A5A;
+    
+    border-left: 1px solid rgba(19, 16, 16, 0.12);
+    border-bottom: 1px solid rgba(19, 16, 16, 0.12);
+}
+
+.mat-tab-label-active{
+    color: #0070AD;
+    opacity: initial;
+    border-bottom: transparent;
+}
+.viewContent {
+    height: inherit;
+    background-color: white;
+}
+
+.h-80{
+    height: 80%;
+    width: calc(100% - 58px);   
+}
+
+

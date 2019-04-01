@@ -3,3 +3,21 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#f7f8fa;}
+
+.titleComponent{
+    color:#0070AD;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 29px 0 46px 25px;
+  }
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    bottom: unset;
+    background-color: red !important;
+}
+
+app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view{
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
