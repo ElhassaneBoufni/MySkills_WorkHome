@@ -1,9 +1,33 @@
 .form-search-comp{
     background-color: #F7F8FA;
+    height: auto;
+    padding: 20px;
+    display: grid;
     margin-left: 39px;
     margin-top: 34px;
-    height: 200px;
+    margin-right: 30px;
 }
+
 .btn-propComp{
     margin-top: 34px;
+    margin-left: auto;
+    margin-right: 45px;
+    border-radius: 1.25rem!important;
+}
+.chipsGroup{
+    margin-right: auto;
+    padding-top: 83px;
+    padding-left: 43px;
+}
+
+.colChips{
+    padding-right: 45px;
+    margin-right: -39px;
+    padding-left: 14px;
+    margin-left: -30px;
+}
+
+.p-15{
+    padding-left: 15px;
+    padding-right: 15px;
 }

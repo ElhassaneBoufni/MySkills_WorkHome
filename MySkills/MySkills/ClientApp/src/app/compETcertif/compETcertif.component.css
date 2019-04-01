@@ -10,7 +10,7 @@
     height: 60px;
     font-family: ubuntu;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     color: #5A5A5A;
     
     border-left: 1px solid rgba(19, 16, 16, 0.12);
@@ -30,6 +30,12 @@
 .h-80{
     height: 80%;
     width: calc(100% - 58px);   
+}
+
+@media (max-width: 1400px) {
+    .mat-tab-link {
+        font-size: 12px;
+    }
 }
 
 
