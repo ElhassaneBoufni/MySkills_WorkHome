@@ -1,6 +1,38 @@
 @media (max-width: 767px) {
   /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
   .body-content {
-    padding-top: 85px;
+    padding-top: 170px;
   }
+
+}
+
+
+.topBar{
+  background-color: white;
+  height: 112px;
+  margin-left: -40px;
+}
+
+.navBar{
+  background-color: #faf7f7;
+}
+/**/
+.input-group.md-form.form-sm.form-1 input{
+  border: 1px solid #bdbdbd;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.red-border  {
+  border: 1px solid #ef9a9a;
+}
+.input-group.md-form.form-sm.form-2 input.lime-border  {
+  border: 1px solid #cddc39;
+}
+.input-group.md-form.form-sm.form-2 input.amber-border  {
+  border: 1px solid #ffca28;
 }

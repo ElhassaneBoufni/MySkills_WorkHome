@@ -1,19 +1,19 @@
-
-<div class='container-fluid'>
-    <div class='row'>
-        <div class='col-sm-3'>
+<div class='container-fluid  h-100'>
+    <div class='row  h-100'>
+        <div class='col-md-3 p-0 navBar'>
             <app-nav-menu></app-nav-menu>
         </div>
-        <div class='col-sm-9 body-content'>
-            <router-outlet></router-outlet>
+        <div class='col-md-9 body-content'>
+            <div class='row topBar'>
+                <nav class="navbar navbar-light">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </nav>
+            </div>
+            <div class='row h-100'  style="background-color: #faf7f7;display: block;">
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
