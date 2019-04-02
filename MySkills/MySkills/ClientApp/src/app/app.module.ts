@@ -15,6 +15,8 @@ import { FaqComponent } from './faq/faq.component';
 import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { EnvironmentUrlService } from './shared/services/environment-url.service';
+import { RepositoryService } from './shared/services/repository.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MaterialModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+    providers: [EnvironmentUrlService, RepositoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

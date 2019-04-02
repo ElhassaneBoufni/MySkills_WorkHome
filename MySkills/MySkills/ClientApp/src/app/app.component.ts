@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
 
-   /* @Input() notes = { description:'', titre:'', id: 0 }
+    @Input() notes = { description:'', titre:'', id: 0 }
 
     title = 'app';
     restItems: any=[];
@@ -37,11 +37,13 @@ export class AppComponent implements OnInit {
         return this.http
             .get<any[]>(this.restItemsUrl)
             .pipe(map(data => data));
-    }*/
+    }
 
+    /*
     constructor() { }
 
     ngOnInit() {
     }
+    */
 }
 
