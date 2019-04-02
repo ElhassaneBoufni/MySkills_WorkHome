@@ -7,7 +7,8 @@ import { CompETcertifComponent } from './compETcertif.component';
 import { SoftSkillsViewComponent } from './soft-skills-view/soft-skills-view.component';
 
 const routesCompEtCertif: Routes = [
-     { path: '', component: CompETcertifComponent,
+      { path: '', redirectTo: '/compETcertif/competenceView',  pathMatch: 'full'},
+      { path: '', component: CompETcertifComponent,
         children: [ { path: 'certifView', component: CertifViewComponent },
                     { path: 'competenceView', component: CompetenceViewComponent },
                     { path: 'managAndSupp', component: ManagAndSuppViewComponent },
