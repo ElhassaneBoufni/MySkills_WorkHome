@@ -6,6 +6,7 @@ import { ManagAndSuppViewComponent } from './manag-and-supp-view/manag-and-supp-
 import { CertifViewComponent } from './certif-view/certif-view.component';
 import { CompEtCertifRoutingModule } from './compETcertif-routing.module';
 import { MaterialModule } from '../../material.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SoftSkillsViewComponent } from './soft-skills-view/soft-skills-view.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -17,7 +18,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
         MaterialModule,
         ReactiveFormsModule,
         CompEtCertifRoutingModule,
-        MDBBootstrapModule.forRoot()
+        MDBBootstrapModule.forRoot(),
+        DragDropModule
     ],
     declarations: [
         CompETcertifComponent,

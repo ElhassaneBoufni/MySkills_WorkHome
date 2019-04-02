@@ -1,16 +1,34 @@
-<div class="row">
-  <div class="col-sm-3 form-search-comp">
-      Rechercher une compétence
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      Choisissez votre techno
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      Choisissez votre skill
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+<div class="row p-15">
+  <div class="col-sm-4 form-search-comp">
+    Rechercher une compétence
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    Choisissez votre techno
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    Choisissez votre skill
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
   </div>
-  <div class="col-sm-8">
-      <button mdbBtn type="button" class="rounded float-right margin-left btn-propComp" color="primary" rounded="true" outline="true" mdbWavesEffect>Proposer une compétence</button>
+  <div class="col-sm-8 colChips">
+    <div class="row">
+      <button mdbBtn type="button" class="float-right margin-left btn-propComp" color="primary" rounded="true"
+        outline="true" mdbWavesEffect>Proposer une compétence</button>
+    </div>
+    <div class="row chipsGroup">
+      <h2 class="titleContent">Skills trouvés</h2>
+      <mat-chip-list cdkDropList [cdkDropListData]="CompFound" [cdkDropListConnectedTo]="[CompDoneList]"
+        (cdkDropListDropped)="drop($event)">
+        <mat-chip color="primary" selected *ngFor="let comp of CompFound" cdkDrag>{{comp}}</mat-chip>
+      </mat-chip-list>
+    </div>
   </div>
 </div>
-<div class="row">
-
+<div class="row p-15">
+  <div class="box">
+    <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="CompSelected"
+      (cdkDropListDropped)="drop($event)">
+      <mat-chip color="primary" *ngFor="let comp of CompSelected" [selectable]="selectable" [removable]="removable"
+        (removed)="remove(comp)"> {{comp}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
 </div>
