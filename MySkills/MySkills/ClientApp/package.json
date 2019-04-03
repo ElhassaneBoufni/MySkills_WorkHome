@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.13.4",
     "@angular/animations": "^7.2.11",
     "@angular/cdk": "^7.3.6",
     "@angular/common": "^7.2.11",
@@ -25,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^7.2.11",
     "@angular/platform-server": "^7.2.11",
     "@angular/router": "^7.2.11",
+    "@kolkov/angular-editor": "^0.13.1",
     "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "ajv": "^6.10.0",
     "angular-bootstrap-md": "^7.4.3",
@@ -36,7 +38,6 @@
     "mdbootstrap": "^4.7.5",
     "popper.js": "^1.14.7",
     "rxjs": "^6.4.0",
-    "@angular-devkit/build-angular": "~0.13.4",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
