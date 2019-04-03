@@ -1,12 +1,7 @@
-<h4 class="titleComponent">Contact</h4>
-    <br />
-   
-    <h6 style="color:DodgerBlue"> Vous avez une question ? contactez-nous ! </h6>
-    <br />
-    <br />
-    <br />
+<h4 class="titleComponent-Contact">Contact</h4>
+    <h6 class="question-Contact"> Vous avez une question ? contactez-nous ! </h6>
 
-    <mat-card>
+    <!--<mat-card>
         <mat-card-content>
 
             
@@ -28,17 +23,66 @@
 
                 <strong> Votre message </strong>
                 <br />
-                <textarea type="text" id="form75" class="form-control md-textarea" rows="3" mdbInput></textarea>
+                <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+               
                 <label for="form75"></label>
 
                 <br />
                 <br />
                 <br />
-                
-                    <button mdbBtn type="button" class="rounded float-right" color="danger" rounded="true" mdbWavesEffect>Envoyer</button>
-                
+
+                <button mdbBtn type="button" class="rounded float-right" color="danger" rounded="true" mdbWavesEffect>Envoyer</button>
+
             </div>
 
           
+        </mat-card-content>
+    </mat-card>-->
+
+    <mat-card>
+        <mat-card-content>
+            <div class="col-md-8 offset-md-0">
+                <!--<span class="anchor" id="formContact"></span>
+                <hr class="my-5">-->
+
+                <!-- form user info -->
+                <div class="">
+                    <!--<div class="card-header">
+                        <h3 class="mb-0">Contact</h3>
+                    </div>-->
+                    <div class="card-body">
+                        <form class="form" role="form" autocomplete="off">
+                            <fieldset>
+                                <label for="name2" class="mb-1 field-Contact">Nom Pr&eacute;nom</label>
+                                <div class="row mb-4">
+                                    <div class="col-lg-8">
+                                        <input type="text" name="name2" id="name2" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <label for="email2" class="mb-1 field-Contact">Objet</label>
+                                <div class="row mb-4">
+                                    <div class="col-lg-8">
+                                        <input type="text" name="email2" id="email2" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <label for="message2" class="mb-1 field-Contact">Votre Message</label>
+                                <div class="col-lg-14">
+                                    <angular-editor [config]="config"></angular-editor>
+                                </div>
+                                    <div class="row mb-4">
+                                        <div class="col-lg-12">
+                                            <!--<textarea rows="6" name="message2" id="message2" class="form-control" required=""></textarea>-->
+                                            <!--<angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>-->
+                                        </div>
+                                    </div>
+                                    <button mdbBtn type="submit" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded float-left" color="danger" rounded="true" mdbWavesEffect>Envoyer</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <!-- /form user info -->
+
+            </div>
+
         </mat-card-content>
     </mat-card>
