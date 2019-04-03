@@ -1,11 +1,11 @@
 <div class="row p-15">
   <div class="col-sm-4 form-search-comp">
     Rechercher une compétence
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2 lbl" type="search" placeholder="Search" aria-label="Search">
     Choisissez votre techno
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2 lbl" type="search" placeholder="Search" aria-label="Search">
     Choisissez votre skill
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2 lbl" type="search" placeholder="Search" aria-label="Search">
   </div>
   <div class="col-sm-8 colChips">
     <div class="row">
@@ -14,17 +14,57 @@
     </div>
     <div class="row chipsGroup">
       <h2 class="titleContent">Skills trouvés</h2>
-      <mat-chip-list cdkDropList [cdkDropListData]="CompFound" [cdkDropListConnectedTo]="[CompDoneList]"
-        (cdkDropListDropped)="drop($event)">
+      <mat-chip-list cdkDropList #CompFoundList="cdkDropList" [cdkDropListData]="CompFound"
+        [cdkDropListConnectedTo]="[CompDoneList]" (cdkDropListDropped)="drop($event)">
         <mat-chip color="primary" selected *ngFor="let comp of CompFound" cdkDrag>{{comp}}</mat-chip>
       </mat-chip-list>
     </div>
   </div>
 </div>
+
 <div class="row p-15">
-  <div class="box">
+  <div class="drop-zone" id="drop-zone">
     <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="CompSelected"
-      (cdkDropListDropped)="drop($event)">
+      [cdkDropListConnectedTo]="[CompFoundList]" (cdkDropListDropped)="drop($event)">
+
+      <div class="placeholder-drop-zone" *ngIf="displayed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="39.51" height="49.858" viewBox="0 0 39.51 49.858">
+          <defs>
+            <style>
+              .aPh {
+                fill: #fff;
+              }
+
+              .aPh,
+              .bPh {
+                stroke: #0070ad;
+                stroke-width: 2px;
+              }
+
+              .bPh {
+                fill: #0070ad;
+              }
+            </style>
+          </defs>
+          <g transform="translate(-1106 -907)">
+            <g transform="translate(1107 908)">
+              <g transform="translate(9.054 0)">
+                <path class="aPh"
+                  d="M2.293,1H20.6c1.248,0,8.853,8.238,8.853,8.238V37.217a1.293,1.293,0,0,1-1.293,1.293H2.293A1.293,1.293,0,0,1,1,37.217V2.293A1.293,1.293,0,0,1,2.293,1Z"
+                  transform="translate(-1 -1)" />
+                <path class="bPh" d="M1,1c1.56,0,9.054,7.078,9.054,9.054H1Z" transform="translate(18.402 -1)" />
+              </g>
+              <g transform="translate(0 10.348)">
+                <path class="aPh"
+                  d="M2.293,1H20.6c1.248,0,8.853,8.238,8.853,8.238V37.217a1.293,1.293,0,0,1-1.293,1.293H2.293A1.293,1.293,0,0,1,1,37.217V2.293A1.293,1.293,0,0,1,2.293,1Z"
+                  transform="translate(-1 -1)" />
+                <path class="bPh" d="M1,1c1.56,0,9.054,7.078,9.054,9.054H1Z" transform="translate(18.402 -1)" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <p style="margin-top: 10px">Drag your skill and drop here</p>
+      </div>
       <mat-chip color="primary" *ngFor="let comp of CompSelected" [selectable]="selectable" [removable]="removable"
         (removed)="remove(comp)"> {{comp}}
         <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>

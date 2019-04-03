@@ -8,6 +8,9 @@
   z-index: 1;
   height: 100%;
 }
+.main-nav .navbar-header {
+  width: 100%;
+}
 
 #navbarNav{
   width: 105%;
@@ -25,9 +28,7 @@
   font-weight: Bold;
 }
 .main-nav .navbar-brand{
-  width: 72%;
-  height: 18%;
-  margin: 20px 0 38px 28px;
+  width: 69.88%;
 }
 
 .main-nav li .fa {
@@ -54,6 +55,9 @@
     font-size: 13px;
   }
 }
+@media (min-width : 768px) and (max-width : 1165px){
+
+}
 @media (max-width: 767px) {
   .main-nav {
     height: auto;
@@ -62,7 +66,7 @@
 
 @media (min-width: 768px) {
   .main-nav {
-    width: calc(25% - 19px);
+    width: 19.58%;
     min-width: 180px;
   }
 
@@ -84,7 +88,7 @@
     font-size: 15px;
     margin: 6px;
     height: 67px;
-    width: -webkit-fill-available;
+    width: calc(100% - 22px)
   }
 
   .main-nav .navbar li a {

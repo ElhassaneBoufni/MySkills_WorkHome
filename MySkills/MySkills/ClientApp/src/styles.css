@@ -4,6 +4,25 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#f7f8fa;}
 
+.col-sm-3half, .col-sm-9half {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-3half, .col-sm-9half {
+        float: left;
+    }
+    .col-sm-3half {
+        width: 19.58%;
+    }
+    .col-sm-9half {
+        width: 80.42%;
+    }
+}
+
 .titleComponent{
     color:#0070AD;
     font-family: Ubuntu;
@@ -36,8 +55,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     bottom: unset;
     background-color: red !important;
 }
-
+/*Specific Css for component angular*/
 app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view{
     width: -webkit-fill-available;
     width: -moz-available;
+    width: 100%;
 }

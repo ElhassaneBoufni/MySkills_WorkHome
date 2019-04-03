@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-competence-view',
@@ -9,6 +9,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 export class CompetenceViewComponent implements OnInit {
   selectable = true;
   removable = true;
+  displayed = true;
 
   CompFound = [
     'Asp.net',
@@ -21,7 +22,15 @@ export class CompetenceViewComponent implements OnInit {
     'SalesForce',
     'SQL Server Integration Services',
     'PHP',
-    'Laravel'
+    'Laravel',
+    'Aprimo',
+    'CPQ (Big machines)',
+    'Computer Tele Integration-CTI',
+    'OSL Marketing Cloud (Eloqua)',
+    'MFG/PRO',
+    'Oracle CRM On Demand',
+    'Hybris',
+    'CRM – Others',
   ];
 
   CompSelected = [
@@ -30,12 +39,17 @@ export class CompetenceViewComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      moveItemInArray(this.CompFound, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+      if (event.container.data.length <= 0) {
+        this.displayed = true;
+      } else {
+        this.displayed = false;
+      }
     }
   }
 
@@ -43,12 +57,23 @@ export class CompetenceViewComponent implements OnInit {
     const index = this.CompSelected.indexOf(comp);
 
     if (index >= 0) {
-      transferArrayItem(this.CompSelected,this.CompFound, this.CompSelected.indexOf(comp), this.CompFound.length);
+      transferArrayItem(this.CompSelected, this.CompFound, this.CompSelected.indexOf(comp), this.CompFound.length);
+      if (this.CompSelected.length <= 0) {
+        this.displayed = true;
+      } else {
+        this.displayed = false;
+      }
       //this.CompSelected.splice(index, 1);
       //https://xd.adobe.com/spec/0c0274ae-b6f0-45b5-6132-e74e223d39e1-7a33/screen/bae4dae5-131f-4068-8af8-ccb36566ba9c/Web-1920-3/
     }
   }
-  constructor() { }
+  constructor() {
+    if (this.CompSelected.length <= 0) {
+      this.displayed = true;
+    } else {
+      this.displayed = false;
+    }
+  }
 
   ngOnInit() {
   }
