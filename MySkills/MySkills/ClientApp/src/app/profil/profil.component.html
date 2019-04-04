@@ -1,12 +1,6 @@
 <h4 class="titleComponent"> Mon Profil  </h4>
 
-<br />
-<br />
 
-
-
-<br />
-<br />
 
 
     <div class="row">
@@ -15,9 +9,9 @@
                 <mat-card>
                     <mat-card-content>
                         <div style="color:DodgerBlue">
-                            <h6>
+                            <h2 class="profilContent">
                                 PROFIL
-
+                            </h2>
                                 <div class="container">
                                     <div class="starrating risingstar d-flex justify-content-right flex-row-reverse">
                                         <input type="radio" id="star5" name="rating" value="5" /><mdb-icon far icon="star"></mdb-icon>
@@ -27,10 +21,10 @@
                                         <input type="radio" id="star1" name="rating" value="1" /><mdb-icon far icon="star"></mdb-icon>
                                     </div>
                                 </div>
-                            </h6>
+                              
 
 
-                        </div>
+</div>
 
                         <div class="row">
                             <div class="col">
@@ -39,14 +33,22 @@
                                         <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
 
                                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                                            <h6 class="mt-0 font-weight-bold blue-text"> Karim Herrati </h6>
-                                            Grade A <br />
-                                            Dev Java JEE
-                                            <tr *ngFor="let note of notes">
-                                                <td>{{note.id}}</td>
-                                                <td>{{note.description}}</td>
-                                                <td> {{note.titre}}</td>
-                                            </tr>
+                                           
+                                            <ul>
+                                                <a *ngFor="let collab of collabs">
+                                                    <div class="contenuContent">
+                                                        {{collab.nom}}
+
+                                                        <br />
+                                                        {{collab.grade}}
+                                                        <br />
+                                                        {{collab.poste}}
+                                                    </div>
+
+                                                </a>
+                                            </ul>
+
+
                                         </div>
 
                                     </div>
@@ -56,40 +58,69 @@
                                 </div>
                             </div>
                             <div class="col">
-                                Practice
-                                <br />
-                                Projet
-                                <br />
-                                PTL
+                                <ul>
+                                    <a *ngFor="let collab of collabs">
+                                        <div class="contenuContent">
+                                            {{collab.practice}}
+                                            <br />
+                                            {{collab.projet}}
+                                            <br />
+                                            {{collab.ptl}}
+                                        </div>
+
+                                    </a>
+                                </ul>
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="col">
-                                <strong> Exp&eacute;rience &agrave; Capgemini</strong> 
+                                <div class="contenuContent"> Exp&eacute;rience &agrave; Capgemini</div>
                                 <br />
                                 <br />
+                               
+                                    <ul>
+                                        <a *ngFor="let collab of collabs">
+                                            <div class="expContent">   {{collab.cap}} </div>
+
+                                        </a>
+                                    </ul>
+
+                                    
+                                
                                 <br />
                                 <br />
                             </div>
                             <div class="col">
-                                <strong>Total ann&eacute;es d'exp&eacute;rience </strong> 
+                                <div class="contenuContent">Total ann&eacute;es d'exp&eacute;rience </div>
                                 <br />
                                 <br />
+                                <ul>
+                                    <a *ngFor="let collab of collabs">
+                                        <div class="expContent">    {{collab.exp}} </div>
+
+                                    </a>
+                                </ul>
                                 <br />
                                 <br />
                             </div>
 
                             <div class="col">
-                                <strong>  Comp&eacute;tences</strong>
+                                <div class="contenuContent">  Comp&eacute;tences</div>
                                 <br />
                                 <br />
+                                <ul>
+                                    <a *ngFor="let collab of collabs">
+                                        <div class="expContent"> {{collab.comp}} </div>
+
+                                    </a>
+                                </ul>
                                 <br />
                                 <br />
                             </div>
                         </div>
 
-                        <br />
+                     
                         
                         <button mdbBtn type="button" class="rounded float-right margin-left" style="background-color:#ff304c" rounded="true" mdbWavesEffect>Compl&eacute;ter le profil</button>
                         
@@ -107,8 +138,8 @@
                 <mat-card>
                     <mat-card-content>
                         <div style="color:DodgerBlue">
-                            <h6> RECAPITULATIF </h6>
-                        </div>
+                            <h2 class="profilContent"> RECAPITULATIF </h2>
+</div>
                         <br />
                         <br />
                         <br />
@@ -122,6 +153,8 @@
                         <br />
                         <br />
                         <br />
+                        <br />
+                        
 
                     </mat-card-content>
                 </mat-card>
@@ -135,44 +168,141 @@
         <div class="col">
             <mat-card>
                 <mat-card-content>
-                    <h6 style="color:DodgerBlue"> Technique  </h6>
+                    <h2 class="colonneContent">
+                        Technique  </h2>
+                        <br />
+                        <br />
+                        <div class="media d-block d-md-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54.764" height="54.747" viewBox="0 0 54.764 54.747">
+                                <defs>
+                                    <style>
+                                        .at {
+                                            fill: none;
+                                            stroke: #0070ad;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-width: 1.5px;
+                                        }
+                                    </style>
+                                </defs>
+                                <g transform="translate(-524.421 -63.182)"><path class="at" d="M555.321,95.283l8.039-6.468a3.8,3.8,0,0,0,2.512.5,12.806,12.806,0,0,0,12.562-12.938v-1l-12.059,6.47-4.521-8.461,12.059-6.468a11.478,11.478,0,0,0-8.041-2.986c-7.035,0-13.065,5.474-13.065,12.441a13.144,13.144,0,0,0,1.508,5.971L541.754,92.3a9.893,9.893,0,0,0-4.02-.5,12.381,12.381,0,0,0-12.562,12.441v.995l12.562-6.47,4.523,8.461-13.065,6.468c2.512,1.991,5.527,3.485,8.542,3.485A13.24,13.24,0,0,0,550.8,104.241a14.4,14.4,0,0,0-1.006-4.479" /></g>
+                            </svg>
+                            <ul>
+                                <a *ngFor="let collab of collabs">
+                                    <div class="techContent"> {{collab.tech}} </div>
+
+                                </a>
+                            </ul>
+                            <br />
+                            <br />
+                        </div>
+</mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col">
+            <mat-card>
+                <mat-card-content>
+                    <h2 class="colonneContent">
+                        Management et support
+                    </h2>
+                   
                     <br />
                     <br />
-                    <br />
-                    <br />
+                    <div class="media d-block d-md-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="57.524" height="61.491" viewBox="0 0 57.524 61.491">
+                            <defs>
+                                <style>
+                                    .am {
+                                        fill: none;
+                                        stroke: #0070ad;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                        stroke-width: 1.5px;
+                                    }
+                                </style>
+                            </defs>
+                            <g transform="translate(-643.166 -1572.998)"><path class="am" d="M660.345,1612c0-10.724,2.866-19.708,11.175-22.027-2.006-1.738-4.3-4.927-4.3-7.824,0-4.927,3.151-8.4,7.449-8.4,3.724,0,6.875,3.478,6.875,8.4a11.267,11.267,0,0,1-3.724,7.824C686.416,1592.3,689,1601.281,689,1612c0,0,1.431,9.274-5.157,10.434" transform="translate(10.789 0)" /><path class="am" d="M670.584,1613.626a28.154,28.154,0,0,1-3.991-4.09c-.306-4.385,2.149-18.121,2.457-21.628a4.77,4.77,0,0,1-.921-2.923,6.244,6.244,0,0,0,4.6,0c.306,1.17-.306,1.753-.615,2.923.308,3.507,2.457,17.828,2.763,21.92a13.87,13.87,0,0,1-2.149,2.046" transform="translate(14.875 7.38)" /><path class="am" d="M644.781,1608.142c0-9.165,2.73-14.892,10.011-16.612-1.517-1.718-3.641-4.3-3.641-6.587,0-4.009,2.73-6.874,6.372-6.874a6.618,6.618,0,0,1,6.37,6.874c0,2.291-1.821,4.869-3.337,6.587,7.28,1.72,10.01,9.165,10.01,18.045" transform="translate(0.568 2.838)" /><path class="am" d="M660.514,1611.382a1.935,1.935,0,0,1,0,2.477h0a1.746,1.746,0,0,1-2.372,0s-5.926-7.74-8.3-8.979a10.592,10.592,0,0,0-5.928-1.547" transform="translate(0 19.416)" /><path class="am" d="M653.289,1604l5.525,4.508a1.452,1.452,0,0,1,0,2.122h0a2.094,2.094,0,0,1-2.455,0l-5.525-4.773" transform="translate(4.543 19.868)" /><path class="am" d="M657.03,1600.544l6.875,8.275c.982.954.982,1.909,0,2.546h0a1.614,1.614,0,0,1-2.291,0l-8.186-7.957" transform="translate(6.247 17.597)" /><path class="am" d="M674.819,1597.893s-4.057,2.672-5.8,2.672c-2.608-.333-6.663-4.009-9.271-4.344-1.738,0-9.561,4.678-9.561,4.678a1.95,1.95,0,0,0-.87,2.339h0a1.524,1.524,0,0,0,2.028,1l6.665-3.007s2.9,4.009,5.5,4.678a9.19,9.19,0,0,0,3.477,0" transform="translate(3.479 14.759)" /><path class="am" d="M658.313,1605.731a1.742,1.742,0,0,1,0,2.291h0a1.741,1.741,0,0,1-2.291,0" transform="translate(7.95 21.003)" /><path class="am" d="M659.481,1606s22.392-.52,24.352-2.863" transform="translate(10.222 19.3)" /><path class="am" d="M644.781,1596.222c0,4.3,14.325,1.953,14.325,1.953" transform="translate(0.568 14.759)" /></g>
+                        </svg>
+                        <ul>
+                            <a *ngFor="let collab of collabs">
+                                <div class="techContent"> {{collab.manag}} </div>
+
+                            </a>
+                        </ul>
+                        <br />
+                        <br />
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>
         <div class="col">
             <mat-card>
                 <mat-card-content>
-                    <h6 style="color:DodgerBlue"> Management et support  </h6>
+                    <h2 class="colonneContent">
+                        Soft Skill
+                    </h2>
+
                     <br />
                     <br />
-                    <br />
-                    <br />
+                    <div class="media d-block d-md-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39.925" height="57.747" viewBox="0 0 39.925 57.747">
+                            <defs>
+                                <style>
+                                    .c {
+                                        fill: none;
+                                        stroke: #0070ad;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                        stroke-width: 1.5px;
+                                    }
+                                </style>
+                            </defs>
+                            <g transform="translate(-661.325 -1491.743)"><path class="c" d="M700.5,1543.252c0-14.5-3.614-26.368-14.779-29.336,2.3-2.306,4.926-6.591,4.926-9.887,0-6.593-4.269-11.536-9.2-11.536-5.583,0-9.853,4.944-9.853,11.536,0,3.3,2.955,7.581,5.255,9.887-10.838,2.968-14.779,14.833-14.779,29.336" transform="translate(0)" /><path class="c" d="M676.271,1539.606c-1.371-1.289-2.4-2.254-4.46-4.507-.343-4.829,3.088-20.284,3.088-24.149-.343-.965-1.373-1.287-1.373-2.9a7.078,7.078,0,0,0,5.147,0c.343,1.289-1.03,1.933-1.373,2.9.343,3.865,3.431,19.64,3.774,24.149-.687.965-1.373,1.287-2.4,2.576" transform="translate(5.701 9.134)" /></g>
+                        </svg>
+                        <ul>
+                            <a *ngFor="let collab of collabs">
+                                <div class="techContent"> {{collab.soft}} </div>
+
+                            </a>
+                        </ul>
+                        <br />
+                        <br />
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>
         <div class="col">
             <mat-card>
                 <mat-card-content>
-                    <h6 style="color:DodgerBlue"> Soft Skill  </h6>
+                    <h2 class="colonneContent">
+                        Certifications
+                    </h2>
+               
                     <br />
                     <br />
-                    <br />
-                    <br />
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col">
-            <mat-card>
-                <mat-card-content>
-                    <h6 style="color:DodgerBlue"> Certifications  </h6>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    <div class="media d-block d-md-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40.999" height="59.731" viewBox="0 0 40.999 59.731">
+                            <defs>
+                                <style>
+                                    .ac {
+                                        fill: none;
+                                        stroke: #0070ad;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                    }
+                                </style>
+                            </defs>
+                            <g transform="translate(-185.662 -2313.589)"><path class="ac" d="M199.494,2356.521l-2.515,8.538,5.283-3.881,2.767,5.175,3.018-9.314,6.793,15.781,1.257-8.02,7.547,4.657-9.811-20.181v4.14l-3.018-2.846-.755,3.88-2.264-3.1-1.761,3.622-1.509-3.622-2.264,3.1-1.007-3.88-2.767,2.846-.251-3.881-3.271,1.811.754-3.881-3.772,1.553,1.509-3.881-4.025.776,2.013-3.621h-3.772l2.767-3.106-3.774-.776,3.019-2.329-3.522-1.552,3.522-1.811-3.271-2.328,3.774-.777-2.515-2.845,3.772-.259-2.013-3.364,4.025.777-1.509-3.881,3.772,1.294-.754-3.881,3.271,2.07.251-3.88,2.767,2.587,1.007-3.881,2.264,3.364,1.509-3.623,1.761,3.364,2.264-2.846,1.007,3.622,2.767-2.587v3.88l3.522-2.07-.754,3.881,3.521-1.294-1.257,3.623,3.774-.518-2.013,3.364,4.024.259-2.767,2.845,3.774.777-3.271,2.328,3.774,1.811-3.521,1.552,3.018,2.329-3.774,1.035,2.767,2.847-4.024.258,2.264,3.363-4.025-.776,1.257,3.881-3.521-1.553.5,4.14" transform="translate(0)" /><path class="ac" d="M192.158,2332.953c0-6.431,5.555-11.87,12.373-11.87h0c7.071,0,12.626,5.439,12.626,11.87h0c0,6.678-5.555,11.872-12.626,11.872h0a12.062,12.062,0,0,1-12.373-11.872Z" transform="translate(1.504 1.754)" /></g>
+                        </svg>
+                        <ul>
+                            <a *ngFor="let collab of collabs">
+                                <div class="techContent"> {{collab.certif}} </div>
+
+                            </a>
+                        </ul>
+                        <br />
+                        <br />
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>
@@ -186,7 +316,10 @@
         <mat-card>
             <mat-card-content>
                 <div style="color:DodgerBlue">
-                    <mat-card-title> T&eacute;moignages formateurs </mat-card-title>
+                    <h2 class="lienContent">
+                        T&eacute;moignages formateurs
+                    </h2>
+                  
                 </div>
                 <br />
                 <br />
@@ -195,8 +328,11 @@
                         <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
 
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                            <h6 class="mt-0 font-weight-bold blue-text"> Karim Herrati </h6>
-                            Cras sit amet nibh libero, in gravida nulla.
+                            <div class="temoContent"> Karim Herrati </div>
+                            <br />
+                            <div class="temoposteContent">
+                                Dev JAVA JEE
+                            </div>
 
 
                         </div>
@@ -207,21 +343,26 @@
                     <div class="media d-block d-md-flex">
                         <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                            <h6 class="mt-0 font-weight-bold blue-text"> Mohammed Alaoui </h6>
-                            Cras sit amet nibh libero, in gravida nulla.
+                            <div class="temoContent"> Mohammed Alaoui </div>
+                            <br />
+                            <div class="temoposteContent">
+                               Dev SALESFORCE
 
+                            </div>
                         </div>
-                    </div>
+                     </div>
                     <br />
 
                     <div class="media d-block d-md-flex">
                         <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                            <h6 class="mt-0 font-weight-bold blue-text"> Samia Berrada </h6>
-                            Cras sit amet nibh libero, in gravida nulla.
+                            <div class="temoContent"> Samia Berrada </div>
+                            <br />
+                            <div class="temoposteContent">
+                               UI/UX Designer
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <br />
                 <br />
@@ -234,39 +375,132 @@
         <mat-card>
             <mat-card-content>
                 <div style="color:DodgerBlue">
-                    <mat-card-title> Quelques liens utiles !</mat-card-title>
+                    <h2 class="lienContent">
+                        Quelques liens utiles !
+                    </h2>
+                    <mat-card-title> </mat-card-title>
                 </div>
                 <br />
                 <br />
                 <ul class="list-unstyled">
                     <li class="media">
-                        <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31.006" viewBox="0 0 31 31.006"><defs><style>
+                                                                                                                             .aqu {
+                                                                                                                                 fill: #ce1e5b;
+                                                                                                                             }
+
+                                                                                                                             .b {
+                                                                                                                                 fill: #72c5cd;
+                                                                                                                             }
+
+                                                                                                                             .cqu {
+                                                                                                                                 fill: #dfa22f;
+                                                                                                                             }
+
+                                                                                                                             .d {
+                                                                                                                                 fill: #3cb187;
+                                                                                                                             }
+
+                                                                                                                             .e {
+                                                                                                                                 fill: #248c73;
+                                                                                                                             }
+
+                                                                                                                             .f {
+                                                                                                                                 fill: #392538;
+                                                                                                                             }
+
+                                                                                                                             .g {
+                                                                                                                                 fill: #bb242a;
+                                                                                                                             }
+                        </style></defs><g transform="translate(-1193 -1145)"><g transform="translate(963.045 915)"><g transform="translate(233.549 244.706)"><path class="aqu" d="M263.263,256.63h0a2.777,2.777,0,0,0-3.5-1.781l-21.851,7.1a2.777,2.777,0,1,0,1.719,5.281l21.85-7.1A2.78,2.78,0,0,0,263.263,256.63Z" transform="translate(-235.994 -254.712)" /></g><g transform="translate(229.955 233.656)"><path class="b" d="M257.174,238.094l-.013-.032a2.777,2.777,0,0,0-3.5-1.781l-21.787,7.088a2.777,2.777,0,0,0-1.782,3.5l.012.031a2.777,2.777,0,0,0,3.5,1.781l21.788-7.081A2.791,2.791,0,0,0,257.174,238.094Z" transform="translate(-229.955 -236.144)" /></g><g transform="translate(244.656 230)"><path class="cqu" d="M267.181,253.769l-7.106-21.851a2.777,2.777,0,0,0-5.281,1.719l7.1,21.851a2.78,2.78,0,0,0,5.288-1.719Z" transform="translate(-254.657 -230)" /></g><g transform="translate(233.611 233.65)"><path class="d" d="M248.63,259.84l-7.081-21.788a2.776,2.776,0,0,0-3.5-1.781l-.032.012a2.777,2.777,0,0,0-1.781,3.5l7.081,21.788a2.777,2.777,0,0,0,3.5,1.781l.031-.012A2.774,2.774,0,0,0,248.63,259.84Z" transform="translate(-236.099 -236.133)" /></g><rect class="e" width="5.587" height="5.587" transform="matrix(0.951, -0.309, 0.309, 0.951, 234.622, 239.985)" /><rect class="f" width="5.587" height="5.55" transform="translate(238.22 251.05) rotate(-18.006)" /><rect class="g" width="5.55" height="5.55" transform="translate(249.287 247.451) rotate(-18.006)" /></g></g></svg>
                         <div class="media-body">
-                            <h6 class="mt-0 font-weight-bold"> Lien Slack</h6>
+                            <div class="slackContent"> Lien Slack</div>
                         </div>
                     </li>
                     <br />
 
 
                     <li class="media">
-                        <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 31"><defs><style>
+                                                                                                                                                                .aya {
+                                                                                                                                                                    fill: none;
+                                                                                                                                                                }
+
+                                                                                                                                                                .bya {
+                                                                                                                                                                    clip-path: url(#a);
+                                                                                                                                                                }
+
+                                                                                                                                                                .cya {
+                                                                                                                                                                    fill: #0093be;
+                                                                                                                                                                }
+
+                                                                                                                                                                .dya {
+                                                                                                                                                                    fill: #fff;
+                                                                                                                                                                }
+                        </style><clipPath id="a"><rect class="aya" width="31" height="31" /></clipPath></defs><g transform="translate(-1193 -1226)"><g transform="translate(990 1023)"><g transform="translate(203 203)"><g class="bya"><rect class="cya" width="31" height="31" rx="6" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M234.017,227a40.992,40.992,0,0,0,5.875.7,1.224,1.224,0,1,0,0-2.446,40.992,40.992,0,0,0-5.875.7c-.342.07-1.186.159-1.186.524S233.676,226.931,234.017,227Z" transform="translate(-213.565 -210.881)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M209.381,211.046a1.156,1.156,0,0,0-1.049,1.59s1.544,3.967,3.138,8.037c.774,1.977,1.558,3.969,2.185,5.553-.2.491-.375.944-.515,1.29-.123.285-.164.408-.277.645a1.9,1.9,0,0,1-1.414,1.044c-.933.074-1.937.138-1.937.138a1.155,1.155,0,1,0,.147,2.306,11.218,11.218,0,0,0,2.369-.165,4.677,4.677,0,0,0,3.256-3.1c.209-.517.483-1.205.8-2.008.636-1.6,1.446-3.666,2.244-5.7,1.595-4.071,3.138-8.037,3.138-8.037a1.155,1.155,0,0,0-1.122-1.589,1.157,1.157,0,0,0-1.031.75s-1.544,3.965-3.137,8.033c-.432,1.1-.866,2.209-1.276,3.251-.411-1.046-.839-2.134-1.276-3.251-1.593-4.067-3.137-8.033-3.137-8.033a1.157,1.157,0,0,0-1.031-.75c-.024,0-.048,0-.072,0Z" transform="translate(-204.859 -205.85)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,233.134a40.985,40.985,0,0,0,4.667,3.637,1.225,1.225,0,1,0,1.265-2.094,40.951,40.951,0,0,0-5.391-2.439c-.328-.118-1.1-.478-1.286-.165S230.534,232.9,230.791,233.134Z" transform="translate(-212.567 -213.253)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,218.406a40.916,40.916,0,0,1,4.667-3.637,1.225,1.225,0,1,1,1.265,2.094,41.041,41.041,0,0,1-5.391,2.439c-.328.117-1.1.477-1.286.165S230.534,218.642,230.791,218.406Z" transform="translate(-212.567 -207.095)" /></g></g></g></g></svg>
                         <div class="media-body">
-                            <h6 class="mt-0 font-weight-bold"> Lien Yammer</h6>
+                            <div class="slackContent"> Lien Yammer</div>
                         </div>
                     </li>
                     <br />
                     <li class="media">
-                        <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 31">
+                            <defs>
+                                <style>
+                                    .aya {
+                                        fill: none;
+                                    }
+
+                                    .bya {
+                                        clip-path: url(#a);
+                                    }
+
+                                    .cya {
+                                        fill: #0093be;
+                                    }
+
+                                    .dya {
+                                        fill: #fff;
+                                    }
+                                </style>
+                                <clipPath id="a"><rect class="aya" width="31" height="31" /></clipPath>
+                            </defs>
+                            <g transform="translate(-1193 -1226)"><g transform="translate(990 1023)"><g transform="translate(203 203)"><g class="bya"><rect class="cya" width="31" height="31" rx="6" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M234.017,227a40.992,40.992,0,0,0,5.875.7,1.224,1.224,0,1,0,0-2.446,40.992,40.992,0,0,0-5.875.7c-.342.07-1.186.159-1.186.524S233.676,226.931,234.017,227Z" transform="translate(-213.565 -210.881)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M209.381,211.046a1.156,1.156,0,0,0-1.049,1.59s1.544,3.967,3.138,8.037c.774,1.977,1.558,3.969,2.185,5.553-.2.491-.375.944-.515,1.29-.123.285-.164.408-.277.645a1.9,1.9,0,0,1-1.414,1.044c-.933.074-1.937.138-1.937.138a1.155,1.155,0,1,0,.147,2.306,11.218,11.218,0,0,0,2.369-.165,4.677,4.677,0,0,0,3.256-3.1c.209-.517.483-1.205.8-2.008.636-1.6,1.446-3.666,2.244-5.7,1.595-4.071,3.138-8.037,3.138-8.037a1.155,1.155,0,0,0-1.122-1.589,1.157,1.157,0,0,0-1.031.75s-1.544,3.965-3.137,8.033c-.432,1.1-.866,2.209-1.276,3.251-.411-1.046-.839-2.134-1.276-3.251-1.593-4.067-3.137-8.033-3.137-8.033a1.157,1.157,0,0,0-1.031-.75c-.024,0-.048,0-.072,0Z" transform="translate(-204.859 -205.85)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,233.134a40.985,40.985,0,0,0,4.667,3.637,1.225,1.225,0,1,0,1.265-2.094,40.951,40.951,0,0,0-5.391-2.439c-.328-.118-1.1-.478-1.286-.165S230.534,232.9,230.791,233.134Z" transform="translate(-212.567 -213.253)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,218.406a40.916,40.916,0,0,1,4.667-3.637,1.225,1.225,0,1,1,1.265,2.094,41.041,41.041,0,0,1-5.391,2.439c-.328.117-1.1.477-1.286.165S230.534,218.642,230.791,218.406Z" transform="translate(-212.567 -207.095)" /></g></g></g></g>
+                        </svg>
                         <div class="media-body">
-                            <h6 class="mt-0 font-weight-bold"> Lien MyLearning</h6>
+                            <div class="slackContent"> Lien MyLearning</div>
                         </div>
                     </li>
                     <br />
 
                     <li class="media">
-                        <mdb-icon fas icon="bolt" size="3x" class="amber-text pr-3" aria-hidden="true"></mdb-icon>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 31">
+                            <defs>
+                                <style>
+                                    .aya {
+                                        fill: none;
+                                    }
+
+                                    .bya {
+                                        clip-path: url(#a);
+                                    }
+
+                                    .cya {
+                                        fill: #0093be;
+                                    }
+
+                                    .dya {
+                                        fill: #fff;
+                                    }
+                                </style>
+                                <clipPath id="a"><rect class="aya" width="31" height="31" /></clipPath>
+                            </defs>
+                            <g transform="translate(-1193 -1226)"><g transform="translate(990 1023)"><g transform="translate(203 203)"><g class="bya"><rect class="cya" width="31" height="31" rx="6" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M234.017,227a40.992,40.992,0,0,0,5.875.7,1.224,1.224,0,1,0,0-2.446,40.992,40.992,0,0,0-5.875.7c-.342.07-1.186.159-1.186.524S233.676,226.931,234.017,227Z" transform="translate(-213.565 -210.881)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M209.381,211.046a1.156,1.156,0,0,0-1.049,1.59s1.544,3.967,3.138,8.037c.774,1.977,1.558,3.969,2.185,5.553-.2.491-.375.944-.515,1.29-.123.285-.164.408-.277.645a1.9,1.9,0,0,1-1.414,1.044c-.933.074-1.937.138-1.937.138a1.155,1.155,0,1,0,.147,2.306,11.218,11.218,0,0,0,2.369-.165,4.677,4.677,0,0,0,3.256-3.1c.209-.517.483-1.205.8-2.008.636-1.6,1.446-3.666,2.244-5.7,1.595-4.071,3.138-8.037,3.138-8.037a1.155,1.155,0,0,0-1.122-1.589,1.157,1.157,0,0,0-1.031.75s-1.544,3.965-3.137,8.033c-.432,1.1-.866,2.209-1.276,3.251-.411-1.046-.839-2.134-1.276-3.251-1.593-4.067-3.137-8.033-3.137-8.033a1.157,1.157,0,0,0-1.031-.75c-.024,0-.048,0-.072,0Z" transform="translate(-204.859 -205.85)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,233.134a40.985,40.985,0,0,0,4.667,3.637,1.225,1.225,0,1,0,1.265-2.094,40.951,40.951,0,0,0-5.391-2.439c-.328-.118-1.1-.478-1.286-.165S230.534,232.9,230.791,233.134Z" transform="translate(-212.567 -213.253)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,218.406a40.916,40.916,0,0,1,4.667-3.637,1.225,1.225,0,1,1,1.265,2.094,41.041,41.041,0,0,1-5.391,2.439c-.328.117-1.1.477-1.286.165S230.534,218.642,230.791,218.406Z" transform="translate(-212.567 -207.095)" /></g></g></g></g>
+                        </svg>
                         <div class="media-body">
-                            <h6 class="mt-0 font-weight-bold"> Lien Linkedin</h6>
+                            <div class="slackContent"> Lien Linkedin</div>
                         </div>
                     </li>
 
@@ -281,5 +515,4 @@
 
 
 <br />
-<br />
-<br />
+

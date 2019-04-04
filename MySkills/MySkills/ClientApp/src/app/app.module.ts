@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
-
+import { ApiService } from './api.service';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -15,8 +15,7 @@ import { FaqComponent } from './faq/faq.component';
 import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { EnvironmentUrlService } from './shared/services/environment-url.service';
-import { RepositoryService } from './shared/services/repository.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +36,7 @@ import { RepositoryService } from './shared/services/repository.service';
     MaterialModule,
     MDBBootstrapModule.forRoot()
   ],
-    providers: [EnvironmentUrlService, RepositoryService],
+    providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
