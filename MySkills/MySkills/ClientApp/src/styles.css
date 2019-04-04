@@ -71,6 +71,61 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     padding: 29px 0 0px 25px;
 }
 
+.temoContent {
+    font-family: ubuntu;
+    font-weight: 700;
+    font-size: 18px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.temoposteContent {
+    font-family: ubuntu;
+    font-weight: normal;
+    font-size: 14px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.lienContent {
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+    .lienContent:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        bottom: 0;
+        border-bottom: 3px solid;
+        border-bottom-color: #FF304C;
+    }
+
+
+.slackContent {
+    font-family: ubuntu;
+    font-weight: normal;
+    font-size: 17px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
 
 .question-Contact {
     color: #0070AD;

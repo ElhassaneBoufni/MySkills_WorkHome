@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySkills.WebUI", "MySkills.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySkills.Front", "MySkills\MySkills\MySkills.Front.csproj", "{0FE0A9BF-90E5-49FF-A9E7-C863F7CCA230}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySkills.API", "MySkills.API\MySkills.API\MySkills.API.csproj", "{D024B6C9-5649-4303-85E0-EE66D59A1897}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{0FE0A9BF-90E5-49FF-A9E7-C863F7CCA230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE0A9BF-90E5-49FF-A9E7-C863F7CCA230}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE0A9BF-90E5-49FF-A9E7-C863F7CCA230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D024B6C9-5649-4303-85E0-EE66D59A1897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D024B6C9-5649-4303-85E0-EE66D59A1897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D024B6C9-5649-4303-85E0-EE66D59A1897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D024B6C9-5649-4303-85E0-EE66D59A1897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{34BB0A51-74B9-46B6-BEAA-94A914F552EE} = {1EC1EEFF-3888-4125-9229-623C564F3E7E}
 		{B3A105C1-F3E0-4290-A330-D0D3F29D2B26} = {833DEA57-A970-418C-831C-2355B8294766}
 		{0FE0A9BF-90E5-49FF-A9E7-C863F7CCA230} = {833DEA57-A970-418C-831C-2355B8294766}
+		{D024B6C9-5649-4303-85E0-EE66D59A1897} = {833DEA57-A970-418C-831C-2355B8294766}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D5D0CA3-C6B8-436C-82B0-39820C8A13FA}

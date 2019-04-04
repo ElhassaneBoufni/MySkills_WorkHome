@@ -17,6 +17,7 @@ import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AngularEditorModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+    providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
