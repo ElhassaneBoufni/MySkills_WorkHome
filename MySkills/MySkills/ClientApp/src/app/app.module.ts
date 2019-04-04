@@ -15,6 +15,7 @@ import { FaqComponent } from './faq/faq.component';
 import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AppRoutingModule,
     FormsModule,
     MaterialModule,
+    AngularEditorModule,
     MDBBootstrapModule.forRoot()
   ],
     providers: [ApiService],
