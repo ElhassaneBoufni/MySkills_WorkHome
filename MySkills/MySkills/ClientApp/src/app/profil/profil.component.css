@@ -56,7 +56,8 @@ div.format {
     width: 40px;
     height: 1px;
     bottom: 0;
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid;
+    border-bottom-color: #FF304C;
 }
 
 
@@ -71,40 +72,22 @@ div.format {
     margin-bottom: 28px;
 }
 
-.colonneContent:before {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 1px;
-    bottom: 0;
-    border-bottom: 3px solid red;
-}
-
-
-.lienContent {
-    font-family: ubuntu;
-    font-weight: 600;
-    font-size: 20px;
-    color: #0070AD;
-    display: inline-block;
-    padding-bottom: 11px;
-    position: relative;
-    margin-bottom: 28px;
-}
-
-.lienContent:before {
+    .colonneContent:before {
         content: "";
         position: absolute;
         width: 40px;
         height: 1px;
         bottom: 0;
-        border-bottom: 3px solid red;
-}
+        border-bottom: 3px solid;
+        border-bottom-color: #FF304C;
+    }
+
+
 
 .contenuContent {
     font-family: ubuntu;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     color: #5A5A5A;
     display: inline-block;
     padding-bottom: 11px;
@@ -115,7 +98,7 @@ div.format {
 .expContent {
     font-family: ubuntu;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 30px;
     color: #5A5A5A;
     display: inline-block;
     padding-bottom: 11px;
@@ -134,36 +117,30 @@ div.format {
     margin-bottom: 28px;
 }
 
-.slackContent {
-    font-family: ubuntu;
-    font-weight: normal;
-    font-size: 17px;
-    color: #555555;
-    display: inline-block;
-    padding-bottom: 11px;
-    position: relative;
-    margin-bottom: 28px;
-}
 
-.temoContent {
+
+
+
+.expoContent {
     font-family: ubuntu;
     font-weight: 700;
-    font-size: 18px;
-    color: #555555;
+    font-size: 15px;
+    color: #0070AD;
     display: inline-block;
     padding-bottom: 11px;
     position: relative;
     margin-bottom: 28px;
 }
 
-.temoposteContent {
+.complContent {
     font-family: ubuntu;
-    font-weight: normal;
-    font-size: 14px;
-    color: #555555;
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
     display: inline-block;
     padding-bottom: 11px;
     position: relative;
     margin-bottom: 28px;
 }
+
 

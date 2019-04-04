@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
-import { ApiService } from './api.service';
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -38,7 +38,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AngularEditorModule,
     MDBBootstrapModule.forRoot()
   ],
-    providers: [ApiService],
+    providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

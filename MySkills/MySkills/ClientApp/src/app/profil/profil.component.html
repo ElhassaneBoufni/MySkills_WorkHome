@@ -1,7 +1,7 @@
-<h4 class="titleComponent"> Mon Profil  </h4>
+<h4 class="titleComponent-Contact"> Mon Profil  </h4>
 
 
-
+<br />
 
     <div class="row">
         <div class="col-8">
@@ -12,19 +12,19 @@
                             <h2 class="profilContent">
                                 PROFIL
                             </h2>
-                                <div class="container">
-                                    <div class="starrating risingstar d-flex justify-content-right flex-row-reverse">
-                                        <input type="radio" id="star5" name="rating" value="5" /><mdb-icon far icon="star"></mdb-icon>
-                                        <input type="radio" id="star4" name="rating" value="4" /><mdb-icon far icon="star"></mdb-icon>
-                                        <input type="radio" id="star3" name="rating" value="3" /><mdb-icon far icon="star"></mdb-icon>
-                                        <input type="radio" id="star2" name="rating" value="2" /><mdb-icon far icon="star"></mdb-icon>
-                                        <input type="radio" id="star1" name="rating" value="1" /><mdb-icon far icon="star"></mdb-icon>
-                                    </div>
+                            <div class="container">
+                                <div class="starrating risingstar d-flex justify-content-right flex-row-reverse">
+                                    <input type="radio" id="star5" name="rating" value="5" /><mdb-icon far icon="star"></mdb-icon>
+                                    <input type="radio" id="star4" name="rating" value="4" /><mdb-icon far icon="star"></mdb-icon>
+                                    <input type="radio" id="star3" name="rating" value="3" /><mdb-icon far icon="star"></mdb-icon>
+                                    <input type="radio" id="star2" name="rating" value="2" /><mdb-icon far icon="star"></mdb-icon>
+                                    <input type="radio" id="star1" name="rating" value="1" /><mdb-icon far icon="star"></mdb-icon>
                                 </div>
-                              
+                            </div>
 
 
-</div>
+
+                        </div>
 
                         <div class="row">
                             <div class="col">
@@ -33,7 +33,7 @@
                                         <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
 
                                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                                           
+
                                             <ul>
                                                 <a *ngFor="let collab of collabs">
                                                     <div class="contenuContent">
@@ -78,18 +78,18 @@
                                 <div class="contenuContent"> Exp&eacute;rience &agrave; Capgemini</div>
                                 <br />
                                 <br />
-                               
-                                    <ul>
-                                        <a *ngFor="let collab of collabs">
-                                            <div class="expContent">   {{collab.cap}} </div>
 
-                                        </a>
-                                    </ul>
+                                <ul>
+                                    <a *ngFor="let collab of collabs">
+                                        <div class="expContent">   {{collab.cap}} </div>
 
-                                    
+                                    </a>
+                                </ul>
+
+
+
+                                <br />
                                 
-                                <br />
-                                <br />
                             </div>
                             <div class="col">
                                 <div class="contenuContent">Total ann&eacute;es d'exp&eacute;rience </div>
@@ -102,7 +102,7 @@
                                     </a>
                                 </ul>
                                 <br />
-                                <br />
+                                
                             </div>
 
                             <div class="col">
@@ -116,19 +116,21 @@
                                     </a>
                                 </ul>
                                 <br />
-                                <br />
+                                
                             </div>
                         </div>
 
-                     
-                        
-                        <button mdbBtn type="button" class="rounded float-right margin-left" style="background-color:#ff304c" rounded="true" mdbWavesEffect>Compl&eacute;ter le profil</button>
-                        
-                            <button mdbBtn type="button" class="rounded float-right margin-left" color="primary" rounded="true" outline="true" mdbWavesEffect>Exporter mon profil </button>
-                        
 
+                        <button mdbBtn type="button" style=" background-color:#ff304c;border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded float-right margin-left complContent" rounded="true" mdbWavesEffect>
+                            Compl&eacute;ter le profil
+                        </button>
+                        <button mdbBtn type="button" style=" background-color:white; border-color:#0070AD; color:#0070AD;border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded float-right margin-left expoContent" rounded="true" outline="true" mdbWavesEffect>
+                          Exporter mon profil <mdb-icon fas icon="upload"></mdb-icon> </button>
+
+
+                            <br />
                         <br />
-                        <br />
+                            <br />
                     </mat-card-content>
                 </mat-card>
             
@@ -301,7 +303,7 @@
                             </a>
                         </ul>
                         <br />
-                        <br />
+                        
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -322,10 +324,10 @@
                   
                 </div>
                 <br />
-                <br />
+                
                 <div class="col-lg-10 col-xk-8">
                     <div class="media d-block d-md-flex">
-                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                        <img src="assets/image.JPG " class="rounded-circle"  alt="im" height="90" width="90">
 
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="temoContent"> Karim Herrati </div>
@@ -338,28 +340,28 @@
                         </div>
 
                     </div>
-                    <br />
-
+                    
+                    <hr />
                     <div class="media d-block d-md-flex">
-                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                        <img src="assets/image.JPG " class="rounded-circle" alt="im" height="90" width="90">
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="temoContent"> Mohammed Alaoui </div>
                             <br />
                             <div class="temoposteContent">
-                               Dev SALESFORCE
+                                Dev SALESFORCE
 
                             </div>
                         </div>
-                     </div>
-                    <br />
-
+                    </div>
+                    
+                    <hr />
                     <div class="media d-block d-md-flex">
-                        <mdb-icon fas icon="camera-retro" size="4x"></mdb-icon>
+                        <img src="assets/ima.JPG " class="rounded-circle" alt="im" height="90" width="90">
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="temoContent"> Samia Berrada </div>
                             <br />
                             <div class="temoposteContent">
-                               UI/UX Designer
+                                UI/UX Designer
                             </div>
                         </div>
                     </div>
@@ -414,7 +416,7 @@
                                                                                                                                  fill: #bb242a;
                                                                                                                              }
                         </style></defs><g transform="translate(-1193 -1145)"><g transform="translate(963.045 915)"><g transform="translate(233.549 244.706)"><path class="aqu" d="M263.263,256.63h0a2.777,2.777,0,0,0-3.5-1.781l-21.851,7.1a2.777,2.777,0,1,0,1.719,5.281l21.85-7.1A2.78,2.78,0,0,0,263.263,256.63Z" transform="translate(-235.994 -254.712)" /></g><g transform="translate(229.955 233.656)"><path class="b" d="M257.174,238.094l-.013-.032a2.777,2.777,0,0,0-3.5-1.781l-21.787,7.088a2.777,2.777,0,0,0-1.782,3.5l.012.031a2.777,2.777,0,0,0,3.5,1.781l21.788-7.081A2.791,2.791,0,0,0,257.174,238.094Z" transform="translate(-229.955 -236.144)" /></g><g transform="translate(244.656 230)"><path class="cqu" d="M267.181,253.769l-7.106-21.851a2.777,2.777,0,0,0-5.281,1.719l7.1,21.851a2.78,2.78,0,0,0,5.288-1.719Z" transform="translate(-254.657 -230)" /></g><g transform="translate(233.611 233.65)"><path class="d" d="M248.63,259.84l-7.081-21.788a2.776,2.776,0,0,0-3.5-1.781l-.032.012a2.777,2.777,0,0,0-1.781,3.5l7.081,21.788a2.777,2.777,0,0,0,3.5,1.781l.031-.012A2.774,2.774,0,0,0,248.63,259.84Z" transform="translate(-236.099 -236.133)" /></g><rect class="e" width="5.587" height="5.587" transform="matrix(0.951, -0.309, 0.309, 0.951, 234.622, 239.985)" /><rect class="f" width="5.587" height="5.55" transform="translate(238.22 251.05) rotate(-18.006)" /><rect class="g" width="5.55" height="5.55" transform="translate(249.287 247.451) rotate(-18.006)" /></g></g></svg>
-                        <div class="media-body">
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="slackContent"> Lien Slack</div>
                         </div>
                     </li>
@@ -440,7 +442,7 @@
                                                                                                                                                                     fill: #fff;
                                                                                                                                                                 }
                         </style><clipPath id="a"><rect class="aya" width="31" height="31" /></clipPath></defs><g transform="translate(-1193 -1226)"><g transform="translate(990 1023)"><g transform="translate(203 203)"><g class="bya"><rect class="cya" width="31" height="31" rx="6" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M234.017,227a40.992,40.992,0,0,0,5.875.7,1.224,1.224,0,1,0,0-2.446,40.992,40.992,0,0,0-5.875.7c-.342.07-1.186.159-1.186.524S233.676,226.931,234.017,227Z" transform="translate(-213.565 -210.881)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M209.381,211.046a1.156,1.156,0,0,0-1.049,1.59s1.544,3.967,3.138,8.037c.774,1.977,1.558,3.969,2.185,5.553-.2.491-.375.944-.515,1.29-.123.285-.164.408-.277.645a1.9,1.9,0,0,1-1.414,1.044c-.933.074-1.937.138-1.937.138a1.155,1.155,0,1,0,.147,2.306,11.218,11.218,0,0,0,2.369-.165,4.677,4.677,0,0,0,3.256-3.1c.209-.517.483-1.205.8-2.008.636-1.6,1.446-3.666,2.244-5.7,1.595-4.071,3.138-8.037,3.138-8.037a1.155,1.155,0,0,0-1.122-1.589,1.157,1.157,0,0,0-1.031.75s-1.544,3.965-3.137,8.033c-.432,1.1-.866,2.209-1.276,3.251-.411-1.046-.839-2.134-1.276-3.251-1.593-4.067-3.137-8.033-3.137-8.033a1.157,1.157,0,0,0-1.031-.75c-.024,0-.048,0-.072,0Z" transform="translate(-204.859 -205.85)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,233.134a40.985,40.985,0,0,0,4.667,3.637,1.225,1.225,0,1,0,1.265-2.094,40.951,40.951,0,0,0-5.391-2.439c-.328-.118-1.1-.478-1.286-.165S230.534,232.9,230.791,233.134Z" transform="translate(-212.567 -213.253)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,218.406a40.916,40.916,0,0,1,4.667-3.637,1.225,1.225,0,1,1,1.265,2.094,41.041,41.041,0,0,1-5.391,2.439c-.328.117-1.1.477-1.286.165S230.534,218.642,230.791,218.406Z" transform="translate(-212.567 -207.095)" /></g></g></g></g></svg>
-                        <div class="media-body">
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="slackContent"> Lien Yammer</div>
                         </div>
                     </li>
@@ -469,7 +471,7 @@
                             </defs>
                             <g transform="translate(-1193 -1226)"><g transform="translate(990 1023)"><g transform="translate(203 203)"><g class="bya"><rect class="cya" width="31" height="31" rx="6" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M234.017,227a40.992,40.992,0,0,0,5.875.7,1.224,1.224,0,1,0,0-2.446,40.992,40.992,0,0,0-5.875.7c-.342.07-1.186.159-1.186.524S233.676,226.931,234.017,227Z" transform="translate(-213.565 -210.881)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M209.381,211.046a1.156,1.156,0,0,0-1.049,1.59s1.544,3.967,3.138,8.037c.774,1.977,1.558,3.969,2.185,5.553-.2.491-.375.944-.515,1.29-.123.285-.164.408-.277.645a1.9,1.9,0,0,1-1.414,1.044c-.933.074-1.937.138-1.937.138a1.155,1.155,0,1,0,.147,2.306,11.218,11.218,0,0,0,2.369-.165,4.677,4.677,0,0,0,3.256-3.1c.209-.517.483-1.205.8-2.008.636-1.6,1.446-3.666,2.244-5.7,1.595-4.071,3.138-8.037,3.138-8.037a1.155,1.155,0,0,0-1.122-1.589,1.157,1.157,0,0,0-1.031.75s-1.544,3.965-3.137,8.033c-.432,1.1-.866,2.209-1.276,3.251-.411-1.046-.839-2.134-1.276-3.251-1.593-4.067-3.137-8.033-3.137-8.033a1.157,1.157,0,0,0-1.031-.75c-.024,0-.048,0-.072,0Z" transform="translate(-204.859 -205.85)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,233.134a40.985,40.985,0,0,0,4.667,3.637,1.225,1.225,0,1,0,1.265-2.094,40.951,40.951,0,0,0-5.391-2.439c-.328-.118-1.1-.478-1.286-.165S230.534,232.9,230.791,233.134Z" transform="translate(-212.567 -213.253)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,218.406a40.916,40.916,0,0,1,4.667-3.637,1.225,1.225,0,1,1,1.265,2.094,41.041,41.041,0,0,1-5.391,2.439c-.328.117-1.1.477-1.286.165S230.534,218.642,230.791,218.406Z" transform="translate(-212.567 -207.095)" /></g></g></g></g>
                         </svg>
-                        <div class="media-body">
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="slackContent"> Lien MyLearning</div>
                         </div>
                     </li>
@@ -499,14 +501,18 @@
                             </defs>
                             <g transform="translate(-1193 -1226)"><g transform="translate(990 1023)"><g transform="translate(203 203)"><g class="bya"><rect class="cya" width="31" height="31" rx="6" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M234.017,227a40.992,40.992,0,0,0,5.875.7,1.224,1.224,0,1,0,0-2.446,40.992,40.992,0,0,0-5.875.7c-.342.07-1.186.159-1.186.524S233.676,226.931,234.017,227Z" transform="translate(-213.565 -210.881)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M209.381,211.046a1.156,1.156,0,0,0-1.049,1.59s1.544,3.967,3.138,8.037c.774,1.977,1.558,3.969,2.185,5.553-.2.491-.375.944-.515,1.29-.123.285-.164.408-.277.645a1.9,1.9,0,0,1-1.414,1.044c-.933.074-1.937.138-1.937.138a1.155,1.155,0,1,0,.147,2.306,11.218,11.218,0,0,0,2.369-.165,4.677,4.677,0,0,0,3.256-3.1c.209-.517.483-1.205.8-2.008.636-1.6,1.446-3.666,2.244-5.7,1.595-4.071,3.138-8.037,3.138-8.037a1.155,1.155,0,0,0-1.122-1.589,1.157,1.157,0,0,0-1.031.75s-1.544,3.965-3.137,8.033c-.432,1.1-.866,2.209-1.276,3.251-.411-1.046-.839-2.134-1.276-3.251-1.593-4.067-3.137-8.033-3.137-8.033a1.157,1.157,0,0,0-1.031-.75c-.024,0-.048,0-.072,0Z" transform="translate(-204.859 -205.85)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,233.134a40.985,40.985,0,0,0,4.667,3.637,1.225,1.225,0,1,0,1.265-2.094,40.951,40.951,0,0,0-5.391-2.439c-.328-.118-1.1-.478-1.286-.165S230.534,232.9,230.791,233.134Z" transform="translate(-212.567 -213.253)" /></g></g><g transform="translate(203 203)"><g class="bya"><path class="dya" d="M230.791,218.406a40.916,40.916,0,0,1,4.667-3.637,1.225,1.225,0,1,1,1.265,2.094,41.041,41.041,0,0,1-5.391,2.439c-.328.117-1.1.477-1.286.165S230.534,218.642,230.791,218.406Z" transform="translate(-212.567 -207.095)" /></g></g></g></g>
                         </svg>
-                        <div class="media-body">
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
                             <div class="slackContent"> Lien Linkedin</div>
                         </div>
                     </li>
 
                 </ul>
 
-
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
                 <button mdbBtn type="button" color="primary" rounded="true" outline="true" class="rounded float-right" mdbWavesEffect> Proposer un lien</button>
             </mat-card-content>
