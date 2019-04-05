@@ -87,9 +87,9 @@ export class ProfilComponent {
     */
     baseUrl: string = "http://localhost:3000";
 
-    constructor(private httpClient: HttpClient) {    
+    constructor(private httpClient: HttpClient) {
         this.get_collabs();
-        }
+    }
 
     get_collabs() {
         this.httpClient.get(this.baseUrl + '/collabs').subscribe((res: any[]) => {
@@ -97,8 +97,8 @@ export class ProfilComponent {
             this.collabs = res;
         });
     }
-    private collabs = []; 
+    private collabs = [];
 
 
 }
-    
+
