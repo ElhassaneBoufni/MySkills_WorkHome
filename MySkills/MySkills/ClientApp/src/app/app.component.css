@@ -5,6 +5,15 @@
   }
 
 }
+.row-Body{
+  padding-left: 27px;
+  padding-right: 32px;
+}
+
+.body-content {
+  /*padding-left: 30px;
+  padding-right: 0px;*/
+}
 
 .topBar{
   background-color: white;

@@ -1,7 +1,6 @@
 .form-search-comp{
     background-color: #F7F8FA;
-    height: 362px;
-    padding: 20px;
+    height: 297px;
     display: inline-grid;
     display: -ms-inline-grid;
     margin-left: 39px;
@@ -17,7 +16,7 @@
 }
 .chipsGroup{
     margin-right: auto;
-    padding-top: 83px;
+    padding-top: 41px;
     padding-left: 43px;
     display: block;
 }
@@ -66,8 +65,31 @@ div.drop-zone mat-chip-list {
     font-family: Helvetica;
     color: #0070AD;
 }
+.ChipsImage{
+    background-color: #0070AD !important;
+    padding-left: 12px !important;
+}
+.mat-standard-chip .mat-chip-avatar {
+    margin-right: 0;
+}
 
 .lbl{
-    margin-top: -17px;
-    height: calc(1.5em + .75rem + 17px);
+    display: inline-block;
+    margin-top: 1.1em;
+    margin-bottom: .5rem;
+    font-family: ubuntu;
+    color: #565656;
 }
+
+.btnComp{
+    float: right !important;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+
+ .fieldsStyle {
+    color: #0070AD;
+    font-weight: bold;
+    font-family: Helvetica;
+ }
