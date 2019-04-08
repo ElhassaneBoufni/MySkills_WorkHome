@@ -1,88 +1,74 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <h4 class="titleComponent-Contact">Contact</h4>
-    <h6 class="question-Contact"> Vous avez une question ? contactez-nous ! </h6>
+<h6 class="question-Contact"> Vous avez une question ? contactez-nous ! </h6>
+<mat-card>
+    <mat-card-content>
+        <div class="col-md-8 offset-md-0">
+            <form class="form" [formGroup]="formdata" (ngSubmit)="on_submit(formdata.value)" novalidate method="post" autocomplete="off">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="email2" class="mb-1 field-Contact">Nom Pr&eacute;nom</label>
+                        <div class="form-group" [ngClass]="{'error': formdata.controls.contact_name.errors && formdata.controls.contact_name.touched}">
 
-    <!--<mat-card>
-        <mat-card-content>
+                            <div class="input-group controls">
+                                <input type="text" formControlName="contact_name" name="name" id="name" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="formdata.controls.contact_name.errors && formdata.controls.contact_name.touched" class="help-block clearfix mt-2">
+                        <ul role="alert">
+                            <li class="alert-danger p-2">Ce Champ est Requis</li>
+                        </ul>
+                    </div>
 
-            
-            <div class="row">
-                <strong> Nom Pr&eacute;nom</strong>
-                <br />
-                <input mdbInput type="text" class="form-control" placeholder="Eg:Jaison Justus">
-                <br />
-                <br />
-                <br />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="email2" class="mb-1 field-Contact">Objet</label>
+                        <div class="form-group" [ngClass]="{'error': formdata.controls.contact_object.errors && formdata.controls.contact_object.touched}">
+
+                            <div class="input-group controls">
+                                <input type="text" formControlName="contact_object" name="object" id="object" class="form-control" required="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="formdata.controls.contact_object.errors && formdata.controls.contact_object.touched" class="help-block clearfix mt-2">
+                        <ul role="alert">
+                            <li class="alert-danger p-2">Ce Champ est Requis</li>
+                        </ul>
+                    </div>
+
+                </div>
 
 
-                <strong> Objet</strong>
-                <br />
-                <input mdbInput type="text" class="form-control" placeholder="Eg:Interface Designer">
-                <br />
-                <br />
-                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="message2" class="mb-1 field-Contact">Votre Message</label>
+                        <div class="form-group" [ngClass]="{'error': formdata.controls.contact_message.errors && formdata.controls.contact_message.touched}">
 
-                <strong> Votre message </strong>
-                <br />
-                <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
-               
-                <label for="form75"></label>
-
-                <br />
-                <br />
-                <br />
-
-                <button mdbBtn type="button" class="rounded float-right" color="danger" rounded="true" mdbWavesEffect>Envoyer</button>
-
-            </div>
-
-          
-        </mat-card-content>
-    </mat-card>-->
-
-    <mat-card>
-        <mat-card-content>
-            <div class="col-md-8 offset-md-0">
-                <!--<span class="anchor" id="formContact"></span>
-                <hr class="my-5">-->
-
-                <!-- form user info -->
-                <div class="">
-                    <!--<div class="card-header">
-                        <h3 class="mb-0">Contact</h3>
-                    </div>-->
-                    <div class="card-body">
-                        <form class="form" role="form" autocomplete="off">
-                            <fieldset>
-                                <label for="name2" class="mb-1 field-Contact">Nom Pr&eacute;nom</label>
-                                <div class="row mb-4">
-                                    <div class="col-lg-8">
-                                        <input type="text" name="name2" id="name2" class="form-control" required="">
-                                    </div>
+                            <div class="input-group controls">
+                                <app-ngx-editor required formControlName="contact_message" id="NewQuestion" placeholder="New Question" height="150px" minHeight="100px" [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+                                <div *ngIf="formdata.controls.contact_message.errors && formdata.controls.contact_message.touched" class="help-block clearfix mt-2">
+                                    <ul role="alert">
+                                        <li class="alert-danger p-2">Ceci est requis min5 max 400</li>
+                                    </ul>
                                 </div>
-                                <label for="email2" class="mb-1 field-Contact">Objet</label>
-                                <div class="row mb-4">
-                                    <div class="col-lg-8">
-                                        <input type="text" name="email2" id="email2" class="form-control" required="">
-                                    </div>
-                                </div>
-                                <label for="message2" class="mb-1 field-Contact">Votre Message</label>
-                                <div class="col-lg-14">
-                                    <angular-editor [config]="config"></angular-editor>
-                                </div>
-                                    <div class="row mb-4">
-                                        <div class="col-lg-12">
-                                            <!--<textarea rows="6" name="message2" id="message2" class="form-control" required=""></textarea>-->
-                                            <!--<angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>-->
-                                        </div>
-                                    </div>
-                                    <button mdbBtn type="submit" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded float-left" color="danger" rounded="true" mdbWavesEffect>Envoyer</button>
-                            </fieldset>
-                        </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- /form user info -->
 
-            </div>
+                <div class="row">
 
-        </mat-card-content>
-    </mat-card>
+                    <div class="col-md-12 m-b-12 m-t-12">
+
+                        <button type="submit" class="btn btn-danger btn-lg waves-effect waves-light m-r-10" [disabled]="!formdata.valid" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;">Envoyer</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>
