@@ -4,11 +4,30 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#f7f8fa;}
 
+.col-sm-3half, .col-sm-9half {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-3half, .col-sm-9half {
+        float: left;
+    }
+    .col-sm-3half {
+        width: 19.58%;
+    }
+    .col-sm-9half {
+        width: 80.42%;
+    }
+}
+
 .titleComponent{
     color:#0070AD;
     font-family: Ubuntu;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 23px;
     padding: 29px 0 46px 25px;
   }
 
@@ -36,10 +55,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     bottom: unset;
     background-color: red !important;
 }
-
+/*Specific Css for component angular*/
 app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view{
     width: -webkit-fill-available;
     width: -moz-available;
+    width: 100%;
 }
 
 /*form contact*/
@@ -49,6 +69,61 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     font-weight: bold;
     font-size: 23px;
     padding: 29px 0 0px 25px;
+}
+
+.temoContent {
+    font-family: ubuntu;
+    font-weight: 700;
+    font-size: 18px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.temoposteContent {
+    font-family: ubuntu;
+    font-weight: normal;
+    font-size: 14px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.lienContent {
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+    .lienContent:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        bottom: 0;
+        border-bottom: 3px solid;
+        border-bottom-color: #FF304C;
+    }
+
+
+.slackContent {
+    font-family: ubuntu;
+    font-weight: normal;
+    font-size: 17px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
 }
 
 
@@ -92,4 +167,4 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
 #ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(5),
 #ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(6) {
     display: none;
-}
+}*/

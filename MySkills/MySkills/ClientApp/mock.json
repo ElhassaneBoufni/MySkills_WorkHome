@@ -1,0 +1,20 @@
+{
+    "collabs": [
+        {
+            "nom": "Kamal Debagh",
+            "grade": "Grade A ",
+            "poste": "Dev JAVA JEE",
+            "practice": "DCX",
+            "projet": "ISM",
+            "ptl": "Unknown",
+            "cap": "2 ans",
+            "exp": "3 ans",
+            "comp": "Java",
+            "tech": 2,
+            "manag": 4,
+            "soft": 14,
+            "certif": 1
+        }
+
+    ]
+}
