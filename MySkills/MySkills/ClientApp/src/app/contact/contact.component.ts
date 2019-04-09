@@ -20,10 +20,13 @@ export class ContactComponent {
         });
 
     }
-
+    public data: any = [];
     on_submit(contact: any) {
         
-        alert('test : ' + contact.contact_name);
+        this.data['name'] = contact.contact_name;
+        this.data['subject'] = contact.contact_object;
+        this.data['message'] = contact.contact_message;
+        console.log(this.data);
     }
     public noWhitespaceValidator(control: FormControl) {
         const isWhitespace = (control.value || '').trim().length === 0;
