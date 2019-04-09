@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,16 @@ import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+
+
+
+
+import { NgxEditorModule } from 'ngx-editor';
+
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+
+
 
 
 @NgModule({
@@ -34,8 +44,11 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     AngularEditorModule,
+    NgxEditorModule,
+    AngularFontAwesomeModule,
     MDBBootstrapModule.forRoot()
   ],
     providers: [],

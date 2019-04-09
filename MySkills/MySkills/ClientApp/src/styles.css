@@ -4,11 +4,30 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#f7f8fa;}
 
+.col-sm-3half, .col-sm-9half {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-3half, .col-sm-9half {
+        float: left;
+    }
+    .col-sm-3half {
+        width: 19.58%;
+    }
+    .col-sm-9half {
+        width: 80.42%;
+    }
+}
+
 .titleComponent{
     color:#0070AD;
     font-family: Ubuntu;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 23px;
     padding: 29px 0 46px 25px;
   }
 
@@ -36,10 +55,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     bottom: unset;
     background-color: red !important;
 }
-
+/*Specific Css for component angular*/
 app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view{
     width: -webkit-fill-available;
     width: -moz-available;
+    width: 100%;
 }
 
 /*form contact*/
@@ -130,33 +150,21 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     font-size: 13px;
 }
 
-.angular-editor-textarea:focus {
+.ngx-editor-textarea:focus {
     outline: none !important;
     border-color: #007bff;
     box-shadow: 0 0 10px #007bff;
 }
 
 
-/*.angular-editor-button[title="Undo"],
-.angular-editor-button[title="Redo"],
-.angular-editor-button[title="Strikethrough"],
-.angular-editor-button[title="Subscript"],
-.angular-editor-button[title="Superscript"],
-.angular-editor-button[title="Indent"],
-.angular-editor-button[title="Outdent"],
-.angular-editor-button[title="Unordered List"],
-.angular-editor-button[title="Ordered List"],
-.angular-editor-button[title="Font Name"],
-.angular-editor-button[title="Font Size"],
-.angular-editor-button[title="Text Color"],
-.angular-editor-button[title="Background Color"],
-.angular-editor-button[title="Custom Style"],
-.angular-editor-button[title="Insert Link"],
-.angular-editor-button[title="Unlink"],
-.angular-editor-button[title="Insert Image"],
-.angular-editor-button[title="Horizontal Line"],
-.angular-editor-button[title="Clear Formatting"],
-.angular-editor-button[title="HTML Code"],
-#angularEditor > angular-editor-toolbar > div > div:nth-child(6) {
+
+.ngx-editor-button {
+    color: #0070ad;
+}
+
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(2),
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(4),
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(5),
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(6) {
     display: none;
-}*/
+}

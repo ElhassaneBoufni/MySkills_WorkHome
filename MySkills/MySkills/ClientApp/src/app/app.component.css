@@ -1,15 +1,23 @@
 @media (max-width: 767px) {
   /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
   .body-content {
-    padding-top: 210px;
+    padding-top: 225px;
   }
 
+}
+.row-Body{
+  padding-left: 27px;
+  padding-right: 32px;
+}
+
+.body-content {
+  /*padding-left: 30px;
+  padding-right: 0px;*/
 }
 
 .topBar{
   background-color: white;
   height: 112px;
-  margin-left: -40px;
 }
 
 .navBar{
