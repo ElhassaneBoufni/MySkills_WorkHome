@@ -16,17 +16,9 @@ import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-
-
-
-
 import { NgxEditorModule } from 'ngx-editor';
-
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
-
-
-
+import { ContactService } from './contact/contact.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +43,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularFontAwesomeModule,
     MDBBootstrapModule.forRoot()
   ],
-    providers: [],
+    providers: [
+        ContactService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
