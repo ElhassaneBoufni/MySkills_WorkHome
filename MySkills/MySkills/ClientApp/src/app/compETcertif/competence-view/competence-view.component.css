@@ -68,6 +68,7 @@ div.drop-zone mat-chip-list {
 .ChipsImage{
     background-color: #0070AD !important;
     padding-left: 12px !important;
+    line-height: 100%;
 }
 .mat-standard-chip .mat-chip-avatar {
     margin-right: 0;

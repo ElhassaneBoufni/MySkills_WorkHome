@@ -13,7 +13,7 @@ import { CompETcertifService } from '../../core/services/comp-etcertif.service';
 export class CompetenceViewComponent implements OnInit {
   selectable = true;
   removable = true;
-  displayed = true;
+  displayed = false;
   disabled = true;
   _CompFound: Skill[] = [];
   _CompSelected: Skill[] = [];
@@ -22,24 +22,23 @@ export class CompetenceViewComponent implements OnInit {
 
   constructor(private _compETcertifService: CompETcertifService) {
     console.log('Le composant a fini sa construction');
+    this._Techno = this._compETcertifService.loadTechno();
+
+    this._compETcertifService.loadUserSkills().subscribe(data => {
+      this._CompSelected = data;
+      console.log(this._CompSelected);
+    });
+
+    if (this._CompSelected.length <= 0) {
+      this.displayed = false;
+    } else {
+      this.displayed = true;
+    }
   }
 
   ngOnInit() {
     console.log('Le composant a fini son initialisation');
-    this._Techno = this._compETcertifService.loadTechno();
 
-    // this._compETcertifService.list().subscribe(data => {
-    //   this._CompFound = data;
-    //   console.log(this._CompFound);
-    // });
-
-    this._CompSelected = this._compETcertifService.CompSelected;
-
-    if (this._CompSelected.length <= 0) {
-      this.displayed = true;
-    } else {
-      this.displayed = false;
-    }
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -72,23 +71,20 @@ export class CompetenceViewComponent implements OnInit {
     }
   }
 
-  changedata($event)
-  {
+  changedata($event) {
     console.log($event.target.value);
-    if($event.target.value == '0'){
+    if ($event.target.value === '0') {
       this.disabled = true;
-    }
-    else{
+    } else {
       this.disabled = false;
       this._Skills2 = this._compETcertifService.loadSkills($event.target.value, '2');
     }
+
   }
-  changedata2($event)
-  {
+  changedata2($event) {
     console.log($event.target.value);
-    if($event.target.value == '0'){
-    }
-    else{
+    if ($event.target.value === '0') {
+    } else {
       this._compETcertifService.loadSkills($event.target.value, '3').subscribe(data => {
         this._CompFound = data;
         console.log(this._CompFound);
@@ -96,11 +92,11 @@ export class CompetenceViewComponent implements OnInit {
     }
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value);
-  }
+  // onSubmit(form: NgForm) {
+  //   console.log(form.value);
+  // }
 
-  onSave() {
-    //this._compETcertifService.SaveTestToServer();
-  }
+  // onSave() {
+  //   this._compETcertifService.SaveTestToServer();
+  // }
 }

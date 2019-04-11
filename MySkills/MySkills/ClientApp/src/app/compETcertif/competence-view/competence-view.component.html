@@ -37,7 +37,7 @@
       <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="_CompSelected"
         [cdkDropListConnectedTo]="[CompFoundList]" (cdkDropListDropped)="drop($event)">
 
-        <div class="placeholder-drop-zone" *ngIf="displayed">
+        <div class="placeholder-drop-zone" [hidden]="!displayed">
           <svg xmlns="http://www.w3.org/2000/svg" width="39.51" height="49.858" viewBox="0 0 39.51 49.858">
             <defs>
               <style>
@@ -76,7 +76,7 @@
           <p style="margin-top: 10px">Drag your skill and drop here</p>
         </div>
         <mat-chip color="primary" *ngFor="let comp of _CompSelected" [selectable]="selectable" [removable]="removable"
-          (removed)="remove(comp)"> {{comp._Title}}
+          (removed)="remove(comp)"> {{comp.Title}}
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>
       </mat-chip-list>

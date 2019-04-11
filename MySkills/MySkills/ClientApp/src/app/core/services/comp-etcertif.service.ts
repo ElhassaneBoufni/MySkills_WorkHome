@@ -8,7 +8,6 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CompETcertifService extends BaseService<Skill> {
-  CompSelected: Skill[] = [];
 
   constructor(protected http: HttpClient, private adapter: SkillAdapter) {
     super(http);
@@ -23,16 +22,20 @@ export class CompETcertifService extends BaseService<Skill> {
     //     });
   }
 
+  loadUserSkills() {
+    return super.findAll('compUser', { Level: '3', IdUser: '1' })
+      .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
+  }
   loadTechno() {
     let params = new HttpParams();
     params.append('Level', '1');
     return super.findAll('Skills', { Level: '1' })
-    .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
+      .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
   }
 
   loadSkills(parentId, level) {
     return super.findAll('Skills', { Level: level, ParentId: parentId })
-    .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
+      .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
     // .subscribe(
     //      (response: Skill[]) => {
     //          console.log(response) ;
