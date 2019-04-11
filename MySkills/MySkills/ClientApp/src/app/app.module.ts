@@ -23,6 +23,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgxEditorModule } from 'ngx-editor';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CoreModule } from './core/core.module';
 
 
 
@@ -49,7 +50,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularEditorModule,
     NgxEditorModule,
     AngularFontAwesomeModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    CoreModule,
+    CompETcertifModule
   ],
     providers: [],
   bootstrap: [AppComponent]

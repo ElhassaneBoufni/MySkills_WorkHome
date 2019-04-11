@@ -156,7 +156,11 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     box-shadow: 0 0 10px #007bff;
 }
 
-
+.btnComp{
+    float: right !important;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
 
 .ngx-editor-button {
     color: #0070ad;

@@ -81,13 +81,6 @@ div.drop-zone mat-chip-list {
     color: #565656;
 }
 
-.btnComp{
-    float: right !important;
-    margin-right: 30px;
-    margin-bottom: 30px;
-}
-
-
  .fieldsStyle {
     color: #0070AD;
     font-weight: bold;

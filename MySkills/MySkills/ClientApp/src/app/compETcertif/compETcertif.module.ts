@@ -27,6 +27,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
         ManagAndSuppViewComponent,
         CertifViewComponent,
         SoftSkillsViewComponent
-    ]
+    ],
+    providers: []
 })
 export class CompETcertifModule {}

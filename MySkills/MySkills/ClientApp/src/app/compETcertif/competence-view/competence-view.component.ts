@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Skill } from '../../core/models/skill.model';
+import { CompETcertifService } from '../../core/services/comp-etcertif.service';
 
 @Component({
   selector: 'app-competence-view',
@@ -11,46 +14,37 @@ export class CompetenceViewComponent implements OnInit {
   selectable = true;
   removable = true;
   displayed = true;
+  disabled = true;
+  _CompFound: Skill[] = [];
+  _CompSelected: Skill[] = [];
+  _Techno: Observable<Skill[]>;
+  _Skills2: Observable<Skill[]>;
 
-  CompFound: { name: string, recommended: number }[] = [
-    { 'name': 'Asp.net', 'recommended': 0 },
-    { 'name': 'Asp.net MVC', 'recommended': 1 },
-    { 'name': 'Java EE', 'recommended': 0 },
-    { 'name': 'Spring MVC', 'recommended': 0 },
-    { 'name': 'Struts 2', 'recommended': 0 },
-    { 'name': 'Angular 7', 'recommended': 1 },
-    { 'name': 'Dynamics CRM', 'recommended': 0 },
-    { 'name': 'SalesForce', 'recommended': 0 },
-    { 'name': 'SQL Server Integration Services', 'recommended': 0 },
-    { 'name': 'PHP', 'recommended': 0 },
-    { 'name': 'Laravel', 'recommended': 0 },
-    { 'name': 'Aprimo', 'recommended': 0 },
-    { 'name': 'CPQ (Big machines)', 'recommended': 0 },
-    { 'name': 'Computer Tele Integration-CTI', 'recommended': 0 },
-    { 'name': 'OSL Marketing Cloud (Eloqua)', 'recommended': 0 },
-    { 'name': 'MFG/PRO', 'recommended': 0 },
-    { 'name': 'Oracle CRM On Demand', 'recommended': 0 },
-    { 'name': 'Hybris', 'recommended': 0 },
-    { 'name': 'CRM – Others', 'recommended': 0 }
-  ];
+  constructor(private _compETcertifService: CompETcertifService) {
+    console.log('Le composant a fini sa construction');
+  }
 
-  CompSelected: { name: string, recommended?: number }[] = [
-    { 'name': 'Asp.net Core 2.2'}
-  ];
-  constructor() {
-    if (this.CompSelected.length <= 0) {
+  ngOnInit() {
+    console.log('Le composant a fini son initialisation');
+    this._Techno = this._compETcertifService.loadTechno();
+
+    // this._compETcertifService.list().subscribe(data => {
+    //   this._CompFound = data;
+    //   console.log(this._CompFound);
+    // });
+
+    this._CompSelected = this._compETcertifService.CompSelected;
+
+    if (this._CompSelected.length <= 0) {
       this.displayed = true;
     } else {
       this.displayed = false;
     }
   }
 
-  ngOnInit() {
-  }
-
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(this.CompFound, event.previousIndex, event.currentIndex);
+      moveItemInArray(this._CompFound, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
@@ -65,22 +59,48 @@ export class CompetenceViewComponent implements OnInit {
   }
 
   remove(comp): void {
-    const index = this.CompSelected.indexOf(comp);
+    const index = this._CompSelected.indexOf(comp);
 
     if (index >= 0) {
-      transferArrayItem(this.CompSelected, this.CompFound , this.CompSelected.indexOf(comp), this.CompFound.length);
-      if (this.CompSelected.length <= 0) {
+      transferArrayItem(this._CompSelected, this._CompFound, this._CompSelected.indexOf(comp), this._CompFound.length);
+      if (this._CompSelected.length <= 0) {
         this.displayed = true;
       } else {
         this.displayed = false;
       }
-      //this.CompSelected.splice(index, 1);
-      //https://xd.adobe.com/spec/0c0274ae-b6f0-45b5-6132-e74e223d39e1-7a33/screen/bae4dae5-131f-4068-8af8-ccb36566ba9c/Web-1920-3/
+      //this._CompSelected.splice(index, 1);
     }
   }
 
-  onSubmit(form: NgForm){
+  changedata($event)
+  {
+    console.log($event.target.value);
+    if($event.target.value == '0'){
+      this.disabled = true;
+    }
+    else{
+      this.disabled = false;
+      this._Skills2 = this._compETcertifService.loadSkills($event.target.value, '2');
+    }
+  }
+  changedata2($event)
+  {
+    console.log($event.target.value);
+    if($event.target.value == '0'){
+    }
+    else{
+      this._compETcertifService.loadSkills($event.target.value, '3').subscribe(data => {
+        this._CompFound = data;
+        console.log(this._CompFound);
+      });
+    }
+  }
+
+  onSubmit(form: NgForm) {
     console.log(form.value);
   }
 
+  onSave() {
+    //this._compETcertifService.SaveTestToServer();
+  }
 }

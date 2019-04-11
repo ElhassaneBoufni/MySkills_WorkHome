@@ -5,16 +5,15 @@
         <label class ="lbl" for="competence">Rechercher une compétence</label>
         <input type="text" name="competence" id="competence" class="form-control fieldsStyle" required="">
         <label class ="lbl" for="techno">Choisissez votre techno</label>
-        <select  class="browser-default custom-select fieldsStyle" name="techno">
-            <option value="1" selected>CRM</option>
-            <option value="2">OptionTwo</option>
-            <option value="3">OptionThree</option>
+        <select  class="browser-default custom-select fieldsStyle" name="techno" (change) = "changedata($event)">
+            <option disabled>--Select--</option>
+            <option *ngFor="let techn of _Techno | async" [value]="techn.Id">{{techn.Title}}</option>
+           
           </select>
         <label class ="lbl" for="skill">Choisissez votre skill</label>
-        <select class="browser-default custom-select fieldsStyle" name="skill">
-            <option value="1" selected>CRM & customer experience Packages</option>
-            <option value="2">OptionTwo</option>
-            <option value="3">OptionThree</option>
+        <select class="browser-default custom-select fieldsStyle" name="skill" [disabled]="disabled" (change) = "changedata2($event)">
+            <option disabled>--Select--</option>
+            <option *ngFor="let skill2 of _Skills2 | async" [value]="skill2.Id" >{{skill2.Title}}</option>
           </select>
       </fieldset>
     </div>
@@ -25,9 +24,9 @@
       </div>
       <div class="row chipsGroup">
         <h2 class="titleContent">Skills trouvés</h2>
-        <mat-chip-list cdkDropList #CompFoundList="cdkDropList" [cdkDropListData]="CompFound"
+        <mat-chip-list cdkDropList #CompFoundList="cdkDropList" [cdkDropListData]="_CompFound"
           [cdkDropListConnectedTo]="[CompDoneList]" (cdkDropListDropped)="drop($event)">
-          <mat-chip class="ChipsImage" color="primary" selected *ngFor="let comp of CompFound" cdkDrag>{{comp.name}} <img src="assets/image.JPG" *ngIf="comp.recommended == 1" matChipAvatar> </mat-chip>
+          <mat-chip class="ChipsImage" color="primary" selected *ngFor="let comp of _CompFound" cdkDrag>{{comp.Title}} <img src="assets/image.JPG" *ngIf="comp.Recommended == 1" matChipAvatar> </mat-chip>
         </mat-chip-list>
       </div>
     </div>
@@ -35,8 +34,8 @@
 
   <div class="row p-15">
     <div class="drop-zone" id="drop-zone">
-      <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="CompSelected"
-        [cdkDropListConnectedTo]="[CompFoundList]" (cdkDropListDropped)="drop($event)" ngModel>
+      <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="_CompSelected"
+        [cdkDropListConnectedTo]="[CompFoundList]" (cdkDropListDropped)="drop($event)">
 
         <div class="placeholder-drop-zone" *ngIf="displayed">
           <svg xmlns="http://www.w3.org/2000/svg" width="39.51" height="49.858" viewBox="0 0 39.51 49.858">
@@ -76,12 +75,13 @@
           </svg>
           <p style="margin-top: 10px">Drag your skill and drop here</p>
         </div>
-        <mat-chip color="primary" *ngFor="let comp of CompSelected" [selectable]="selectable" [removable]="removable"
-          (removed)="remove(comp)"> {{comp.name}}
+        <mat-chip color="primary" *ngFor="let comp of _CompSelected" [selectable]="selectable" [removable]="removable"
+          (removed)="remove(comp)"> {{comp._Title}}
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>
       </mat-chip-list>
     </div>
   </div>
-  <button  mdbBtn type="submit" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded btnComp" color="danger" rounded="true" mdbWavesEffect>Suivant</button>
+  <button [routerLink]='["/compETcertif/managAndSupp"]' mdbBtn type="submit" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded btnComp" color="danger" rounded="true" mdbWavesEffect>Suivant</button>
+  <button class="btn btn-success" (click)="onSave()">savetoServer</button>
 </form>

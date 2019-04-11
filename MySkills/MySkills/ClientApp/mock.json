@@ -1,4 +1,134 @@
 {
+    "Skills" : [ {
+        "Id" : 1,
+        "Level" : 1,
+        "Title" : "Microsoft"
+      }, {
+        "Id" : 2,
+        "Level" : 1,
+        "Title" : "PHP"
+      }, {
+        "Id" : 3,
+        "Level" : 1,
+        "Title" : "Front end development"
+      }, {
+        "Id" : 4,
+        "Level" : 1,
+        "Title" : "CRM"
+      }, {
+        "Id" : 5,
+        "Level" : 2,
+        "ParentId" : 1,
+        "Title" : ".NET Dev"
+      }, {
+        "Id" : 6,
+        "Level" : 2,
+        "ParentId" : 1,
+        "Title" : "SQL Server"
+      }, {
+        "Id" : 7,
+        "Level" : 2,
+        "ParentId" : 1,
+        "Title" : "Sharepoint"
+      }, {
+        "Id" : 8,
+        "Level" : 2,
+        "ParentId" : 1,
+        "Title" : "Biztalk"
+      }, {
+        "Id" : 9,
+        "Level" : 2,
+        "ParentId" : 1,
+        "Title" : "Windows Server Plateform"
+      }, {
+        "Id" : 10,
+        "Level" : 3,
+        "ParentId" : 5,
+        "Title" : "Asp.Net",
+        "Recommended" : 0
+      }, {
+        "Id" : 11,
+        "Level" : 3,
+        "ParentId" : 5,
+        "Title" : "Asp.Net Core",
+        "Recommended" : 1
+      }, {
+        "Id" : 12,
+        "Level" : 3,
+        "ParentId" : 5,
+        "Title" : "Asp.Net MVC",
+        "Recommended" : 1
+      }, {
+        "Id" : 13,
+        "Level" : 3,
+        "ParentId" : 5,
+        "Title" : "Asp WebForm",
+        "Recommended" : 0
+      }, {
+        "Id" : 14,
+        "Level" : 3,
+        "ParentId" : 5,
+        "Title" : "WCF",
+        "Recommended" : 0
+      } ],
+      "compFound" : [ {
+        "title" : "Asp.net",
+        "recommended" : 0
+      }, {
+        "title" : "Asp.net MVC",
+        "recommended" : 1
+      }, {
+        "title" : "Java EE",
+        "recommended" : 0
+      }, {
+        "title" : "Spring MVC",
+        "recommended" : 0
+      }, {
+        "title" : "Struts 2",
+        "recommended" : 0
+      }, {
+        "title" : "Angular 7",
+        "recommended" : 1
+      }, {
+        "title" : "Dynamics CRM",
+        "recommended" : 0
+      }, {
+        "title" : "SalesForce",
+        "recommended" : 0
+      }, {
+        "title" : "SQL Server Integration Services",
+        "recommended" : 0
+      }, {
+        "title" : "PHP",
+        "recommended" : 0
+      }, {
+        "title" : "Laravel",
+        "recommended" : 0
+      }, {
+        "title" : "Aprimo",
+        "recommended" : 0
+      }, {
+        "title" : "CPQ (Big machines)",
+        "recommended" : 0
+      }, {
+        "title" : "Computer Tele Integration-CTI",
+        "recommended" : 0
+      }, {
+        "title" : "OSL Marketing Cloud (Eloqua)",
+        "recommended" : 0
+      }, {
+        "title" : "MFG/PRO",
+        "recommended" : 0
+      }, {
+        "title" : "Oracle CRM On Demand",
+        "recommended" : 0
+      }, {
+        "title" : "Hybris",
+        "recommended" : 0
+      }, {
+        "title" : "CRM – Others",
+        "recommended" : 0
+      } ],
     "collabs": [
         {
             "nom": "Kamal Debagh",
