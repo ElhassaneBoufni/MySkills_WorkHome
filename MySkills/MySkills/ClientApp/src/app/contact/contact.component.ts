@@ -1,5 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ContactService } from './contact.service';
 @Component({
     selector: 'contact',
     templateUrl: './contact.component.html',
@@ -9,6 +10,9 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 export class ContactComponent {
 
     formdata;
+
+    constructor(private _contactService: ContactService) { }
+
     ngOnInit() {
         this.formdata = new FormGroup({
             contact_name: new FormControl("", [Validators.required, this.noWhitespaceValidator,
@@ -20,10 +24,10 @@ export class ContactComponent {
         });
 
     }
-
+   
     on_submit(contact: any) {
-        
-        alert('test : ' + contact.contact_name);
+
+        this._contactService.save(contact.contact_name, contact.contact_object, contact.contact_message);
     }
     public noWhitespaceValidator(control: FormControl) {
         const isWhitespace = (control.value || '').trim().length === 0;

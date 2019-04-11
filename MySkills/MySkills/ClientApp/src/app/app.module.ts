@@ -16,18 +16,14 @@ import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-
-
-
-
 import { NgxEditorModule } from 'ngx-editor';
-
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CoreModule } from './core/core.module';
 
 
 
 
+import { ContactService } from './contact/contact.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +50,9 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     CompETcertifModule
   ],
-    providers: [],
+    providers: [
+        ContactService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
