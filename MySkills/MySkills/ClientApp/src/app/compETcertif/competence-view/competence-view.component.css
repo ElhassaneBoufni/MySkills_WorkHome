@@ -87,3 +87,7 @@ div.drop-zone mat-chip-list {
     font-weight: bold;
     font-family: Helvetica;
  }
+
+ .mat-form-field {
+    width: inherit;
+ }

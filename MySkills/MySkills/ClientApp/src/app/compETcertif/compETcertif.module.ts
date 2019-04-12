@@ -9,7 +9,8 @@ import { MaterialModule } from '../../material.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SoftSkillsViewComponent } from './soft-skills-view/soft-skills-view.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule, PopoverModule, WavesModule } from 'angular-bootstrap-md';
+
 
 @NgModule({
     imports: [
@@ -19,6 +20,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
         ReactiveFormsModule,
         CompEtCertifRoutingModule,
         MDBBootstrapModule.forRoot(),
+        PopoverModule,
+        WavesModule,
         DragDropModule
     ],
     declarations: [

@@ -49,6 +49,7 @@ export class CompetenceViewComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+        console.log(event.container.data);
       if (event.container.data.length <= 0) {
         this.displayed = true;
       } else {
@@ -92,9 +93,9 @@ export class CompetenceViewComponent implements OnInit {
     }
   }
 
-  // onSubmit(form: NgForm) {
-  //   console.log(form.value);
-  // }
+   onSubmit(form: NgForm) {
+     console.log(form.value);
+   }
 
   // onSave() {
   //   this._compETcertifService.SaveTestToServer();
