@@ -16,7 +16,7 @@ namespace MySkills.Application.Notes.Commands.CreateNote
 
         public async Task<int> Handle(CreateNoteCommand request, CancellationToken cancellationToken)
         {
-            var entity = new Note
+            var entity = new MySkills.Domain.Entities.Notes
             {
                 NoteId = request.NoteId,
                 Titre = request.Titre,

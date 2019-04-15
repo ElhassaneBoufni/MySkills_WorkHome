@@ -13,7 +13,7 @@ namespace MySkills.Application.Notes.Queries.GetNotesList
 
         public void CreateMappings(Profile configuration)
         {
-            configuration.CreateMap<Note, NoteLookupModel>()
+            configuration.CreateMap<MySkills.Domain.Entities.Notes, NoteLookupModel>()
                 .ForMember(cDTO => cDTO.Id, opt => opt.MapFrom(c => c.NoteId))
                 .ForMember(cDTO => cDTO.Titre, opt => opt.MapFrom(c => c.Titre))
                 .ForMember(cDTO => cDTO.Description, opt => opt.MapFrom(c => c.Description));

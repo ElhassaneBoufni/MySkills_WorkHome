@@ -70,65 +70,106 @@
         "ParentId" : 5,
         "Title" : "WCF",
         "Recommended" : 0
-      } ],
-      "compFound" : [ {
-        "title" : "Asp.net",
-        "recommended" : 0
       }, {
-        "title" : "Asp.net MVC",
-        "recommended" : 1
+        "Id" : 15,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Plateform - SQL Server 2000",
+        "Recommended" : 0
       }, {
-        "title" : "Java EE",
-        "recommended" : 0
+        "Id" : 16,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Plateform - SQL Server 2005",
+        "Recommended" : 0
       }, {
-        "title" : "Spring MVC",
-        "recommended" : 0
+        "Id" : 17,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Plateform - SQL Server 2008",
+        "Recommended" : 0
       }, {
-        "title" : "Struts 2",
-        "recommended" : 0
+        "Id" : 18,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Development - Querying Microsoft SQL Server (Queries, Functions, Stored Procedure ...)",
+        "Recommended" : 0
       }, {
-        "title" : "Angular 7",
-        "recommended" : 1
+        "Id" : 19,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Development - Schema (tables, indexes, constraints, triggers ...)",
+        "Recommended" : 0
       }, {
-        "title" : "Dynamics CRM",
-        "recommended" : 0
+        "Id" : 20,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Administration - SQL Server Deploiment",
+        "Recommended" : 0
       }, {
-        "title" : "SalesForce",
-        "recommended" : 0
+        "Id" : 21,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Administration - Database Backup/Restore & Import and export data",
+        "Recommended" : 0
       }, {
-        "title" : "SQL Server Integration Services",
-        "recommended" : 0
+        "Id" : 22,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Administration - Security (logins and server roles)",
+        "Recommended" : 0
       }, {
-        "title" : "PHP",
-        "recommended" : 0
+        "Id" : 23,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "Administration - SQL Server Tuning",
+        "Recommended" : 0
       }, {
-        "title" : "Laravel",
-        "recommended" : 0
+        "Id" : 24,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "BI - Cube/warehouse/views fundamentals",
+        "Recommended" : 0
       }, {
-        "title" : "Aprimo",
-        "recommended" : 0
+        "Id" : 25,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "BI - Using report builder to create reports",
+        "Recommended" : 0
       }, {
-        "title" : "CPQ (Big machines)",
-        "recommended" : 0
+        "Id" : 26,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "BI - Design and test report models, layouts and templates",
+        "Recommended" : 0
       }, {
-        "title" : "Computer Tele Integration-CTI",
-        "recommended" : 0
+        "Id" : 27,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "BI - Develop complex SQL queries for reports",
+        "Recommended" : 0
       }, {
-        "title" : "OSL Marketing Cloud (Eloqua)",
-        "recommended" : 0
+        "Id" : 28,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "BI - Design SSIS package execution",
+        "Recommended" : 0
       }, {
-        "title" : "MFG/PRO",
-        "recommended" : 0
-      }, {
-        "title" : "Oracle CRM On Demand",
-        "recommended" : 0
-      }, {
-        "title" : "Hybris",
-        "recommended" : 0
-      }, {
-        "title" : "CRM – Others",
-        "recommended" : 0
-      } ],
+        "Id" : 29,
+        "Level" : 3,
+        "ParentId" : 6,
+        "Title" : "BI - Deploy SSIS solutions",
+        "Recommended" : 0
+      } ],  
+      "compUser" : [  
+        {
+          "Id" : 12,
+          "IdUser" : 1,
+          "Level" : 3,
+          "ParentId" : 5,
+          "Title" : "Asp.Net MVC"
+        }
+      ],
     "collabs": [
         {
             "nom": "Kamal Debagh",
