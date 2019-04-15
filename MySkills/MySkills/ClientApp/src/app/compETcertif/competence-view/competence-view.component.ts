@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Skill } from '../../core/models/skill.model';
 import { CompETcertifService } from '../../core/services/comp-etcertif.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PropCompFormComponent } from './prop-comp-form/prop-comp-form.component';
 
 @Component({
   selector: 'app-competence-view',
@@ -19,15 +21,17 @@ export class CompetenceViewComponent implements OnInit {
   _CompSelected: Skill[] = [];
   _Techno: Observable<Skill[]>;
   _Skills2: Observable<Skill[]>;
+  popup: any;
+  userName = 'Karim Herrati';
 
-  constructor(private _compETcertifService: CompETcertifService) {
+  constructor(private _compETcertifService: CompETcertifService, private dialog: MatDialog) {
     console.log('Le composant a fini sa construction');
-    this._Techno = this._compETcertifService.loadTechno();
+    this._compETcertifService.loadTechno();
 
-    this._compETcertifService.loadUserSkills().subscribe(data => {
-      this._CompSelected = data;
-      console.log(this._CompSelected);
-    });
+    // this._compETcertifService.loadUserSkills().subscribe(data => {
+    //   this._CompSelected = data;
+    //   console.log(this._CompSelected);
+    // });
 
     if (this._CompSelected.length <= 0) {
       this.displayed = false;
@@ -41,6 +45,7 @@ export class CompetenceViewComponent implements OnInit {
 
   }
 
+  // Drag And Drop methodes
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(this._CompFound, event.previousIndex, event.currentIndex);
@@ -49,7 +54,7 @@ export class CompetenceViewComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-        console.log(event.container.data);
+      console.log(event.container.data);
       if (event.container.data.length <= 0) {
         this.displayed = true;
       } else {
@@ -68,11 +73,12 @@ export class CompetenceViewComponent implements OnInit {
       } else {
         this.displayed = false;
       }
-      //this._CompSelected.splice(index, 1);
     }
   }
 
+  // Load Select's
   changedata($event) {
+    console.log('chandata & !');
     console.log($event.target.value);
     if ($event.target.value === '0') {
       this.disabled = true;
@@ -80,9 +86,9 @@ export class CompetenceViewComponent implements OnInit {
       this.disabled = false;
       this._Skills2 = this._compETcertifService.loadSkills($event.target.value, '2');
     }
-
   }
   changedata2($event) {
+    console.log('chandata 2 !');
     console.log($event.target.value);
     if ($event.target.value === '0') {
     } else {
@@ -92,12 +98,24 @@ export class CompetenceViewComponent implements OnInit {
       });
     }
   }
+  // Méthodes pour le PopOver d'ajout d'experiences
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+    this.popup.hide();
+    console.log('Baaaa7');
+  }
 
-   onSubmit(form: NgForm) {
-     console.log(form.value);
-   }
+  openPopover(pop) {
+    this.popup = pop;
+  }
 
-  // onSave() {
-  //   this._compETcertifService.SaveTestToServer();
-  // }
+  // Proposer compétence DialogModal
+  openPropComp() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '50%';
+    dialogConfig.data = this._Techno;
+    this.dialog.open(PropCompFormComponent, dialogConfig);
+  }
 }

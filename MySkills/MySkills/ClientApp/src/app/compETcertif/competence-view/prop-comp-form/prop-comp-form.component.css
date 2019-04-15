@@ -1,0 +1,9 @@
+.field-propComp{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: stretch;
+}
+
+.btn-propComp{
+    border-radius:32px!important;
+}
