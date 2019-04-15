@@ -19,11 +19,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgxEditorModule } from 'ngx-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CoreModule } from './core/core.module';
-
-
-
-
-import { ContactService } from './contact/contact.service';
+import { ContactService } from './core/services/contact.service';
 
 @NgModule({
   declarations: [
