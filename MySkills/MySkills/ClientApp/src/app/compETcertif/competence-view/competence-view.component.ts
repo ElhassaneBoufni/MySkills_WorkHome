@@ -118,7 +118,7 @@ export class CompetenceViewComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
-    dialogConfig.data = this._Techno;
+    //dialogConfig.data = this._Techno;
     this.dialog.open(PropCompFormComponent, dialogConfig);
   }
 }
