@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ContactService } from './contact.service';
+import { ContactService } from '../core/services/contact.service';
 @Component({
     selector: 'contact',
     templateUrl: './contact.component.html',

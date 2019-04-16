@@ -19,8 +19,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgxEditorModule } from 'ngx-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CoreModule } from './core/core.module';
-import { ContactService } from './contact/contact.service';
 import { HttpErrorInterceptor } from './core/Interceptors/http-error-interceptor';
+import { ContactService } from './core/services/contact.service';
 
 @NgModule({
   declarations: [

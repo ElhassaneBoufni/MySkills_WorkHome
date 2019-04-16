@@ -17,16 +17,16 @@ export class ContactService {
         this.data['message'] = message;
         console.log(this.data);
         //add request to send email or into mysql
-        //this.http.put<any>('http://localhost/api/v1/update/', this.data).subscribe(
-        //    res => {
-        //        console.log(res);
-        //    },
-        //    (err: HttpErrorResponse) => {
-        //        if (err.error instanceof Error) {
-        //            console.log("Client-side error occured.");
-        //        } else {
-        //            console.log("Server-side error occurred.");
-        //        }
-        //    });
+        this.http.put<any>('http://localhost/api/v1/update/', this.data).subscribe(
+            res => {
+                console.log(res);
+            },
+            (err: HttpErrorResponse) => {
+                if (err.error instanceof Error) {
+                    console.log("Client-side error occured.");
+                } else {
+                    console.log("Server-side error occurred.");
+                }
+            });
     }
 }
