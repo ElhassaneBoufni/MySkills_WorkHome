@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!--<Import Project="..\MySkills.CodeAnalysis.targets" />-->
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>MySkills.Domain</AssemblyName>
-    <RootNamespace>MySkills.Domain</RootNamespace>
-  </PropertyGroup>
-</Project>

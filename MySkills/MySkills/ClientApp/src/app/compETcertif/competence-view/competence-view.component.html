@@ -19,7 +19,7 @@
         <label class="lbl" for="techno">Choisissez votre techno</label>
         <select class="browser-default custom-select fieldsStyle" name="techno" (change)="changedata($event)">
           <option disabled>--Select--</option>
-          <option *ngFor="let techn of _Techno | async" [value]="techn.Id">{{techn.Title}}</option>
+          <option *ngFor="let techn of _Techno" [value]="techn.Id">{{techn._Title}}</option>
 
         </select>
         

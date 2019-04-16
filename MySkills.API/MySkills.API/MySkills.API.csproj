@@ -22,10 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MySkills.Application\MySkills.Application.csproj" />
-    <ProjectReference Include="..\..\MySkills.Common\MySkills.Common.csproj" />
+    <Folder Include="EF224\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MySkills.Core\MySkills.Core.csproj" />
     <ProjectReference Include="..\..\MySkills.Infrastructure\MySkills.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\MySkills.Persistence\MySkills.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Skill } from '../../core/models/skill.model';
+import { Skills } from '../../core/models/skills.model';
 import { CompETcertifService } from '../../core/services/comp-etcertif.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PropCompFormComponent } from './prop-comp-form/prop-comp-form.component';
@@ -17,16 +17,16 @@ export class CompetenceViewComponent implements OnInit {
   removable = true;
   displayed = false;
   disabled = true;
-  _CompFound: Skill[] = [];
-  _CompSelected: Skill[] = [];
-  _Techno: Observable<Skill[]>;
-  _Skills2: Observable<Skill[]>;
+  _CompFound: Skills[] = [];
+  _CompSelected: Skills[] = [];
+  // _Techno: Observable<Skills[]>;
+  _Skills2: Observable<Skills[]>;
   popup: any;
   userName = 'Karim Herrati';
 
   constructor(private _compETcertifService: CompETcertifService, private dialog: MatDialog) {
     console.log('Le composant a fini sa construction');
-    this._compETcertifService.loadTechno();
+    // this._Techno = this._compETcertifService.loadTechno();
 
     // this._compETcertifService.loadUserSkills().subscribe(data => {
     //   this._CompSelected = data;
@@ -42,7 +42,10 @@ export class CompetenceViewComponent implements OnInit {
 
   ngOnInit() {
     console.log('Le composant a fini son initialisation');
+  }
 
+  get _Techno(): Skills[] {
+    return this._compETcertifService.Technos;
   }
 
   // Drag And Drop methodes
@@ -119,3 +122,4 @@ export class CompetenceViewComponent implements OnInit {
     this.dialog.open(PropCompFormComponent, dialogConfig);
   }
 }
+

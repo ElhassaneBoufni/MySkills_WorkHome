@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
@@ -19,11 +19,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgxEditorModule } from 'ngx-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CoreModule } from './core/core.module';
-
-
-
-
 import { ContactService } from './contact/contact.service';
+import { HttpErrorInterceptor } from './core/Interceptors/http-error-interceptor';
 
 @NgModule({
   declarations: [
@@ -50,9 +47,14 @@ import { ContactService } from './contact/contact.service';
     CoreModule,
     CompETcertifModule
   ],
-    providers: [
-        ContactService
-    ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    },
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
