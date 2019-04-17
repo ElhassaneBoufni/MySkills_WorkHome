@@ -10,16 +10,24 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/switchMap';
 */
 
-import { Component } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+
+import { Chart } from 'chart.js';
+
+import * as jspdf from 'jspdf';
+
+import html2canvas from 'html2canvas'; 
 
 @Component({
     selector: 'profil',
     templateUrl: './profil.component.html',
     styleUrls: ['./profil.component.css']
 })
-export class ProfilComponent {
+export class ProfilComponent implements OnInit{
+
+    @ViewChild('content') content: ElementRef;
     /*
     id: number;
     titre: string;
@@ -85,6 +93,8 @@ export class ProfilComponent {
 
     }
     */
+    collabs = [];
+
     baseUrl: string = "http://localhost:3000";
 
     constructor(private httpClient: HttpClient) {
@@ -97,8 +107,69 @@ export class ProfilComponent {
             this.collabs = res;
         });
     }
-    private collabs = [];
 
+    DoughnutChart = [];
+
+    ngOnInit() {
+        this.DoughnutChart = new Chart('doughnutChart', {
+            type: 'doughnut',
+            data: {
+                labels: ["JAVA", ".NET", "ASP.NET", "C#", "PHP", "DRUPAL"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [9, 7, 3, 5, 2, 10],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                
+                segmentShowStroke: true,
+                segmentStrokeColor: "#fff",
+                segmentStrokeWidth: 2,
+                percentageInnerCutout: 50,
+                animationSteps: 100,
+                animationEasing: "easeOutBounce",
+                animateRotate: true,
+                animateScale: false,
+                responsive: true,
+                maintainAspectRatio: true,
+                showScale: true
+                
+            }
+        });
+
+    }
+
+    public captureScreen() {
+        var data = document.getElementById('convert');
+        html2canvas(data).then(canvas => {
+            var imgWidth = 208;
+            var pageHeight = 295;
+            var imgHeight = canvas.height * imgWidth / canvas.width;
+            var heightLeft = imgHeight;
+            const contentDataURL = canvas.toDataURL('image/png')
+            let pdf = new jspdf('p', 'mm', 'a4');
+            var position = 0;
+            pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+            pdf.save('MYPdf.pdf')
+        });
+    }
 
 
 }

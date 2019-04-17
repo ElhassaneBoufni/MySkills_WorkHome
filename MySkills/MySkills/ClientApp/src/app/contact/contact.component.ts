@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 export class ContactComponent {
 
     formdata;
+    htmlContent;
     ngOnInit() {
         this.formdata = new FormGroup({
             contact_name: new FormControl("", [Validators.required, this.noWhitespaceValidator,
@@ -18,6 +19,7 @@ export class ContactComponent {
             contact_message: new FormControl("", [Validators.required, this.noWhitespaceValidator,
             Validators.maxLength(400), Validators.minLength(5)]),
         });
+
 
     }
     public data: any = [];
