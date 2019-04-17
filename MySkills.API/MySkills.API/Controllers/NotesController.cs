@@ -6,17 +6,20 @@ using System.Net;
 using Microsoft.AspNetCore.Http;
 using MySkills.Core.Entities;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
 namespace MySkills.API.Controllers
 {
     
     public class NotesController : BaseController
     {
-        private IMyService _service;
+        private readonly IMyService _service;
+        private readonly ILogger _logger;
 
-        public NotesController(IMyService service)
+        public NotesController(IMyService service, ILogger<NotesController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
 
@@ -28,6 +31,7 @@ namespace MySkills.API.Controllers
          }*/
         public ActionResult<IEnumerable<Notes>> GetNotes([FromQuery] int level)
         {
+            _logger.LogInformation("Hellow");
             var res = _service.GetNotes();
             return new JsonResult(res);
         }
