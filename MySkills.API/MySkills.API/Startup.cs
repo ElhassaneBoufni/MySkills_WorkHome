@@ -10,11 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
-using AutoMapper;
-using FluentValidation.AspNetCore;
-using MediatR;
-using MediatR.Pipeline;
 using Microsoft.EntityFrameworkCore;
 //using MySkills.Application.Customers.Commands.CreateCustomer;
 
@@ -59,6 +54,9 @@ namespace MySkills.Domain
             services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddTransient<IMyService, MyService>();
+            services.AddTransient<INotesRepository, NotesRepository>();
 
             // the API�s can be accessed from any origin globally
             services.AddCors(c =>

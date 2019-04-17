@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from './base.service';
-import { Skill, SkillAdapter } from '../models/skill.model';
+import { Skills, SkillAdapter } from '../models/skills.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
@@ -8,17 +8,22 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CompETcertifService extends BaseService<Skill> {
+export class CompETcertifService extends BaseService<Skills> {
+
+  error: any = '';
+  Technos: Skills[];
+  Skills2: Skills[];
 
   constructor(protected http: HttpClient, private adapter: SkillAdapter) {
     super(http);
+    this.loadTechno();
   }
 
   list() {
     return super.findAll('compFound')
       .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
     // .subscribe(
-    //     (response: Skill[]) => {
+    //     (response: Skills[]) => {
     //         console.log(response) ;
     //     });
   }
@@ -29,18 +34,20 @@ export class CompETcertifService extends BaseService<Skill> {
   }
   loadTechno() {
     return super.findAll('Skills', { Level: '1' })
-      //.pipe(map((data: any[]) => data.map((item: any) => new Skill().deserialize(item))))
+      .pipe(map(data => data['skills'].map((item: any) => this.adapter.adapt(item))))
       .subscribe(
-           (response: Skill[]) => {
-               console.log(response) ;
-          });
+        (response: Skills[]) => {
+          this.Technos = response;
+          console.log(this.Technos);
+        },
+        error => this.error = error);
   }
 
   loadSkills(parentId, level) {
     return super.findAll('Skills', { Level: level, ParentId: parentId })
       .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
     // .subscribe(
-    //      (response: Skill[]) => {
+    //      (response: Skills[]) => {
     //          console.log(response) ;
     //     });
   }

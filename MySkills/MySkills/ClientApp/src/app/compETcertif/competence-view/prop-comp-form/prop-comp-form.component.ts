@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Skill } from '../../../core/models/skill.model';
+import { Skills } from '../../../core/models/skills.model';
 import { CompETcertifService } from '../../../core/services/comp-etcertif.service';
 import { Observable } from 'rxjs';
 
@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./prop-comp-form.component.css']
 })
 export class PropCompFormComponent implements OnInit {
-  formDataPropComp: Skill;
+  formDataPropComp: Skills;
   disabled: boolean;
-  _Skills2: Observable<Skill[]>;
+  _Skills2: Observable<Skills[]>;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) private data: Skill[],
+    @Inject(MAT_DIALOG_DATA) private data: Skills[],
     private _compETcertifService: CompETcertifService,
     private dialogRef: MatDialogRef<PropCompFormComponent>
   ) { }
