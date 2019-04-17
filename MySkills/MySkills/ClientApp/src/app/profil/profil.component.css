@@ -69,7 +69,7 @@ div.format {
     display: inline-block;
     padding-bottom: 11px;
     position: relative;
-    margin-bottom: 28px;
+  
 }
 
     .colonneContent:before {
@@ -104,6 +104,7 @@ div.format {
     padding-bottom: 11px;
     position: relative;
     margin-bottom: 28px;
+    margin-left: 20px;
 }
 
 .techContent {
@@ -112,9 +113,9 @@ div.format {
     font-size: 60px;
     color: #5A5A5A;
     display: inline-block;
-    padding-bottom: 11px;
+   
     position: relative;
-    margin-bottom: 28px;
+   
 }
 
 

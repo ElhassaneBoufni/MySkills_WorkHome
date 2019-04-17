@@ -77,9 +77,9 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     font-size: 18px;
     color: #555555;
     display: inline-block;
-    padding-bottom: 11px;
+   
     position: relative;
-    margin-bottom: 28px;
+    
 }
 
 .temoposteContent {
@@ -88,9 +88,9 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     font-size: 14px;
     color: #555555;
     display: inline-block;
-    padding-bottom: 11px;
+   
     position: relative;
-    margin-bottom: 28px;
+   
 }
 
 .lienContent {
