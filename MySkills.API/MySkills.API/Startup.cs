@@ -26,6 +26,7 @@ using MySkills.Persistence.UnitOfWork;
 using MySkills.DomainModel;
 using MySkills.BL.Contracts;
 using MySkills.BL;
+using AutoMapper;
 
 namespace MySkills.Domain
 {
@@ -55,8 +56,8 @@ namespace MySkills.Domain
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddTransient<IMyService, MyService>();
-            services.AddTransient<INotesRepository, NotesRepository>();
+            //services.AddTransient<IMyService, MyService>();
+            //services.AddTransient<INotesRepository, NotesRepository>();
 
             // the API�s can be accessed from any origin globally
             services.AddCors(c =>
