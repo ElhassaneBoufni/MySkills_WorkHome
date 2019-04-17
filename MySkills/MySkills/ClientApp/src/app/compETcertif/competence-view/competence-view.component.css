@@ -68,6 +68,7 @@ div.drop-zone mat-chip-list {
 .ChipsImage{
     background-color: #0070AD !important;
     padding-left: 12px !important;
+    line-height: 100%;
 }
 .mat-standard-chip .mat-chip-avatar {
     margin-right: 0;
@@ -81,15 +82,12 @@ div.drop-zone mat-chip-list {
     color: #565656;
 }
 
-.btnComp{
-    float: right !important;
-    margin-right: 30px;
-    margin-bottom: 30px;
-}
-
-
  .fieldsStyle {
     color: #0070AD;
     font-weight: bold;
     font-family: Helvetica;
+ }
+
+ .mat-form-field {
+    width: inherit;
  }

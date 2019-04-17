@@ -156,7 +156,11 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
     box-shadow: 0 0 10px #007bff;
 }
 
-
+.btnComp{
+    float: right !important;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
 
 .ngx-editor-button {
     color: #0070ad;
@@ -168,3 +172,40 @@ app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view
 #ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(6) {
     display: none;
 }
+/********/
+[data-toggle="collapse"] .fa:before {
+    content: "\f068";
+    color: #FF304C;
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+    content: "\f067";
+    color: #FF304C;
+}
+
+.fa{
+    font-size:8px;
+    margin-right:10px;
+   
+}
+
+.button-faq {
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+    color: #0070AD !important;
+}
+
+    .button-faq:hover, .button-faq:link, .button-faq:focus {
+        text-decoration: none !important;
+    }
+
+.card-body-faq {
+    margin-left: 40px !important;
+    color: gray;
+    font-size: 13px;
+    border-left: 2px solid #FF304C;
+    margin-bottom: 14px;
+    margin-top: 14px;
+    padding-top: 10px!important;
+}
+

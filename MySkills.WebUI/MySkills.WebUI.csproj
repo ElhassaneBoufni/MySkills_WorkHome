@@ -35,9 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MySkills.Application\MySkills.Application.csproj" />
     <ProjectReference Include="..\MySkills.Common\MySkills.Common.csproj" />
-    <ProjectReference Include="..\MySkills.Infrastructure\MySkills.Infrastructure.csproj" />
   </ItemGroup>
 
   <Target Name="NSwag" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">

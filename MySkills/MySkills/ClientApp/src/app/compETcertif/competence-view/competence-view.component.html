@@ -2,32 +2,48 @@
   <div class="row p-15">
     <div class="col-sm-4 form-search-comp">
       <fieldset>
-        <label class ="lbl" for="competence">Rechercher une compétence</label>
+        <label class="lbl" for="competence">Rechercher une compétence</label>
         <input type="text" name="competence" id="competence" class="form-control fieldsStyle" required="">
-        <label class ="lbl" for="techno">Choisissez votre techno</label>
-        <select  class="browser-default custom-select fieldsStyle" name="techno">
-            <option value="1" selected>CRM</option>
-            <option value="2">OptionTwo</option>
-            <option value="3">OptionThree</option>
-          </select>
-        <label class ="lbl" for="skill">Choisissez votre skill</label>
-        <select class="browser-default custom-select fieldsStyle" name="skill">
-            <option value="1" selected>CRM & customer experience Packages</option>
-            <option value="2">OptionTwo</option>
-            <option value="3">OptionThree</option>
-          </select>
+      <!--
+        <mat-form-field>
+          <mat-select placeholder="Choisissez votre techno" name="techno" (selectionChange)="changedata($event)">
+            <mat-option *ngFor="let techn of _Techno | async" [value]="techn.Id">{{techn.Title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Choisissez votre skill" name="skill"  [disabled]="disabled" (selectionChange)="changedata2($event)">
+            <mat-option *ngFor="let skill2 of _Skills2 | async" [value]="skill2.Id">{{skill2.Title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      -->
+        <label class="lbl" for="techno">Choisissez votre techno</label>
+        <select class="browser-default custom-select fieldsStyle" name="techno" (change)="changedata($event)">
+          <option disabled>--Select--</option>
+          <option *ngFor="let techn of _Techno" [value]="techn.Id">{{techn._Title}}</option>
+
+        </select>
+        
+        <label class="lbl" for="skill">Choisissez votre skill</label>
+        <select class="browser-default custom-select fieldsStyle" name="skill" [disabled]="disabled"
+          (change)="changedata2($event)">
+          <option disabled>--Select--</option>
+          <option *ngFor="let skill2 of _Skills2 | async" [value]="skill2.Id">{{skill2.Title}}</option>
+        </select>
+      
       </fieldset>
     </div>
     <div class="col-sm-8 colChips">
       <div class="row">
         <button mdbBtn type="button" class="float-right margin-left btn-propComp" color="primary" rounded="true"
-          outline="true" mdbWavesEffect>Proposer une compétence</button>
+          outline="true" mdbWavesEffect (click)="openPropComp()">Proposer une compétence</button>
       </div>
       <div class="row chipsGroup">
         <h2 class="titleContent">Skills trouvés</h2>
-        <mat-chip-list cdkDropList #CompFoundList="cdkDropList" [cdkDropListData]="CompFound"
+        <mat-chip-list cdkDropList #CompFoundList="cdkDropList" [cdkDropListData]="_CompFound"
           [cdkDropListConnectedTo]="[CompDoneList]" (cdkDropListDropped)="drop($event)">
-          <mat-chip class="ChipsImage" color="primary" selected *ngFor="let comp of CompFound" cdkDrag>{{comp.name}} <img src="assets/image.JPG" *ngIf="comp.recommended == 1" matChipAvatar> </mat-chip>
+          <mat-chip class="ChipsImage" color="primary" selected *ngFor="let comp of _CompFound" cdkDrag>{{comp.Title}}
+            <img src="assets/image.JPG" *ngIf="comp.Recommended == 1" matChipAvatar matTooltip="Recommandée par {{userName}} !"> 
+          </mat-chip>
         </mat-chip-list>
       </div>
     </div>
@@ -35,10 +51,10 @@
 
   <div class="row p-15">
     <div class="drop-zone" id="drop-zone">
-      <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="CompSelected"
-        [cdkDropListConnectedTo]="[CompFoundList]" (cdkDropListDropped)="drop($event)" ngModel>
+      <mat-chip-list cdkDropList #CompDoneList="cdkDropList" [cdkDropListData]="_CompSelected"
+        [cdkDropListConnectedTo]="[CompFoundList]" (cdkDropListDropped)="drop($event)">
 
-        <div class="placeholder-drop-zone" *ngIf="displayed">
+        <div class="placeholder-drop-zone" [hidden]="!displayed">
           <svg xmlns="http://www.w3.org/2000/svg" width="39.51" height="49.858" viewBox="0 0 39.51 49.858">
             <defs>
               <style>
@@ -76,12 +92,50 @@
           </svg>
           <p style="margin-top: 10px">Drag your skill and drop here</p>
         </div>
-        <mat-chip color="primary" *ngFor="let comp of CompSelected" [selectable]="selectable" [removable]="removable"
-          (removed)="remove(comp)"> {{comp.name}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+
+
+        <mat-chip [popover]="popTemplate" placement="right" #pop="bs-popover" [popoverContext]="formExp" (click)="openPopover(pop)"
+                color="primary" *ngFor="let comp of _CompSelected" [selectable]="selectable" [removable]="true" (removed)="remove(comp)">
+          {{comp.Title}}
+          <mat-icon matChipRemove>cancel</mat-icon>
         </mat-chip>
+        <ng-template #popTemplate>
+          <div>
+            <form #formExp="ngForm" (ngSubmit)="onSubmit(formExp)">
+              <div class="form-group">
+                <label for="niveau">Choisissez votre niveau</label>
+                <select name="niveau" #niveau="" class="browser-default custom-select" ngModel>
+                  <option value="0" disabled>--Select--</option>
+                  <option value="Débutant">Débutant</option>
+                  <option value="Confirmé">Confirmé</option>
+                  <option value="Senior">Senior</option>
+                  <option value="Expert">Expert</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label>Veuillez saisir votre expérience</label>
+                <div class="form-group col-md-6">
+                  <mat-form-field>
+                    <input matInput #year="" name="year" type="number" placeholder="Année" min="0" max="50" ngModel>
+                  </mat-form-field>
+                </div>
+                <div class="form-group col-md-6">
+                  <mat-form-field>
+                    <input matInput #mounth="" name="mounth" type="number" placeholder="Mois"  min="0" max="11" ngModel>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-group">
+                <button mdbBtn type="submit" style="border-radius:32px!important;" class="btn btn-danger float-right"
+                  rounded="true">Ajouter</button>
+              </div>
+            </form>
+          </div>
+        </ng-template>
       </mat-chip-list>
     </div>
   </div>
-  <button  mdbBtn type="submit" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;" class="btn btn-secondary rounded btnComp" color="danger" rounded="true" mdbWavesEffect>Suivant</button>
+  <button [routerLink]='["/compETcertif/managAndSupp"]' mdbBtn type="submit"
+    style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;"
+    class="btn btn-secondary rounded btnComp" color="danger" rounded="true" mdbWavesEffect>Suivant</button>
 </form>

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
@@ -16,17 +16,10 @@ import { ErrorComponent } from './error/error.component';
 import { CompETcertifModule } from './compETcertif';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-
-
-
-
 import { NgxEditorModule } from 'ngx-editor';
-
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
-
-
-
+import { CoreModule } from './core/core.module';
+import { HttpErrorInterceptor } from './core/Interceptors/http-error-interceptor';
 
 @NgModule({
   declarations: [
@@ -49,9 +42,17 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularEditorModule,
     NgxEditorModule,
     AngularFontAwesomeModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    CoreModule,
+    CompETcertifModule
   ],
-    providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
