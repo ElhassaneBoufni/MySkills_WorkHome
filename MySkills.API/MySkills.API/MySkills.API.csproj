@@ -22,9 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MySkills.Application\MySkills.Application.csproj" />
+    <ProjectReference Include="..\..\MySkills.BL.Contracts\MySkills.BL.Contracts.csproj" />
+    <ProjectReference Include="..\..\MySkills.BL\MySkills.BL.csproj" />
     <ProjectReference Include="..\..\MySkills.Common\MySkills.Common.csproj" />
-    <ProjectReference Include="..\..\MySkills.Infrastructure\MySkills.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\MySkills.DomainModel\MySkills.DomainModel.csproj" />
     <ProjectReference Include="..\..\MySkills.Persistence\MySkills.Persistence.csproj" />
   </ItemGroup>
 

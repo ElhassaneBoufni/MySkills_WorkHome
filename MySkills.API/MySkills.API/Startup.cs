@@ -17,17 +17,20 @@ using MediatR;
 using MediatR.Pipeline;
 using Microsoft.EntityFrameworkCore;
 //using MySkills.Application.Customers.Commands.CreateCustomer;
-using MySkills.Application.Infrastructure;
-using MySkills.Application.Infrastructure.AutoMapper;
-using MySkills.Application.Interfaces;
+
 //using MySkills.Application.Products.Queries.GetProduct;
-using MySkills.Application.Notes.Queries.GetNotesList;
+
 using MySkills.Common;
-using MySkills.Infrastructure;
+
 using MySkills.Persistence;
 using NSwag.AspNetCore;
 using System.Reflection;
-using MySkills.Application.Skills.Queries;
+
+using MySkills.Persistence.Contracts.UnitOfWork;
+using MySkills.Persistence.UnitOfWork;
+using MySkills.DomainModel;
+using MySkills.BL.Contracts;
+using MySkills.BL;
 
 namespace MySkills.Domain
 {
@@ -43,18 +46,17 @@ namespace MySkills.Domain
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(new Assembly[] { typeof(AutoMapperProfile).GetTypeInfo().Assembly });
-
-            // Add MediatR
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            services.AddMediatR(typeof(GetNotesListQueryHandler).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(GetSkillsListQueryHandler).GetTypeInfo().Assembly);
 
             // Add DbContext using SQL Server Provider
-            services.AddDbContext<MySkillsDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MySkillsDatabase")));
+            //services.AddDbContext<MySkillsDbContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("MySkillsDatabase")));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            // Inject BL 
+           
+            services.AddScoped<IFaq, BLFaq>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

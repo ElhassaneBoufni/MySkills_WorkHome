@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MySkills.BL.Contracts\MySkills.BL.Contracts.csproj" />
     <ProjectReference Include="..\MySkills.DomainModel\MySkills.DomainModel.csproj" />
     <ProjectReference Include="..\MySkills.Persistence.Contracts\MySkills.Persistence.Contracts.csproj" />
   </ItemGroup>
