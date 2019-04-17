@@ -1,36 +1,74 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<h4 class="titleComponent-Contact">Contact</h4>
+<h6 class="question-Contact"> Vous avez une question ? contactez-nous ! </h6>
+<mat-card>
+    <mat-card-content>
+        <div class="col-md-8 offset-md-0">
+            <form class="form" [formGroup]="formdata" (ngSubmit)="on_submit(formdata.value)" novalidate method="post" autocomplete="off">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="email2" class="mb-1 field-Contact">Nom Pr&eacute;nom</label>
+                        <div class="form-group" [ngClass]="{'error': formdata.controls.contact_name.errors && formdata.controls.contact_name.touched}">
 
-<mat-toolbar> Contact </mat-toolbar>
-<br />
-<br />
-<br />
-<form>
-    Nous Contacter
-    <br />
-    <br />
-    <br />
+                            <div class="input-group controls">
+                                <input type="text" formControlName="contact_name" name="name" id="name" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="formdata.controls.contact_name.errors && formdata.controls.contact_name.touched" class="help-block clearfix mt-2">
+                        <ul role="alert">
+                            <li class="alert-danger p-2">Ce Champ est Requis</li>
+                        </ul>
+                    </div>
 
-    <div class="form-row">
-        <div class="row">
-            <strong> Nom Prénom</strong>
-            <br />
-            <input mdbInput type="text" class="form-control" placeholder="Eg:Jaison Justus">
-            <br />
-            <br />
+                </div>
 
-            <strong> Objet</strong>
-            <br />
-            <input mdbInput type="text" class="form-control" placeholder="Eg:Interface Designer">
-            <br />
-            <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="email2" class="mb-1 field-Contact">Objet</label>
+                        <div class="form-group" [ngClass]="{'error': formdata.controls.contact_object.errors && formdata.controls.contact_object.touched}">
 
-            <strong> Votre message </strong>
-            <br />
-            <textarea type="text" id="form75" class="form-control md-textarea" rows="3" mdbInput></textarea>
-            <label for="form75"></label>
+                            <div class="input-group controls">
+                                <input type="text" formControlName="contact_object" name="object" id="object" class="form-control" required="">
 
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="formdata.controls.contact_object.errors && formdata.controls.contact_object.touched" class="help-block clearfix mt-2">
+                        <ul role="alert">
+                            <li class="alert-danger p-2">Ce Champ est Requis</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="message2" class="mb-1 field-Contact">Votre Message</label>
+                        <div class="form-group" [ngClass]="{'error': formdata.controls.contact_message.errors && formdata.controls.contact_message.touched}">
+
+                            <div class="input-group controls">
+                                <app-ngx-editor required formControlName="contact_message" id="NewQuestion" placeholder="New Question" height="150px" minHeight="100px" [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+                                <div *ngIf="formdata.controls.contact_message.errors && formdata.controls.contact_message.touched" class="help-block clearfix mt-2">
+                                    <ul role="alert">
+                                        <li class="alert-danger p-2">Ceci est requis min5 max 400</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12 m-b-12 m-t-12">
+
+                        <button type="submit" class="btn btn-danger btn-lg waves-effect waves-light m-r-10" [disabled]="!formdata.valid" style="border-radius:32px!important;padding-left: 30px!important;padding-right: 30px!important;margin-top: 15px!important;font-size:15px!important">Envoyer</button>
+
+                    </div>
+                </div>
+            </form>
         </div>
-
-
-
-    </div>
-</form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,93 @@
+.form-search-comp{
+    background-color: #F7F8FA;
+    height: 297px;
+    display: inline-grid;
+    display: -ms-inline-grid;
+    margin-left: 39px;
+    margin-top: 34px;
+    margin-right: 30px;
+}
+
+.btn-propComp{
+    margin-top: 34px;
+    margin-left: auto;
+    margin-right: 45px;
+    border-radius: 1.25rem!important;
+}
+.chipsGroup{
+    margin-right: auto;
+    padding-top: 41px;
+    padding-left: 43px;
+    display: block;
+}
+
+.colChips{
+    padding-right: 45px;
+    margin-right: -39px;
+    padding-left: 14px;
+    margin-left: -30px;
+}
+
+.p-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.drop-zone mat-chip-list {
+    width: inherit;
+    padding: 46px 38px 46px 38px;
+}
+
+/* layout.css Style */
+.drop-zone {
+    height: 349px;
+    border-width: 1px;
+    margin: 32px;
+    margin-top: 97px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* skin.css Style*/
+  .drop-zone {
+    border-style: solid;
+    border-color: #0070AD;
+  }
+  .drop-zone.drop {
+    color: #222;
+    border-color: #222;
+  }
+
+.placeholder-drop-zone {
+    padding-top: 8%;
+    width: 100%;
+    font-family: Helvetica;
+    color: #0070AD;
+}
+.ChipsImage{
+    background-color: #0070AD !important;
+    padding-left: 12px !important;
+    line-height: 100%;
+}
+.mat-standard-chip .mat-chip-avatar {
+    margin-right: 0;
+}
+
+.lbl{
+    display: inline-block;
+    margin-top: 1.1em;
+    margin-bottom: .5rem;
+    font-family: ubuntu;
+    color: #565656;
+}
+
+ .fieldsStyle {
+    color: #0070AD;
+    font-weight: bold;
+    font-family: Helvetica;
+ }
+
+ .mat-form-field {
+    width: inherit;
+ }

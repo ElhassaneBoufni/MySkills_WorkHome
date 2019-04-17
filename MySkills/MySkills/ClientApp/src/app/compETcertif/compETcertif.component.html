@@ -1,13 +1,14 @@
-
-<mat-toolbar> Comp�tences & Certifications </mat-toolbar>
-
-<nav mat-tab-nav-bar>
-    <a mat-tab-link
-    *ngFor="let link of navLinks"
-    [routerLink]="link.link"
-    routerLinkActive #rla="routerLinkActive"
-    [active]="rla.isActive">
-        {{link.label}}
-    </a>
-</nav>
-<router-outlet></router-outlet>
+<h4 class="titleComponent"> Compétences & Certifications </h4>
+<div class="container h-80">
+    <div class="row">
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive
+                #rla="routerLinkActive" [active]="rla.isActive">
+                {{link.label}}
+            </a>
+        </nav>
+    </div>
+    <div class="row viewContent">
+        <router-outlet></router-outlet>
+    </div>
+</div>

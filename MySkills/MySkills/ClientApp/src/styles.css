@@ -2,4 +2,210 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#f7f8fa;}
+
+.col-sm-3half, .col-sm-9half {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-3half, .col-sm-9half {
+        float: left;
+    }
+    .col-sm-3half {
+        width: 19.58%;
+    }
+    .col-sm-9half {
+        width: 80.42%;
+    }
+}
+
+.titleComponent{
+    color:#0070AD;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 23px;
+    padding: 29px 0 46px 25px;
+  }
+
+.titleContent{
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 22px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.titleContent:before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    bottom: 0;
+    border-bottom: 3px solid red;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    bottom: unset;
+    background-color: red !important;
+}
+/*Specific Css for component angular*/
+app-competence-view,app-certif-view,app-manag-and-supp-view,app-soft-skills-view{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: 100%;
+}
+
+/*form contact*/
+.titleComponent-Contact {
+    color: #0070AD;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 23px;
+    padding: 29px 0 0px 25px;
+}
+
+.temoContent {
+    font-family: ubuntu;
+    font-weight: 700;
+    font-size: 18px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.temoposteContent {
+    font-family: ubuntu;
+    font-weight: normal;
+    font-size: 14px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.lienContent {
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+    .lienContent:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        bottom: 0;
+        border-bottom: 3px solid;
+        border-bottom-color: #FF304C;
+    }
+
+
+.slackContent {
+    font-family: ubuntu;
+    font-weight: normal;
+    font-size: 17px;
+    color: #555555;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+
+.question-Contact {
+    color: #0070AD;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+.question-Contact:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    bottom: -5px;
+    border-bottom: 3px solid red;
+}
+
+.field-Contact {
+    color: #0070AD;
+    font-weight: bold;
+    font-family: Ubuntu;
+    font-size: 13px;
+}
+
+.ngx-editor-textarea:focus {
+    outline: none !important;
+    border-color: #007bff;
+    box-shadow: 0 0 10px #007bff;
+}
+
+.btnComp{
+    float: right !important;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.ngx-editor-button {
+    color: #0070ad;
+}
+
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(2),
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(4),
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(5),
+#ngxEditor > app-ngx-editor-toolbar > div > div:nth-child(6) {
+    display: none;
+}
+/********/
+[data-toggle="collapse"] .fa:before {
+    content: "\f068";
+    color: #FF304C;
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+    content: "\f067";
+    color: #FF304C;
+}
+
+.fa{
+    font-size:8px;
+    margin-right:10px;
+   
+}
+
+.button-faq {
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+    color: #0070AD !important;
+}
+
+    .button-faq:hover, .button-faq:link, .button-faq:focus {
+        text-decoration: none !important;
+    }
+
+.card-body-faq {
+    margin-left: 40px !important;
+    color: gray;
+    font-size: 13px;
+    border-left: 2px solid #FF304C;
+    margin-bottom: 14px;
+    margin-top: 14px;
+    padding-top: 10px!important;
+}
+

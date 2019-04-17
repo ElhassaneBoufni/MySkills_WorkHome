@@ -14,18 +14,23 @@ export class CompETcertifComponent implements OnInit {
     constructor(private router: Router) {
         this.navLinks = [
             {
-                label: 'competenceView',
+                label: 'TECHNIQUE',
                 link: './competenceView',
                 index: 0
             }, {
-                label: 'certifView',
-                link: './certifView',
+                label: 'MANAGEMENT & SUPPORT',
+                link: './managAndSupp',
                 index: 1
             }, {
-                label: 'managAndSupp',
-                link: './managAndSupp',
+                label: 'SOFT SKILLS',
+                link: './softSkillsview',
                 index: 2
             },
+            {
+                label: 'CERTIFICATION',
+                link: './certifView',
+                index: 3
+            }
         ];
     }
 

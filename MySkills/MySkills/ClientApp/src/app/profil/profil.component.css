@@ -1,0 +1,146 @@
+div.format {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+body
+{
+  background: #4a4a4c !important;
+}
+
+.starrating > input {display: none;}  /* Remove radio buttons */
+
+.starrating > label:before { 
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 2em;
+  font-family: FontAwesome;
+  display: inline-block; 
+}
+
+.starrating > label
+{
+  color: #222222; /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label
+{ color: #ffca08 ; } /* Set yellow color when star checked */
+
+.starrating > input:hover ~ label
+{ color: #ffca08 ;  } /* Set yellow color when star hover */
+
+div.format {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.margin-left {
+    margin-left: 40px;
+}
+
+.profilContent {
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 18px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+.profilContent:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    bottom: 0;
+    border-bottom: 3px solid;
+    border-bottom-color: #FF304C;
+}
+
+
+.colonneContent {
+    font-family: ubuntu;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+    .colonneContent:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        bottom: 0;
+        border-bottom: 3px solid;
+        border-bottom-color: #FF304C;
+    }
+
+
+
+.contenuContent {
+    font-family: ubuntu;
+    font-weight: 500;
+    font-size: 18px;
+    color: #5A5A5A;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.expContent {
+    font-family: ubuntu;
+    font-weight: 700;
+    font-size: 30px;
+    color: #5A5A5A;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.techContent {
+    font-family: ubuntu;
+    font-weight: 300;
+    font-size: 60px;
+    color: #5A5A5A;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+
+
+
+
+.expoContent {
+    font-family: ubuntu;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0070AD;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.complContent {
+    font-family: ubuntu;
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+    display: inline-block;
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+
