@@ -14,10 +14,10 @@ using Microsoft.EntityFrameworkCore;
 using NSwag.AspNetCore;
 using System.Reflection;
 using MySkills.Infrastructure.EntityFramework;
-using MySkills.Core.Interfaces.Repositories;
+using MySkills.Core.Interfaces.IUnitOfWork;
 using MySkills.Core.Interfaces.Services;
 using MySkills.Core.Services;
-using MySkills.Infrastructure.EntityFramework.RepositoriesImpl;
+using MySkills.Infrastructure.EntityFramework.UnitOfWork;
 
 namespace MySkills.API
 {
@@ -35,21 +35,16 @@ namespace MySkills.API
         {
             // services.AddAutoMapper(new Assembly[] { typeof(AutoMapperProfile).GetTypeInfo().Assembly });
 
-            // Add MediatR
-            // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
-            // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
-            // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            // services.AddMediatR(typeof(GetNotesListQueryHandler).GetTypeInfo().Assembly);
-            // services.AddMediatR(typeof(GetSkillsListQueryHandler).GetTypeInfo().Assembly);
 
             // Add DbContext using SQL Server Provider
             services.AddDbContext<MySkillsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MySkillsDatabase")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddTransient<IMyService, MyService>();
-            services.AddTransient<INotesRepository, NotesRepository>();
+            
+            // Inject services
+            services.AddTransient<INotesService, NotesService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             // the API�s can be accessed from any origin globally
             services.AddCors(c =>
@@ -73,6 +68,8 @@ namespace MySkills.API
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //loggerFactory.AddLog4Net();
 
             app.UseHttpsRedirection();
             app.UseMvc();
