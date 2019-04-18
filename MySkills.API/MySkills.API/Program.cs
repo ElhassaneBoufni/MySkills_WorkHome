@@ -14,8 +14,6 @@ namespace MySkills.API
 {
     public class Program
     {
-        private static string _environmentName;
-
         public static void Main(string[] args)
         {
             // Create the logger
