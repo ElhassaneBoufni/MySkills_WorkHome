@@ -5,8 +5,8 @@ using MySkills.Core.Entities;
 
 namespace MySkills.Core.Interfaces.Services
 {
-    public interface IMyService
+    public interface INotesService
     {
-        List<Notes> GetNotes();
+        IEnumerable<Notes> GetNotes();
     }
 }
