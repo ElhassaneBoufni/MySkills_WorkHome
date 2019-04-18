@@ -5,7 +5,7 @@ using MySkills.Core.Interfaces.IUnitOfWork;
 using MySkills.Core.Entities;
 using MySkills.Core.Interfaces;
 
-namespace MySkills.Infrastructure.EntityFramework.UnitOfWork
+namespace MySkills.Persistance.EntityFramework.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

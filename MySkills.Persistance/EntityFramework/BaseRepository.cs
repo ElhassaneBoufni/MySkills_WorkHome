@@ -6,7 +6,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using MySkills.Core.Interfaces;
 
-namespace MySkills.Infrastructure.EntityFramework
+namespace MySkills.Persistance.EntityFramework
 {
     class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {

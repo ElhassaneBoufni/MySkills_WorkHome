@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using MySkills.Core.Entities;
 //using MySkills.Persistence.Configurations;
 
-namespace MySkills.Infrastructure.EntityFramework
+namespace MySkills.Persistance.EntityFramework
 {
     public class MySkillsDbContext : DbContext
     {

@@ -13,11 +13,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using NSwag.AspNetCore;
 using System.Reflection;
-using MySkills.Infrastructure.EntityFramework;
+using MySkills.Persistance.EntityFramework;
 using MySkills.Core.Interfaces.IUnitOfWork;
 using MySkills.Core.Interfaces.Services;
 using MySkills.Core.Services;
-using MySkills.Infrastructure.EntityFramework.UnitOfWork;
+using MySkills.Persistance.EntityFramework.UnitOfWork;
+
 
 namespace MySkills.API
 {
