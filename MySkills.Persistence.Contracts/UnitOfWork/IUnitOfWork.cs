@@ -10,6 +10,8 @@ namespace MySkills.Persistence.Contracts.UnitOfWork
 
         IRepository<Faq> FaqsRepository { get; }
 
+        IRepository<Profil> ProfilsRepository { get; }
+
         void Commit();
     }
 }

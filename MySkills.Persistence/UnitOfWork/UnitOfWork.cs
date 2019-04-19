@@ -15,9 +15,16 @@ namespace MySkills.Persistence.UnitOfWork
             this.dbContext = dbContext;
 
             this.FaqsRepository = new BaseRepository<Faq>(dbContext);
+            this.ProfilsRepository = new BaseRepository<Profil>(dbContext);
         }
 
         public IRepository<Faq> FaqsRepository
+        {
+            get;
+            protected set;
+        }
+
+        public IRepository<Profil> ProfilsRepository
         {
             get;
             protected set;
