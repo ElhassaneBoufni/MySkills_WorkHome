@@ -18,7 +18,7 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _logger = logger;
             _dbContext = dbContext;
 
-            NotesRepository = new BaseRepository<Notes>(dbContext);
+            NotesRepository = new GenericRepository<Notes>(dbContext);
 
             _logger.LogInformation("L'UnitOfWork est appelé");
 
@@ -68,6 +68,11 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
         public void Commit()
         {
             _dbContext.SaveChanges();
+        }
+
+        public void Rollback()
+        {
+            _dbContext = new MySkillsDbContext();
         }
     }
 }
