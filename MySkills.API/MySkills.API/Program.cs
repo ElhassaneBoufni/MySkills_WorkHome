@@ -9,6 +9,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Serilog;
 using Serilog.Events;
+using Microsoft.Extensions.Logging;
 
 namespace MySkills.API
 {
@@ -16,42 +17,57 @@ namespace MySkills.API
     {
         public static void Main(string[] args)
         {
-            // Create the logger
-            Log.Logger = new LoggerConfiguration()
+            var currentEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            var configSerilog = new LoggerConfiguration();
+
+            // Configure Serilog per Environment
+            if(currentEnv == EnvironmentName.Development)
+            {
+                configSerilog = configSerilog
                 .MinimumLevel.Debug()
-                .WriteTo.Console(
+                .WriteTo.Debug(restrictedToMinimumLevel: LogEventLevel.Warning)
+                .WriteTo.ColoredConsole(
                     LogEventLevel.Verbose,
-                    "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}")
-                    .CreateLogger();
-            Log.Information("!!!!!!!!!!!!!Hello, world!!!!!!!!!");
+                    "{NewLine}{Timestamp:HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}");
+            }
+            else
+            {
+                configSerilog = configSerilog
+               .MinimumLevel.Warning()
+               .WriteTo.File(
+                    "Logs/log.txt",
+                    rollingInterval: RollingInterval.Day,
+                    retainedFileCountLimit: 31,
+                    fileSizeLimitBytes: null
+                    );
+            }
+
+            // Create the logger
+            Log.Logger = configSerilog.CreateLogger();
 
             try
             {
+                Log.Information("Starting web host");
                 CreateWebHostBuilder(args).Build().Run();
+           }
+            catch(Exception ex)
+            {
+                Log.Fatal(ex, "Host terminated unexpectedly");
             }
             finally
             {
                 // Close and flush the log.
                 Log.CloseAndFlush();
             }
-
-            /* XmlDocument log4netConfig = new XmlDocument();
-            log4netConfig.Load(File.OpenRead("log4net.config"));
-            var logRepository = LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
-            XmlConfigurator.Configure(logRepository, log4netConfig["log4net"]);*/
-
-            // CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)/*.ConfigureLogging((hostingContext, logging)
-                => {
-                    logging.ClearProviders();
-                    //logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-                    //logging.AddConsole();
-                    //logging.AddDebug();
-                })*/
+            WebHost.CreateDefaultBuilder(args)
                 .UseSerilog() // Set serilog as the loggin provider.
+
+              /* For using Serilog config appSettings.{Env}.Json files
+                .UseSerilog((hostingContext, config) => {config.ReadFrom.Configuration(hostingContext.Configuration);})
+              */
                 .UseStartup<Startup>();
     }
 }

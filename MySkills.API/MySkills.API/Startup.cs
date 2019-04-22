@@ -70,8 +70,6 @@ namespace MySkills.API
                 app.UseHsts();
             }
 
-            //loggerFactory.AddLog4Net();
-
             app.UseHttpsRedirection();
             app.UseMvc();
         }

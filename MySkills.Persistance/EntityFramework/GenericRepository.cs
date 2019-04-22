@@ -8,20 +8,20 @@ using MySkills.Core.Interfaces;
 
 namespace MySkills.Persistance.EntityFramework
 {
-    class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> Entities;
         private readonly DbContext _dbContext;
 
         /// <summary>  
-        /// Initializes a new instance of the <see cref="BaseRepository{TEntity}"/> class.  
+        /// Initializes a new instance of the <see cref="GenericRepository{TEntity}"/> class.  
         /// Note that here I've stored Context.Set<TEntity>() in the constructor and store it in a private field like _entities.   
         /// This way, the implementation  of our methods would be cleaner:        ///   
         /// _entities.ToList();  
         /// _entities.Where();  
         /// _entities.SingleOrDefault();  
         /// </summary>  
-        public BaseRepository(DbContext dbContext)
+        public GenericRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
             Entities = _dbContext.Set<TEntity>();
