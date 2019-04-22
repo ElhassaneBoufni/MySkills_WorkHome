@@ -1,0 +1,187 @@
+2019-04-22 01:25:13.063 +01:00 [DBG] Hosting starting
+2019-04-22 01:25:14.135 +01:00 [INF] User profile is available. Using 'C:\Users\eboufni\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-22 01:25:14.208 +01:00 [DBG] Reading data from file 'C:\Users\eboufni\AppData\Local\ASP.NET\DataProtection-Keys\key-bfec5139-228c-42d7-9b10-865a5385b08e.xml'.
+2019-04-22 01:25:14.440 +01:00 [DBG] Found key "bfec5139-228c-42d7-9b10-865a5385b08e".
+2019-04-22 01:25:14.516 +01:00 [DBG] Considering key "bfec5139-228c-42d7-9b10-865a5385b08e" with expiration date "2019-05-21T08:33:30.1947948+00:00" as default key.
+2019-04-22 01:25:14.737 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-04-22 01:25:14.763 +01:00 [DBG] Decrypting secret element using Windows DPAPI.
+2019-04-22 01:25:14.825 +01:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2019-04-22 01:25:14.832 +01:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2019-04-22 01:25:14.846 +01:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2019-04-22 01:25:14.864 +01:00 [DBG] Using key "bfec5139-228c-42d7-9b10-865a5385b08e" as the default key.
+2019-04-22 01:25:14.868 +01:00 [DBG] Key ring with default key "bfec5139-228c-42d7-9b10-865a5385b08e" was loaded during application startup.
+2019-04-22 01:25:15.049 +01:00 [DBG] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.179 +01:00 [DBG] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.191 +01:00 [DBG] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.197 +01:00 [DBG] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.207 +01:00 [DBG] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using compatibility value "MalformedInputExceptions" for version "Version_2_2"
+2019-04-22 01:25:15.219 +01:00 [DBG] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.227 +01:00 [DBG] Compatibility switch EnableEndpointRouting in type MvcOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.316 +01:00 [DBG] Compatibility switch MaxValidationDepth in type MvcOptions is using compatibility value 32 for version "Version_2_2"
+2019-04-22 01:25:15.325 +01:00 [DBG] Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.490 +01:00 [DBG] Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using default value false
+2019-04-22 01:25:15.498 +01:00 [DBG] Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using default value false
+2019-04-22 01:25:15.507 +01:00 [DBG] Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using default value false
+2019-04-22 01:25:15.529 +01:00 [DBG] Compatibility switch AllowAreas in type RazorPagesOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.539 +01:00 [DBG] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.553 +01:00 [DBG] Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.651 +01:00 [DBG] Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value true
+2019-04-22 01:25:15.755 +01:00 [DBG] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:15.827 +01:00 [DBG] Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using compatibility value true for version "Version_2_2"
+2019-04-22 01:25:16.032 +01:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-04-22 01:25:17.180 +01:00 [DBG] Failed to locate the development https certificate at 'null'.
+2019-04-22 01:25:17.492 +01:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 15F8A4075C69BD9C2A5854ACCB722A8D1ED17252)
+2019-04-22 01:25:17.793 +01:00 [DBG] Hosting started
+2019-04-22 01:25:17.801 +01:00 [DBG] Loaded hosting startup assembly MySkills.API
+2019-04-22 01:25:18.084 +01:00 [DBG] Connection id "0HLM6N3VMADSH" started.
+2019-04-22 01:25:18.084 +01:00 [DBG] Connection id "0HLM6N3VMADSI" started.
+2019-04-22 01:25:18.368 +01:00 [DBG] Connection id "0HLM6N3VMADSH" received FIN.
+2019-04-22 01:25:18.368 +01:00 [DBG] Connection id "0HLM6N3VMADSI" received FIN.
+2019-04-22 01:25:18.429 +01:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-04-22 01:25:18.429 +01:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2019-04-22 01:25:19.283 +01:00 [DBG] Connection id "0HLM6N3VMADSH" sending FIN because: "The client closed the connection."
+2019-04-22 01:25:19.456 +01:00 [DBG] Connection id "0HLM6N3VMADSI" disconnecting.
+2019-04-22 01:25:19.484 +01:00 [DBG] Connection id "0HLM6N3VMADSI" sending FIN because: "The client closed the connection."
+2019-04-22 01:25:19.488 +01:00 [DBG] Connection id "0HLM6N3VMADSH" disconnecting.
+2019-04-22 01:25:19.520 +01:00 [DBG] Connection id "0HLM6N3VMADSH" stopped.
+2019-04-22 01:25:19.532 +01:00 [DBG] Connection id "0HLM6N3VMADSI" stopped.
+2019-04-22 01:25:24.605 +01:00 [DBG] Connection id "0HLM6N3VMADSJ" started.
+2019-04-22 01:25:25.616 +01:00 [DBG] Connection id "0HLM6N3VMADSK" started.
+2019-04-22 01:25:26.980 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/values  
+2019-04-22 01:25:27.186 +01:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2019-04-22 01:25:27.877 +01:00 [DBG] 1 candidate(s) found for the request path '/api/values'
+2019-04-22 01:25:28.141 +01:00 [DBG] Endpoint 'MySkills.API.Controllers.ValuesController.Get (MySkills.API)' with route pattern 'api/Values' is valid for the request path '/api/values'
+2019-04-22 01:25:28.199 +01:00 [DBG] Request matched endpoint 'MySkills.API.Controllers.ValuesController.Get (MySkills.API)'
+2019-04-22 01:25:28.245 +01:00 [INF] Executing endpoint 'MySkills.API.Controllers.ValuesController.Get (MySkills.API)'
+2019-04-22 01:25:28.532 +01:00 [INF] Route matched with {action = "Get", controller = "Values"}. Executing action MySkills.API.Controllers.ValuesController.Get (MySkills.API)
+2019-04-22 01:25:28.580 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2019-04-22 01:25:28.609 +01:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-04-22 01:25:28.641 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2019-04-22 01:25:28.836 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2019-04-22 01:25:28.861 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2019-04-22 01:25:29.501 +01:00 [INF] Executing action method MySkills.API.Controllers.ValuesController.Get (MySkills.API) - Validation state: "Valid"
+2019-04-22 01:25:29.957 +01:00 [INF] Executed action method MySkills.API.Controllers.ValuesController.Get (MySkills.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.616ms.
+2019-04-22 01:25:30.009 +01:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2019-04-22 01:25:30.046 +01:00 [DBG] No information found on request to perform content negotiation.
+2019-04-22 01:25:30.048 +01:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2019-04-22 01:25:30.052 +01:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2019-04-22 01:25:30.056 +01:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2019-04-22 01:25:30.067 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String[]'.
+2019-04-22 01:25:30.620 +01:00 [INF] Executed action MySkills.API.Controllers.ValuesController.Get (MySkills.API) in 1327.007ms
+2019-04-22 01:25:30.654 +01:00 [INF] Executed endpoint 'MySkills.API.Controllers.ValuesController.Get (MySkills.API)'
+2019-04-22 01:25:30.667 +01:00 [DBG] Connection id "0HLM6N3VMADSK" completed keep alive response.
+2019-04-22 01:25:30.691 +01:00 [INF] Request finished in 3719.0228ms 200 application/json; charset=utf-8
+2019-04-22 01:25:42.296 +01:00 [DBG] Connection id "0HLM6N3VMADSJ" received FIN.
+2019-04-22 01:25:42.304 +01:00 [DBG] Connection id "0HLM6N3VMADSL" started.
+2019-04-22 01:25:42.309 +01:00 [DBG] Connection id "0HLM6N3VMADSJ" sending FIN because: "The client closed the connection."
+2019-04-22 01:25:42.386 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/notes/getall  
+2019-04-22 01:25:42.427 +01:00 [DBG] Connection id "0HLM6N3VMADSJ" disconnecting.
+2019-04-22 01:25:42.432 +01:00 [DBG] Connection id "0HLM6N3VMADSJ" stopped.
+2019-04-22 01:25:42.432 +01:00 [DBG] 1 candidate(s) found for the request path '/api/notes/getall'
+2019-04-22 01:25:42.436 +01:00 [DBG] Endpoint 'MySkills.API.Controllers.NotesController.GetAll (MySkills.API)' with route pattern 'api/Notes/GetAll' is valid for the request path '/api/notes/getall'
+2019-04-22 01:25:42.440 +01:00 [DBG] Request matched endpoint 'MySkills.API.Controllers.NotesController.GetAll (MySkills.API)'
+2019-04-22 01:25:42.445 +01:00 [INF] Executing endpoint 'MySkills.API.Controllers.NotesController.GetAll (MySkills.API)'
+2019-04-22 01:25:42.458 +01:00 [INF] Route matched with {action = "GetAll", controller = "Notes"}. Executing action MySkills.API.Controllers.NotesController.GetAll (MySkills.API)
+2019-04-22 01:25:42.462 +01:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2019-04-22 01:25:42.465 +01:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-04-22 01:25:42.468 +01:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2019-04-22 01:25:42.477 +01:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2019-04-22 01:25:42.481 +01:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2019-04-22 01:25:42.899 +01:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2019-04-22 01:25:44.380 +01:00 [DBG] The index {'UserId'} was not created on entity type 'AspNetUserRoles' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2019-04-22 01:25:44.386 +01:00 [DBG] The index {'RankId'} was not created on entity type 'Tumranks' as the properties are already covered by the index {'RankId', 'ApplicationUserId'}.
+2019-04-22 01:25:44.389 +01:00 [DBG] The index {'CertificationId'} was not created on entity type 'UserCertifications' as the properties are already covered by the index {'CertificationId', 'ApplicationUserId'}.
+2019-04-22 01:25:44.398 +01:00 [DBG] The index {'SkillId'} was not created on entity type 'UserSkillL3' as the properties are already covered by the index {'SkillId', 'ApplicationUserId'}.
+2019-04-22 01:25:44.406 +01:00 [DBG] The index {'SkillId'} was not created on entity type 'UserSkills' as the properties are already covered by the index {'SkillId', 'ApplicationUserId'}.
+2019-04-22 01:25:44.734 +01:00 [INF] Entity Framework Core 2.2.3-servicing-35854 initialized 'MySkillsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2019-04-22 01:25:44.740 +01:00 [INF] L'UnitOfWork est appelé
+2019-04-22 01:25:44.744 +01:00 [INF] Executing action method MySkills.API.Controllers.NotesController.GetAll (MySkills.API) - Validation state: "Valid"
+2019-04-22 01:25:44.753 +01:00 [DBG] Hello loggDebug
+2019-04-22 01:25:44.755 +01:00 [INF] Hello loggInfo
+2019-04-22 01:25:44.760 +01:00 [WRN] Hello LogWarning
+2019-04-22 01:25:44.770 +01:00 [ERR] Hello LogError
+2019-04-22 01:25:44.776 +01:00 [FTL] Hello LogCritical
+2019-04-22 01:25:44.873 +01:00 [DBG] Compiling query model: 
+'from Notes <generated>_0 in DbSet<Notes>
+select [<generated>_0]'
+2019-04-22 01:25:44.913 +01:00 [DBG] Optimized query model: 
+'from Notes <generated>_0 in DbSet<Notes>
+select [<generated>_0]'
+2019-04-22 01:25:45.113 +01:00 [DBG] (QueryContext queryContext) => IEnumerable<Notes> _InterceptExceptions(
+|__ source: IEnumerable<Notes> _TrackEntities(
+|   |__ results: IEnumerable<Notes> _ShapedQuery(
+|   |   |__ queryContext: queryContext, 
+|   |   |__ shaperCommandContext: SelectExpression: 
+|   |   |       SELECT [n].[NoteId], [n].[Description], [n].[Titre]
+|   |   |       FROM [Notes] AS [n], 
+|   |   |__ shaper: (MaterializationContext materializationContext) => 
+|   |       {
+|   |           instance = new Notes()
+|   |           instance.<NoteId>k__BackingField = int TryReadValue(ValueBuffer materializationContext.get_ValueBuffer(), 0, Notes.NoteId)
+|   |           instance.<Description>k__BackingField = string TryReadValue(ValueBuffer materializationContext.get_ValueBuffer(), 1, Notes.Description)
+|   |           instance.<Titre>k__BackingField = string TryReadValue(ValueBuffer materializationContext.get_ValueBuffer(), 2, Notes.Titre)
+|   |           return instance
+|   |       }), 
+|   |__ queryContext: queryContext, 
+|   |__ entityTrackingInfos: { itemType: Notes }, 
+|   |__ entityAccessors: List<Func<Notes, object>> 
+|       { 
+|           Func<Notes, Notes>, 
+|       }), 
+|__ contextType: MySkills.Persistance.EntityFramework.MySkillsDbContext, 
+|__ logger: DiagnosticsLogger<Query>, 
+|__ queryContext: queryContext)
+2019-04-22 01:25:45.312 +01:00 [DBG] Opening connection to database 'ISMDB' on server '.\SQLEXPRESS'.
+2019-04-22 01:25:46.864 +01:00 [DBG] Opened connection to database 'ISMDB' on server '.\SQLEXPRESS'.
+2019-04-22 01:25:46.945 +01:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[NoteId], [n].[Description], [n].[Titre]
+FROM [Notes] AS [n]
+2019-04-22 01:25:47.096 +01:00 [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[NoteId], [n].[Description], [n].[Titre]
+FROM [Notes] AS [n]
+2019-04-22 01:25:47.216 +01:00 [DBG] Context 'MySkillsDbContext' started tracking 'Notes' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-04-22 01:25:47.253 +01:00 [DBG] Context 'MySkillsDbContext' started tracking 'Notes' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-04-22 01:25:47.260 +01:00 [DBG] Context 'MySkillsDbContext' started tracking 'Notes' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-04-22 01:25:47.269 +01:00 [DBG] Context 'MySkillsDbContext' started tracking 'Notes' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-04-22 01:25:47.280 +01:00 [DBG] A data reader was disposed.
+2019-04-22 01:25:47.283 +01:00 [DBG] Closing connection to database 'ISMDB' on server '.\SQLEXPRESS'.
+2019-04-22 01:25:47.290 +01:00 [DBG] Closed connection to database 'ISMDB' on server '.\SQLEXPRESS'.
+2019-04-22 01:25:47.320 +01:00 [INF] ===> les notes Recu : [{"NoteId":1,"Titre":"Débutant","Description":"A moins d'une année sur la techno","UserSkills":[],"$type":"Notes"},{"NoteId":2,"Titre":"Confirmé","Description":"A entre 1 et 3 ans sur la techno","UserSkills":[],"$type":"Notes"},{"NoteId":3,"Titre":"Senior","Description":"A entre 3 ans et 6 ans sur la techno","UserSkills":[],"$type":"Notes"},{"NoteId":4,"Titre":"Expert","Description":"A plus de 6 ans sur la techno","UserSkills":[],"$type":"Notes"}] date : "2019-04-22T01:25:47.2974701+01:00"
+2019-04-22 01:25:47.359 +01:00 [INF] Executed action method MySkills.API.Controllers.NotesController.GetAll (MySkills.API), returned result Microsoft.AspNetCore.Mvc.JsonResult in 2608.5324ms.
+2019-04-22 01:25:47.371 +01:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[MySkills.Core.Entities.Notes, MySkills.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-04-22 01:25:47.421 +01:00 [INF] Executed action MySkills.API.Controllers.NotesController.GetAll (MySkills.API) in 4926.7956ms
+2019-04-22 01:25:47.427 +01:00 [INF] Executed endpoint 'MySkills.API.Controllers.NotesController.GetAll (MySkills.API)'
+2019-04-22 01:25:47.438 +01:00 [DBG] Connection id "0HLM6N3VMADSK" completed keep alive response.
+2019-04-22 01:25:47.446 +01:00 [DBG] 'MySkillsDbContext' disposed.
+2019-04-22 01:25:47.454 +01:00 [INF] Request finished in 5068.3348ms 200 application/json; charset=utf-8
+2019-04-22 01:27:05.210 +01:00 [DBG] Hosting shutdown
+2019-04-22 01:27:05.301 +01:00 [DBG] Connection id "0HLM6N3VMADSK" disconnecting.
+2019-04-22 01:27:05.301 +01:00 [DBG] Connection id "0HLM6N3VMADSL" disconnecting.
+2019-04-22 01:27:05.304 +01:00 [DBG] Connection id "0HLM6N3VMADSK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2019-04-22 01:27:05.305 +01:00 [DBG] Connection id "0HLM6N3VMADSL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2019-04-22 01:27:05.324 +01:00 [DBG] Connection id "0HLM6N3VMADSK" stopped.
+2019-04-22 01:27:05.324 +01:00 [DBG] Connection id "0HLM6N3VMADSL" stopped.

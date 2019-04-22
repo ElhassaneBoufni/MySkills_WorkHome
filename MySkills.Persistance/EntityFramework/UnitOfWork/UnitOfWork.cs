@@ -4,17 +4,23 @@ using System.Text;
 using MySkills.Core.Interfaces.IUnitOfWork;
 using MySkills.Core.Entities;
 using MySkills.Core.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace MySkills.Persistance.EntityFramework.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MySkillsDbContext _dbContext;
-        public UnitOfWork(MySkillsDbContext dbContext)
+        private readonly ILogger _logger;
+
+        public UnitOfWork(MySkillsDbContext dbContext, ILogger<UnitOfWork> logger)
         {
+            _logger = logger;
             _dbContext = dbContext;
 
             NotesRepository = new GenericRepository<Notes>(dbContext);
+
+            _logger.LogInformation("L'UnitOfWork est appelé");
 
         }
 
