@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using MySkills.Core.Entities;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace MySkills.API.Controllers
 {
@@ -28,18 +29,16 @@ namespace MySkills.API.Controllers
 
         // GET api/notes/getall
         [HttpGet]
-        /* public async Task<ActionResult<NotesListViewModel>> GetAll()
-         {
-             return Ok(await Mediator.Send(new GetNotesListQuery()));
-         }*/
         public ActionResult<IEnumerable<Notes>> GetAll()
         {
-            _logger.LogInformation("Hello logging world");
-            _logger.LogWarning("_logger: LogWarning");
-            _logger.LogError("_logger: LogError");
-            _logger.LogCritical("_logger: LogCritical");
-            // _logger4net.Info("Hello logging world from log 4 net");
+            _logger.LogDebug("Hello loggDebug");
+            _logger.LogInformation("Hello loggInfo");
+            _logger.LogWarning("Hello LogWarning");
+            _logger.LogError("Hello LogError");
+            _logger.LogCritical("Hello LogCritical");
+
             var res = _service.GetNotes();
+            _logger.LogInformation("===> les notes Recu : {@res} date : {Created}", res, DateTime.Now);
             return new JsonResult(res);
         }
     }
