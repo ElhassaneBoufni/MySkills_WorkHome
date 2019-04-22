@@ -1,14 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MySkills.Persistence.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using MySkills.Core.Interfaces;
 
-namespace MySkills.Persistence
+namespace MySkills.Persistance.EntityFramework
 {
-    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> Entities;
         private readonly DbContext _dbContext;
@@ -27,7 +27,7 @@ namespace MySkills.Persistence
             Entities = _dbContext.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,string includeProperties = "")
+        public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
         {
             IQueryable<TEntity> query = Entities;
 

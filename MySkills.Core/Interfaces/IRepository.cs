@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace MySkills.Persistence.Contracts
+namespace MySkills.Core.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
@@ -83,3 +83,4 @@ namespace MySkills.Persistence.Contracts
         void UpdateEntity(TEntity entityToUpdate);
     }
 }
+

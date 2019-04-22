@@ -8,7 +8,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Api.Analyzers" Version="2.2.0" />
@@ -20,14 +19,14 @@
     </PackageReference>
     <PackageReference Include="Seq.Extensions.Logging" Version="4.0.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.1.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MySkills.BL.Contracts\MySkills.BL.Contracts.csproj" />
-    <ProjectReference Include="..\..\MySkills.BL\MySkills.BL.csproj" />
-    <ProjectReference Include="..\..\MySkills.Common\MySkills.Common.csproj" />
-    <ProjectReference Include="..\..\MySkills.DomainModel\MySkills.DomainModel.csproj" />
-    <ProjectReference Include="..\..\MySkills.Persistence\MySkills.Persistence.csproj" />
+    <ProjectReference Include="..\..\MySkills.Core\MySkills.Core.csproj" />
+    <ProjectReference Include="..\..\MySkills.Persistance\MySkills.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

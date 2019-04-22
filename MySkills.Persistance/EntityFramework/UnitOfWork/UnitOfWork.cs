@@ -1,30 +1,24 @@
-﻿using MySkills.DomainModel;
-using MySkills.Persistence.Contracts;
-using MySkills.Persistence.Contracts.UnitOfWork;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MySkills.Core.Interfaces.IUnitOfWork;
+using MySkills.Core.Entities;
+using MySkills.Core.Interfaces;
 
-namespace MySkills.Persistence.UnitOfWork
+namespace MySkills.Persistance.EntityFramework.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AppDbContext dbContext;
-        public UnitOfWork(AppDbContext dbContext)
+        private readonly MySkillsDbContext _dbContext;
+        public UnitOfWork(MySkillsDbContext dbContext)
         {
-            this.dbContext = dbContext;
+            _dbContext = dbContext;
 
-            this.FaqsRepository = new BaseRepository<Faq>(dbContext);
-            this.ProfilsRepository = new BaseRepository<Profil>(dbContext);
+            NotesRepository = new BaseRepository<Notes>(dbContext);
+
         }
 
-        public IRepository<Faq> FaqsRepository
-        {
-            get;
-            protected set;
-        }
-
-        public IRepository<Profil> ProfilsRepository
+        public IRepository<Notes> NotesRepository
         {
             get;
             protected set;
@@ -67,7 +61,8 @@ namespace MySkills.Persistence.UnitOfWork
 
         public void Commit()
         {
-            this.dbContext.SaveChanges();
+            _dbContext.SaveChanges();
         }
     }
 }
+

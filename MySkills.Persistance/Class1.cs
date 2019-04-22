@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MySkills.Infrastructure
+namespace MySkills.Persistance
 {
     public class Class1
     {

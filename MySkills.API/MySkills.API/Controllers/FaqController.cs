@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MySkills.BL.Contracts;
-using MySkills.DomainModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +10,7 @@ namespace MySkills.API.Controllers
     [ApiController]
     public class FaqController : ControllerBase
     {
-        private readonly IFaq blFaq;
+        /* private readonly IFaq blFaq;
 
         public FaqController(IFaq faq)
         {
@@ -25,5 +23,6 @@ namespace MySkills.API.Controllers
             var faqs = blFaq.GetFaqs();
             return faqs;
         }
+        */
     }
 }
