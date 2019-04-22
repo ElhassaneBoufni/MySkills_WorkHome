@@ -15,10 +15,17 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _dbContext = dbContext;
 
             NotesRepository = new BaseRepository<Notes>(dbContext);
+            AspNetUsersRepository = new BaseRepository<AspNetUsers>(dbContext);
 
         }
 
         public IRepository<Notes> NotesRepository
+        {
+            get;
+            protected set;
+        }
+
+        public IRepository<AspNetUsers> AspNetUsersRepository
         {
             get;
             protected set;
