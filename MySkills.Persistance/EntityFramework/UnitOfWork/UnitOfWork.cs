@@ -64,10 +64,7 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _dbContext.SaveChanges();
         }
 
-        public void Rollback()
-        {
-            _dbContext = new MySkillsDbContext();
-        }
+        
     }
 }
 
