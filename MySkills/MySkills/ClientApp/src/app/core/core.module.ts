@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompETcertifService } from './services/comp-etcertif.service';
-import { ContactService } from './services/contact.service';
+import { FaqService } from './services/faq.service';
 
 @NgModule({
   declarations: [],
@@ -10,7 +10,7 @@ import { ContactService } from './services/contact.service';
   ],
   providers: [
     CompETcertifService,
-    ContactService
+    FaqService
   ]
 })
 export class CoreModule { }

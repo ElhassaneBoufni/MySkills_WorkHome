@@ -52,6 +52,7 @@ namespace MySkills.API
             
             // Inject services
             services.AddTransient<INotesService, NotesService>();
+            services.AddTransient<IFaqService, FaqService>();
             services.AddTransient<ICompEtCertifService, CompEtCertifService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 

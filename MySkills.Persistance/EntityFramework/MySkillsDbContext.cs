@@ -36,7 +36,7 @@ namespace MySkills.Persistance.EntityFramework
         public virtual DbSet<UserCertifications> UserCertifications { get; set; }
         public virtual DbSet<UserSkillL3> UserSkillL3 { get; set; }
         public virtual DbSet<UserSkills> UserSkills { get; set; }
-
+        public virtual DbSet<Faq> Faq { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MySkillsDbContext).Assembly);

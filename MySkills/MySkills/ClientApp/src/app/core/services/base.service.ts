@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export abstract class BaseService<T> {
-  readonly rootURL = 'https://localhost:5001/api/';
+    readonly rootURL = 'https://localhost:44333/api/';
 
   constructor(protected http: HttpClient) {
   }
