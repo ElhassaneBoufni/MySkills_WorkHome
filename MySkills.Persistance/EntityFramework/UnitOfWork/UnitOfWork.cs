@@ -19,12 +19,19 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _dbContext = dbContext;
 
             NotesRepository = new GenericRepository<Notes>(dbContext);
+            SkillsRepository = new GenericRepository<Skills>(dbContext);
 
             _logger.LogInformation("L'UnitOfWork est appelé");
 
         }
 
         public IRepository<Notes> NotesRepository
+        {
+            get;
+            protected set;
+        }
+
+        public IRepository<Skills> SkillsRepository
         {
             get;
             protected set;
@@ -72,7 +79,7 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
 
         public void Rollback()
         {
-            _dbContext = new MySkillsDbContext();
+            // _dbContext = new MySkillsDbContext();
         }
     }
 }

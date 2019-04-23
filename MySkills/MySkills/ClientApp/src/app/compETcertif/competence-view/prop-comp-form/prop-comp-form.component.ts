@@ -21,13 +21,13 @@ export class PropCompFormComponent implements OnInit {
   ) { }
 
   changedata($event) {
-    console.log('chandata & !');
+    console.log('changedata 1 !');
     console.log($event.value);
     if ($event.value === '0') {
       this.disabled = true;
     } else {
       this.disabled = false;
-      this._Skills2 = this._compETcertifService.loadSkills($event.value, '2');
+      this._Skills2 = this._compETcertifService.loadSkills($event.value);
     }
   }
 

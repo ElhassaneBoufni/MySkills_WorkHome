@@ -33,8 +33,8 @@ export class CompETcertifService extends BaseService<Skills> {
       .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
   }
   loadTechno() {
-    return super.findAll('Skills', { Level: '1' })
-      .pipe(map(data => data['skills'].map((item: any) => this.adapter.adapt(item))))
+    return super.findAll('CompEtCertif/GetTechno', { Level: '1' })
+      .pipe(map(data => data.map((item: any) => this.adapter.adapt(item))))
       .subscribe(
         (response: Skills[]) => {
           this.Technos = response;
@@ -43,8 +43,8 @@ export class CompETcertifService extends BaseService<Skills> {
         error => this.error = error);
   }
 
-  loadSkills(parentId, level) {
-    return super.findAll('Skills', { Level: level, ParentId: parentId })
+  loadSkills(parentId) {
+    return super.findAll('CompEtCertif/GetSkills', {ParentId: parentId })
       .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
     // .subscribe(
     //      (response: Skills[]) => {

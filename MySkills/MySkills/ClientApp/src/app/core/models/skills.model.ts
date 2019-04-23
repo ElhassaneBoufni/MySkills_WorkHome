@@ -10,14 +10,14 @@ export class Skills implements Deserializable {
     _Recommended?: number;
 
     constructor(args: {
-        id: String,
+        skillId: String,
         title: String,
         level?: String,
         parentId?: String,
         recommended?: number
     }
     ) {
-        this._Id = args.id;
+        this._Id = args.skillId;
         this._Title = args.title;
         this._Level = args.level;
         this._ParentId = args.parentId;
