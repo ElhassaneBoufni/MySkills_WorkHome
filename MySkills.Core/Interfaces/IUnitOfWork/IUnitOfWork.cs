@@ -9,7 +9,7 @@ namespace MySkills.Core.Interfaces.IUnitOfWork
     {
 
         IRepository<Notes> NotesRepository { get; }
-
+        IRepository<Faq> FaqRepository { get; }
         void Commit();
     }
 }

@@ -45,6 +45,7 @@ namespace MySkills.API
             
             // Inject services
             services.AddTransient<INotesService, NotesService>();
+            services.AddTransient<IFaqService, FaqService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             // the API�s can be accessed from any origin globally

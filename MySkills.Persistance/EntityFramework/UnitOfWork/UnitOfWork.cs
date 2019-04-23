@@ -19,6 +19,7 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _dbContext = dbContext;
 
             NotesRepository = new GenericRepository<Notes>(dbContext);
+            FaqRepository = new GenericRepository<Faq>(dbContext);
 
             _logger.LogInformation("L'UnitOfWork est appelé");
 
@@ -29,19 +30,13 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             get;
             protected set;
         }
-        //private IFaqRepository _Faq;
 
-        //public IFaqRepository Faq
-        //{
-        //    get
-        //    {
-        //        if (this._Faq == null)
-        //        {
-        //            this._Faq = new FaqRepository(dbContext);
-        //        }
-        //        return this._Faq;
-        //    }
-        //}
+        public IRepository<Faq> FaqRepository
+        {
+            get;
+            protected set;
+        }
+        
 
         private bool _disposedValue = false; // To detect redundant calls  
 
