@@ -46,6 +46,7 @@ namespace MySkills.API
             // Inject services
             services.AddTransient<INotesService, NotesService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IAspNetUsersService, AspNetUsersService>();
 
             // the API�s can be accessed from any origin globally
             services.AddCors(c =>

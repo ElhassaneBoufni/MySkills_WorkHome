@@ -19,6 +19,9 @@ import { Chart } from 'chart.js';
 import * as jspdf from 'jspdf';
 
 import html2canvas from 'html2canvas'; 
+import { AspNetUsersService } from '../core/services/aspNetUsers.service';
+import { MatDialog } from '@angular/material';
+import { AspNetUsers } from '../core/models/aspNetUsers.model';
 
 @Component({
     selector: 'profil',
@@ -96,7 +99,7 @@ export class ProfilComponent implements OnInit{
     collabs = [];
 
     baseUrl: string = "http://localhost:3000";
-
+    /*
     constructor(private httpClient: HttpClient) {
         this.get_collabs();
     }
@@ -106,6 +109,12 @@ export class ProfilComponent implements OnInit{
             console.log(res);
             this.collabs = res;
         });
+    } */
+
+    constructor(private _aspNetUsersService: AspNetUsersService, private dialog: MatDialog) { }
+
+    get_AspNetUsers(): AspNetUsers[] {
+        return this._aspNetUsersService.AspNetUsers;
     }
 
     DoughnutChart = [];

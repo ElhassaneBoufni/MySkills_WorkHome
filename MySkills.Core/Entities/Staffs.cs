@@ -12,6 +12,7 @@ namespace MySkills.Core.Entities
         public DateTime? AvailabaleDate { get; set; }
         public string UserId { get; set; }
         public int? ProductionUnitId { get; set; }
+        public string Practice { get; set; }
 
         public virtual ProductionUnits ProductionUnit { get; set; }
         public virtual AspNetUsers User { get; set; }
