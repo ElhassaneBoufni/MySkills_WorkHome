@@ -24,9 +24,9 @@ namespace MySkills.Core.Services
             Expression<Func<Skills, bool>> isTechnoExp = s => s.Parent.ParentId == null && !validValues.Contains(s.Parent.Title) && s.Parent.SkillId == s.ParentId;
 
             IEnumerable<Skills> skillsQuery = _unitOfWork.SkillsRepository.Get(isTechnoExp);
-            //Expression <Func<Skills, bool>> isTechnoExp2 = sk => sk.ParentId == null && sk.Title != "Soft skills" && sk.Title != "Service Management & Support";
-            //IEnumerable<Skills> skillsQuery2 = _unitOfWork.SkillsRepository.Get(isTechnoExp2);
-            /* var res = skillsQuery.Join(
+            /*Expression <Func<Skills, bool>> isTechnoExp2 = sk => sk.ParentId == null && sk.Title != "Soft skills" && sk.Title != "Service Management & Support";
+            IEnumerable<Skills> skillsQuery2 = _unitOfWork.SkillsRepository.Get(isTechnoExp2);
+             var res = skillsQuery.Join(
                  skillsQuery2,
                  s => s.ParentId,
                  sk => sk.SkillId,
@@ -44,6 +44,19 @@ namespace MySkills.Core.Services
         {
             Expression<Func<Skills, bool>> perLevelExp = s => s.ParentId == parentId;
             return _unitOfWork.SkillsRepository.Get(perLevelExp);
+        }
+
+        public IEnumerable<Skills> GetUserSkills(string appUserId)
+        {
+
+            var userSkillsquery = _unitOfWork.UserSkillsRepository.Get(us => us.ApplicationUserId == appUserId);
+            var skillsQuery = _unitOfWork.SkillsRepository.GetAll();
+            var res = from s in skillsQuery.AsQueryable()
+                      join us in userSkillsquery.AsQueryable()
+                      on s.SkillId equals us.SkillId
+                      where us.ApplicationUserId == appUserId
+                      select (s);
+            return res;
         }
     }
 }

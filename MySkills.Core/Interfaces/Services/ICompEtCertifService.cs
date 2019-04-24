@@ -9,5 +9,6 @@ namespace MySkills.Core.Interfaces.Services
     {
         IEnumerable<Skills> GetTechno();
         IEnumerable<Skills> GetSkills(int parentId);
+        IEnumerable<Skills> GetUserSkills(string appUserId);
     }
 }

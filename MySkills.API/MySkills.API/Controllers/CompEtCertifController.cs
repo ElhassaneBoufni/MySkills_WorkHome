@@ -37,5 +37,13 @@ namespace MySkills.API.Controllers
             var res = _service.GetSkills(ParentId);
             return res;
         }
+
+        [HttpGet]
+        public IEnumerable<Skills> GetUserSkills([FromQuery] string appUserID)
+        {
+            _logger.LogInformation("====> {appUserID} <=====", appUserID);
+            var res = _service.GetUserSkills(appUserID);
+            return res;
+        }
     }
 }

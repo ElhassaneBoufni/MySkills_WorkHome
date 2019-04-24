@@ -29,16 +29,18 @@ export class CompetenceViewComponent implements OnInit {
     console.log('Le composant a fini sa construction');
     // this._Techno = this._compETcertifService.loadTechno();
 
-    // this._compETcertifService.loadUserSkills().subscribe(data => {
-    //   this._CompSelected = data;
-    //   console.log(this._CompSelected);
-    // });
-
+    this._compETcertifService.loadUserSkills().subscribe(data => {
+      this._CompSelected = data;
+      console.log(this._CompSelected);
+      
     if (this._CompSelected.length <= 0) {
       this.displayed = true;
     } else {
       this.displayed = false;
     }
+    }
+    );
+
   }
 
   ngOnInit() {

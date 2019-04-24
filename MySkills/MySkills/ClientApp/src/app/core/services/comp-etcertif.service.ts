@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class CompETcertifService extends BaseService<Skills> {
 
+  userId = 'c278b350-d33f-4155-95fc-30f0222d7059';
   error: any = '';
   Technos: Skills[];
   Skills2: Skills[];
@@ -29,18 +30,17 @@ export class CompETcertifService extends BaseService<Skills> {
   }
 
   loadUserSkills() {
-    return super.findAll('compUser', { Level: '3', IdUser: '1' })
+    return super.findAll('CompEtCertif/GetUserSkills', { appUserId: this.userId })
       .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
   }
   loadTechno() {
-    return super.findAll('CompEtCertif/GetTechno', { Level: '1' })
+    return super.findAll('CompEtCertif/GetTechno')
       .pipe(map(data => data.map((item: any) => this.adapter.adapt(item))))
       .subscribe(
         (response: Skills[]) => {
           this.Technos = response;
           console.log(this.Technos);
-        },
-        error => this.error = error);
+        });
   }
 
   loadSkills(parentId) {
