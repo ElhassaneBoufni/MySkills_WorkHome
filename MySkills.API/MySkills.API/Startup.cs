@@ -18,7 +18,8 @@ using MySkills.Core.Interfaces.IUnitOfWork;
 using MySkills.Core.Interfaces.Services;
 using MySkills.Core.Services;
 using MySkills.Persistance.EntityFramework.UnitOfWork;
-
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace MySkills.API
 {
@@ -41,10 +42,18 @@ namespace MySkills.API
             services.AddDbContext<MySkillsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MySkillsDatabase")));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                });
             
             // Inject services
             services.AddTransient<INotesService, NotesService>();
+            services.AddTransient<IFaqService, FaqService>();
+            services.AddTransient<ICompEtCertifService, CompEtCertifService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IAspNetUsersService, AspNetUsersService>();
 

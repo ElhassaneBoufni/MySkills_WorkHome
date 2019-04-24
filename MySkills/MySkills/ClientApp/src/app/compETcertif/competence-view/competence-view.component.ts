@@ -13,9 +13,10 @@ import { PropCompFormComponent } from './prop-comp-form/prop-comp-form.component
   styleUrls: ['./competence-view.component.css']
 })
 export class CompetenceViewComponent implements OnInit {
+  skill2: Skills;
   selectable = true;
   removable = true;
-  displayed = false;
+  displayed = true;
   disabled = true;
   _CompFound: Skills[] = [];
   _CompSelected: Skills[] = [];
@@ -28,16 +29,18 @@ export class CompetenceViewComponent implements OnInit {
     console.log('Le composant a fini sa construction');
     // this._Techno = this._compETcertifService.loadTechno();
 
-    // this._compETcertifService.loadUserSkills().subscribe(data => {
-    //   this._CompSelected = data;
-    //   console.log(this._CompSelected);
-    // });
-
+    this._compETcertifService.loadUserSkills().subscribe(data => {
+      this._CompSelected = data;
+      console.log(this._CompSelected);
+      
     if (this._CompSelected.length <= 0) {
-      this.displayed = false;
-    } else {
       this.displayed = true;
+    } else {
+      this.displayed = false;
     }
+    }
+    );
+
   }
 
   ngOnInit() {
@@ -79,27 +82,51 @@ export class CompetenceViewComponent implements OnInit {
     }
   }
 
+  // async Skills2Async(_indexSkillsLvl2) {
+  //   return await this._Skills2.subscribe((response: Skills[]) => {
+  //     if (response) {
+  //       console.log('==========> _indexSkillsLvl2 : ' + _indexSkillsLvl2);
+  //       return _indexSkillsLvl2 = response[0]._Id;
+  //     }
+  //   });
+  // }
+
   // Load Select's
   changedata($event) {
-    console.log('chandata & !');
-    console.log($event.target.value);
+    let indexSkillsLvl2: String;
+
+    console.log('changedata 1 !');
     if ($event.target.value === '0') {
+      this._CompFound = [];
       this.disabled = true;
     } else {
       this.disabled = false;
-      this._Skills2 = this._compETcertifService.loadSkills($event.target.value, '2');
-    }
-  }
-  changedata2($event) {
-    console.log('chandata 2 !');
-    console.log($event.target.value);
-    if ($event.target.value === '0') {
-    } else {
-      this._compETcertifService.loadSkills($event.target.value, '3').subscribe(data => {
-        this._CompFound = data;
-        console.log(this._CompFound);
+      this._Skills2 = this._compETcertifService.loadSkills($event.target.value);
+
+      this._Skills2.subscribe((response: Skills[]) => {
+        indexSkillsLvl2 = (response[0]._Id);
+        console.log('event value' + $event.target.value);
+        console.log('==========> indexSkillsLvl2 : ' + indexSkillsLvl2);
+        if (!this.disabled) {
+          console.log('Haaaaaaaaaaaahouwaaaaaaaaaaaa !!!!!');
+          console.log('==========> indexSkillsLvl2 : ' + indexSkillsLvl2);
+          this._compETcertifService.loadSkills(indexSkillsLvl2).subscribe(data => {
+            this._CompFound = data;
+            console.log(this._CompFound);
+          });
+        }
       });
     }
+    console.log(this.skill2);
+  }
+
+  changedata2($event) {
+    console.log('changedata 2 !');
+    console.log($event.target.value);
+    this._compETcertifService.loadSkills($event.target.value).subscribe(data => {
+      this._CompFound = data;
+      console.log(this._CompFound);
+    });
   }
   // Méthodes pour le PopOver d'ajout d'experiences
   onSubmit(form: NgForm) {
@@ -118,7 +145,7 @@ export class CompetenceViewComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
-    //dialogConfig.data = this._Techno;
+    dialogConfig.data = this._Techno;
     this.dialog.open(PropCompFormComponent, dialogConfig);
   }
 }
