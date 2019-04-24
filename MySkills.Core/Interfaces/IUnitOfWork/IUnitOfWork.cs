@@ -9,10 +9,11 @@ namespace MySkills.Core.Interfaces.IUnitOfWork
     {
 
         IRepository<Notes> NotesRepository { get; }
+        IRepository<Skills> SkillsRepository { get; }
         IRepository<AspNetUsers> AspNetUsersRepository { get; }
-     
-
         IRepository<Faq> FaqRepository { get; }
+        IRepository<UserSkills> UserSkillsRepository { get; }
+        
         void Commit();
     }
 }

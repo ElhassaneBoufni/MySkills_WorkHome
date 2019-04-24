@@ -19,13 +19,23 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _dbContext = dbContext;
 
             NotesRepository = new GenericRepository<Notes>(dbContext);
+            SkillsRepository = new GenericRepository<Skills>(dbContext);
             FaqRepository = new GenericRepository<Faq>(dbContext);
+            AspNetUsersRepository = new GenericRepository<AspNetUsers>(dbContext);
+            UserSkillsRepository = new GenericRepository<UserSkills>(dbContext);
 
             _logger.LogInformation("L'UnitOfWork est appelé");
 
         }
 
         public IRepository<Notes> NotesRepository
+        {
+            get;
+            protected set;
+        }
+        //private IFaqRepository _Faq;
+
+        public IRepository<Skills> SkillsRepository
         {
             get;
             protected set;
@@ -37,6 +47,17 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             protected set;
         }
         
+        public IRepository<AspNetUsers> AspNetUsersRepository
+        {
+            get;
+            protected set;
+        }
+
+        public IRepository<UserSkills> UserSkillsRepository
+        {
+            get;
+            protected set;
+        }
 
         private bool _disposedValue = false; // To detect redundant calls  
 
@@ -65,7 +86,10 @@ namespace MySkills.Persistance.EntityFramework.UnitOfWork
             _dbContext.SaveChanges();
         }
 
-        
+        public void Rollback()
+        {
+           // _dbContext = new MySkillsDbContext();
+        }
     }
 }
 

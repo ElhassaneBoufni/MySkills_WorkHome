@@ -4,14 +4,14 @@
       <mat-form-field class="field-propComp">
         <mat-select name="techno" #techno="" placeholder="Choisissez votre technologie"
           (selectionChange)="changedata($event)">
-          <mat-option *ngFor="let techn of data | async" [value]="techn.Id">{{techn.Title}}</mat-option>
+          <mat-option *ngFor="let techn of data " [value]="techn._Id">{{techn._Title}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
     <div class="form-row">
       <mat-form-field class="field-propComp">
         <mat-select placeholder="Choisissez votre skill" name="skill" [disabled]="disabled">
-          <mat-option *ngFor="let skill2 of _Skills2 | async" [value]="skill2.Id">{{skill2.Title}}</mat-option>
+          <mat-option *ngFor="let skill2 of _Skills2 | async" [value]="skill2._Id">{{skill2._Title}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

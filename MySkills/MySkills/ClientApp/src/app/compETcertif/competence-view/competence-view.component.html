@@ -1,4 +1,4 @@
-<form class="form" (ngSubmit)="onSubmit(formComp)" #formComp="ngForm">
+<form class="form">
   <div class="row p-15">
     <div class="col-sm-4 form-search-comp">
       <fieldset>
@@ -16,18 +16,17 @@
           </mat-select>
         </mat-form-field>
       -->
-        <label class="lbl" for="techno">Choisissez votre techno</label>
+        <label class="lbl" for="techno">Choisissez votre technologie</label>
         <select class="browser-default custom-select fieldsStyle" name="techno" (change)="changedata($event)">
-          <option disabled>--Select--</option>
-          <option *ngFor="let techn of _Techno" [value]="techn.Id">{{techn._Title}}</option>
-
+          <option disabled value="0">--Select--</option>
+          <option *ngFor="let techn of _Techno" [value]="techn._Id">{{techn._Title}}</option>
         </select>
         
         <label class="lbl" for="skill">Choisissez votre skill</label>
-        <select class="browser-default custom-select fieldsStyle" name="skill" [disabled]="disabled"
+        <select placeholder="Choose Select" class="browser-default custom-select fieldsStyle" name="skill" [disabled]="disabled"
           (change)="changedata2($event)">
-          <option disabled>--Select--</option>
-          <option *ngFor="let skill2 of _Skills2 | async" [value]="skill2.Id">{{skill2.Title}}</option>
+          <!-- <option disabled value="0">--Select--</option> -->
+          <option *ngFor="let skill2 of _Skills2 | async" [value]="skill2._Id" >{{skill2._Title}}</option>
         </select>
       
       </fieldset>
@@ -41,7 +40,7 @@
         <h2 class="titleContent">Skills trouvés</h2>
         <mat-chip-list cdkDropList #CompFoundList="cdkDropList" [cdkDropListData]="_CompFound"
           [cdkDropListConnectedTo]="[CompDoneList]" (cdkDropListDropped)="drop($event)">
-          <mat-chip class="ChipsImage" color="primary" selected *ngFor="let comp of _CompFound" cdkDrag>{{comp.Title}}
+          <mat-chip class="ChipsImage" color="primary" selected *ngFor="let comp of _CompFound" cdkDrag >{{comp._Title}}
             <img src="assets/image.JPG" *ngIf="comp.Recommended == 1" matChipAvatar matTooltip="Recommandée par {{userName}} !"> 
           </mat-chip>
         </mat-chip-list>
@@ -96,7 +95,7 @@
 
         <mat-chip [popover]="popTemplate" placement="right" #pop="bs-popover" [popoverContext]="formExp" (click)="openPopover(pop)"
                 color="primary" *ngFor="let comp of _CompSelected" [selectable]="selectable" [removable]="true" (removed)="remove(comp)">
-          {{comp.Title}}
+          {{comp._Title}}
           <mat-icon matChipRemove>cancel</mat-icon>
         </mat-chip>
         <ng-template #popTemplate>
