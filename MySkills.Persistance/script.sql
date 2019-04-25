@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[Faq](
+	[FaqId] [int] IDENTITY(1,1) NOT NULL,
+	[Question] [nvarchar](256) NULL,
+	[Response] [nvarchar](256) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[FaqId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ ALTER TABLE [AspNetUsers]
+  ADD Poste VARCHAR(50)
+
+  ALTER TABLE [AspNetUsers]
+  ADD Ptl VARCHAR(40);
+
+  ALTER TABLE [ISMDB].[dbo].[Staffs]
+  ADD Practice VARCHAR(50) ;
+GO 

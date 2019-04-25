@@ -42,6 +42,8 @@ namespace MySkills.Core.Entities
         public string UserName { get; set; }
         public string Statut { get; set; }
         public int? RankId { get; set; }
+        public string Poste { get; set; }
+        public string Ptl { get; set; }
 
         public virtual Ranks Rank { get; set; }
         public virtual ICollection<AspNetUserClaims> AspNetUserClaims { get; set; }
