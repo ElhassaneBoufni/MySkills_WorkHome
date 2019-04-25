@@ -40,7 +40,7 @@ div.drop-zone mat-chip-list {
 
 /* layout.css Style */
 .drop-zone {
-    height: 349px;
+    min-height: 349px;
     border-width: 1px;
     margin: 32px;
     margin-top: 97px;

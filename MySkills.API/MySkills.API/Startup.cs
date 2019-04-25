@@ -67,7 +67,9 @@ namespace MySkills.API
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // inject CORS into a container
-            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors(options => options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             if (env.IsDevelopment())
             {

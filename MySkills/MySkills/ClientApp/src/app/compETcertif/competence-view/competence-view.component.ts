@@ -32,12 +32,11 @@ export class CompetenceViewComponent implements OnInit {
     this._compETcertifService.loadUserSkills().subscribe(data => {
       this._CompSelected = data;
       console.log(this._CompSelected);
-      
-    if (this._CompSelected.length <= 0) {
-      this.displayed = true;
-    } else {
-      this.displayed = false;
-    }
+      if (this._CompSelected.length <= 0) {
+        this.displayed = true;
+      } else {
+        this.displayed = false;
+      }
     }
     );
 
@@ -52,7 +51,7 @@ export class CompetenceViewComponent implements OnInit {
   }
 
   // Drag And Drop methodes
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<Skills[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(this._CompFound, event.previousIndex, event.currentIndex);
     } else {
@@ -60,7 +59,9 @@ export class CompetenceViewComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      console.log(event.container.data);
+        let sk: Skills = ((event.container.data[event.currentIndex]));
+        console.log(sk);
+        this._compETcertifService.postUserSkill(sk);
       if (event.container.data.length <= 0) {
         this.displayed = true;
       } else {
@@ -82,15 +83,6 @@ export class CompetenceViewComponent implements OnInit {
     }
   }
 
-  // async Skills2Async(_indexSkillsLvl2) {
-  //   return await this._Skills2.subscribe((response: Skills[]) => {
-  //     if (response) {
-  //       console.log('==========> _indexSkillsLvl2 : ' + _indexSkillsLvl2);
-  //       return _indexSkillsLvl2 = response[0]._Id;
-  //     }
-  //   });
-  // }
-
   // Load Select's
   changedata($event) {
     let indexSkillsLvl2: String;
@@ -105,12 +97,8 @@ export class CompetenceViewComponent implements OnInit {
 
       this._Skills2.subscribe((response: Skills[]) => {
         indexSkillsLvl2 = (response[0]._Id);
-        console.log('event value' + $event.target.value);
-        console.log('==========> indexSkillsLvl2 : ' + indexSkillsLvl2);
         if (!this.disabled) {
-          console.log('Haaaaaaaaaaaahouwaaaaaaaaaaaa !!!!!');
-          console.log('==========> indexSkillsLvl2 : ' + indexSkillsLvl2);
-          this._compETcertifService.loadSkills(indexSkillsLvl2).subscribe(data => {
+          this._compETcertifService.loadSkills(indexSkillsLvl2, true).subscribe(data => {
             this._CompFound = data;
             console.log(this._CompFound);
           });
@@ -123,7 +111,7 @@ export class CompetenceViewComponent implements OnInit {
   changedata2($event) {
     console.log('changedata 2 !');
     console.log($event.target.value);
-    this._compETcertifService.loadSkills($event.target.value).subscribe(data => {
+    this._compETcertifService.loadSkills($event.target.value, true).subscribe(data => {
       this._CompFound = data;
       console.log(this._CompFound);
     });

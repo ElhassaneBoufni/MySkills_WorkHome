@@ -6,6 +6,7 @@ using MySkills.Core.Entities;
 using MySkills.Core.Interfaces.IUnitOfWork;
 using MySkills.Core.Interfaces.Services;
 using System.Linq;
+using MySkills.Core.DTO;
 
 namespace MySkills.Core.Services
 {
@@ -18,45 +19,55 @@ namespace MySkills.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Skills> GetTechno()
+        public IEnumerable<SkillsDTO> GetTechno()
         {
             List<string> validValues = new List<string>() { "Soft skills", "Service Management & Support" };
             Expression<Func<Skills, bool>> isTechnoExp = s => s.Parent.ParentId == null && !validValues.Contains(s.Parent.Title) && s.Parent.SkillId == s.ParentId;
-
-            IEnumerable<Skills> skillsQuery = _unitOfWork.SkillsRepository.Get(isTechnoExp);
-            /*Expression <Func<Skills, bool>> isTechnoExp2 = sk => sk.ParentId == null && sk.Title != "Soft skills" && sk.Title != "Service Management & Support";
-            IEnumerable<Skills> skillsQuery2 = _unitOfWork.SkillsRepository.Get(isTechnoExp2);
-             var res = skillsQuery.Join(
-                 skillsQuery2,
-                 s => s.ParentId,
-                 sk => sk.SkillId,
-                 (s,) => new {S Skills=s}
-             ).ToList();
-            var x = from s in skillsQuery.AsQueryable()
-                                     join sk in skillsQuery.AsQueryable()
-                                     on s.ParentId equals sk.SkillId
-                                     where sk.ParentId == null && sk.Title != "Soft skills" && sk.Title != "Service Management & Support"
-                                     select  new { s.SkillId, s.Description ,s.Title, s.Level, s.ParentId, s.Code} ; */
+            IEnumerable<SkillsDTO> skillsQuery = _unitOfWork.SkillsRepository.Get(isTechnoExp).Select(s => new SkillsDTO { SkillId = s.SkillId, Title = s.Title });
             return skillsQuery;
         }
 
-        public IEnumerable<Skills> GetSkills(int parentId)
+        public IEnumerable<SkillsDTO> GetSkills(int parentId, string userId, bool? islvl3)
         {
-            Expression<Func<Skills, bool>> perLevelExp = s => s.ParentId == parentId;
-            return _unitOfWork.SkillsRepository.Get(perLevelExp);
+            IEnumerable<SkillsDTO> res;
+
+            Expression <Func<Skills, bool>> perLevelExp = s => s.ParentId == parentId;
+            IQueryable<Skills> skillsQuery = _unitOfWork.SkillsRepository.Get(perLevelExp, null, "UserSkills").AsQueryable();
+            if (islvl3.HasValue && islvl3 == true)
+            {
+                res = from s in skillsQuery
+                      where !(from c in s.UserSkills.AsQueryable()
+                              where c.ApplicationUserId == userId
+                              select c.SkillId).Contains(s.SkillId)
+                      select new SkillsDTO { SkillId = s.SkillId, Title = s.Title };
+
+                return res;
+            }
+            else
+            {
+                res = skillsQuery.Select(s => new SkillsDTO { SkillId = s.SkillId, Title = s.Title });
+                return res;
+            }
+            
         }
 
-        public IEnumerable<Skills> GetUserSkills(string appUserId)
+        public IEnumerable<SkillsDTO> GetUserSkills(string appUserId)
         {
-
-            var userSkillsquery = _unitOfWork.UserSkillsRepository.Get(us => us.ApplicationUserId == appUserId);
-            var skillsQuery = _unitOfWork.SkillsRepository.GetAll();
+            var userSkillsquery = _unitOfWork.UserSkillsRepository.Get(us => us.ApplicationUserId == appUserId).Select(s => new UserSkills { SkillId = s.SkillId, ApplicationUserId = s.ApplicationUserId });
+            var skillsQuery = _unitOfWork.SkillsRepository.GetAll().Select(s => new Skills { SkillId = s.SkillId, Title = s.Title });
             var res = from s in skillsQuery.AsQueryable()
                       join us in userSkillsquery.AsQueryable()
                       on s.SkillId equals us.SkillId
                       where us.ApplicationUserId == appUserId
-                      select (s);
+                      select new SkillsDTO { SkillId = s.SkillId, Title = s.Title};
             return res;
         }
+
+       /* public IEnumerable<SkillsDTO> PostUserSkill(SkillsDTO userSkill, string appUserId)
+        {
+            var us = new UserSkills { SkillId = userSkill.SkillId, ApplicationUserId = appUserId, DateCreation = DateTime.Now, Etat=1, NoteId =1 }; 
+            _unitOfWork.UserSkillsRepository.Add(us);
+            return null;
+        }*/
     }
 }

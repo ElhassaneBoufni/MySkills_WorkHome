@@ -4,6 +4,7 @@ import { Skills, SkillAdapter } from '../models/skills.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -43,12 +44,22 @@ export class CompETcertifService extends BaseService<Skills> {
         });
   }
 
-  loadSkills(parentId) {
-    return super.findAll('CompEtCertif/GetSkills', {ParentId: parentId })
-      .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
-    // .subscribe(
-    //      (response: Skills[]) => {
-    //          console.log(response) ;
-    //     });
+  loadSkills(parentId, Islvl3?: boolean) {
+    let res: Observable<Skills[]>;
+    if (Islvl3) {
+      res = super.findAll('CompEtCertif/GetSkills', { ParentId: parentId, appUserId: this.userId, islvl3: Islvl3 });
+    } else {
+      res = super.findAll('CompEtCertif/GetSkills', { ParentId: parentId, appUserId: this.userId });
+    }
+    return res.pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
+  }
+
+  postUserSkill(skill: Skills) {
+    return super.insert(skill, 'CompEtCertif/PostSkills')
+                .subscribe(
+                  (data: Skills) => {
+                    console.log(data);
+                  }
+                );
   }
 }

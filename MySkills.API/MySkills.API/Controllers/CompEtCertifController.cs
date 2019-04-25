@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using MySkills.Core.Entities;
 using MySkills.Core.Interfaces.Services;
 using Microsoft.Extensions.Logging;
+using MySkills.Core.DTO;
 
 namespace MySkills.API.Controllers
 {
@@ -24,26 +25,33 @@ namespace MySkills.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Skills> GetTechno()
+        public IEnumerable<SkillsDTO> GetTechno()
         {
             var res = _service.GetTechno();
             return res;
         }
 
         [HttpGet]
-        public IEnumerable<Skills> GetSkills([FromQuery] int ParentId)
+        public IEnumerable<SkillsDTO> GetSkills([FromQuery] int ParentId, string appUserId, bool? islvl3)
         {
             _logger.LogInformation("====> {p.ID} <=====", ParentId);
-            var res = _service.GetSkills(ParentId);
+            var res = _service.GetSkills(ParentId, appUserId, islvl3);
             return res;
         }
 
         [HttpGet]
-        public IEnumerable<Skills> GetUserSkills([FromQuery] string appUserID)
+        public IEnumerable<SkillsDTO> GetUserSkills([FromQuery] string appUserID)
         {
             _logger.LogInformation("====> {appUserID} <=====", appUserID);
             var res = _service.GetUserSkills(appUserID);
             return res;
+        }
+
+        [HttpPost]
+        public IActionResult PostSkills([FromBody] SkillsDTO s)
+        {
+            _logger.LogWarning("====> {appUserID} <=====", s.Title);
+            return Ok(s.SkillId);
         }
     }
 }
