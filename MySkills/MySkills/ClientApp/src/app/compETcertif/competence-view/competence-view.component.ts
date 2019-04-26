@@ -59,9 +59,9 @@ export class CompetenceViewComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-        let sk: Skills = ((event.container.data[event.currentIndex]));
-        console.log(sk);
-        this._compETcertifService.postUserSkill(sk);
+      let sk: Skills = ((event.container.data[event.currentIndex]));
+      console.log(sk);
+      this._compETcertifService.postUserSkill(sk);
       if (event.container.data.length <= 0) {
         this.displayed = true;
       } else {
@@ -72,9 +72,12 @@ export class CompetenceViewComponent implements OnInit {
 
   remove(comp): void {
     const index = this._CompSelected.indexOf(comp);
-
+    let IdSkillToremove: number;
     if (index >= 0) {
       transferArrayItem(this._CompSelected, this._CompFound, this._CompSelected.indexOf(comp), this._CompFound.length);
+      IdSkillToremove = Number.parseInt(this._CompSelected[index].skillId, 36);
+      this._compETcertifService.deleteUserSkill(IdSkillToremove);
+      alert(IdSkillToremove);
       if (this._CompSelected.length <= 0) {
         this.displayed = true;
       } else {
@@ -95,8 +98,9 @@ export class CompetenceViewComponent implements OnInit {
       this.disabled = false;
       this._Skills2 = this._compETcertifService.loadSkills($event.target.value);
 
+      // Pour charger les 2 select et la chips_List des skills trouvé en cascade
       this._Skills2.subscribe((response: Skills[]) => {
-        indexSkillsLvl2 = (response[0]._Id);
+        indexSkillsLvl2 = (response[0].skillId);
         if (!this.disabled) {
           this._compETcertifService.loadSkills(indexSkillsLvl2, true).subscribe(data => {
             this._CompFound = data;

@@ -3,24 +3,21 @@ import { Adapter } from '../utilities/adapter';
 import { Deserializable } from '../utilities/deserializable';
 
 export class Skills implements Deserializable {
-    _Id: String;
-    _Title: String;
-    _Level?: String;
-    _ParentId?: String;
-    _Recommended?: number;
+    skillId: string;
+    title: string;
+    applicationUserId?: string;
+    recommended?: number;
 
     constructor(args: {
-        skillId: String,
-        title: String,
-        level?: String,
-        parentId?: String,
+        skillId: string,
+        title: string,
+        applicationUserId?: string,
         recommended?: number
     }
     ) {
-        this._Id = args.skillId;
-        this._Title = args.title;
-        this._Level = args.level;
-        this._ParentId = args.parentId;
+        this.skillId = args.skillId;
+        this.title = args.title;
+        this.applicationUserId = args.applicationUserId;
     }
 
     deserialize(input: any): this {

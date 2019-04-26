@@ -49,13 +49,13 @@ namespace MySkills.API
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 });
-            
+
             // Inject services
+            services.AddTransient<IAspNetUsersService, AspNetUsersService>();
             services.AddTransient<INotesService, NotesService>();
             services.AddTransient<IFaqService, FaqService>();
             services.AddTransient<ICompEtCertifService, CompEtCertifService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IAspNetUsersService, AspNetUsersService>();
 
             // the API�s can be accessed from any origin globally
             services.AddCors(c =>

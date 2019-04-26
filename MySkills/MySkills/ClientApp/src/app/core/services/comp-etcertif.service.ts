@@ -5,6 +5,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class CompETcertifService extends BaseService<Skills> {
   Technos: Skills[];
   Skills2: Skills[];
 
-  constructor(protected http: HttpClient, private adapter: SkillAdapter) {
+  constructor(protected http: HttpClient, private adapter: SkillAdapter, private toastr: ToastrService) {
     super(http);
     this.loadTechno();
   }
@@ -24,10 +25,6 @@ export class CompETcertifService extends BaseService<Skills> {
   list() {
     return super.findAll('compFound')
       .pipe(map((data: any[]) => data.map((item: any) => this.adapter.adapt(item))));
-    // .subscribe(
-    //     (response: Skills[]) => {
-    //         console.log(response) ;
-    //     });
   }
 
   loadUserSkills() {
@@ -55,11 +52,17 @@ export class CompETcertifService extends BaseService<Skills> {
   }
 
   postUserSkill(skill: Skills) {
+    skill.applicationUserId = this.userId;
     return super.insert(skill, 'CompEtCertif/PostSkills')
-                .subscribe(
-                  (data: Skills) => {
-                    console.log(data);
-                  }
-                );
+      .subscribe(
+        (data: Skills) => {
+          console.log(data);
+          this.toastr.success('Compétence ajoutée !');
+        }
+      );
+  }
+
+  deleteUserSkill(id) {
+    return super.delete(id, 'CompEtCertif/DeleteUserSkill').subscribe();
   }
 }

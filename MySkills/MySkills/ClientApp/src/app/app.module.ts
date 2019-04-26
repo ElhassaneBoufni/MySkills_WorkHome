@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material.module';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -43,6 +44,7 @@ import { HttpErrorInterceptor } from './core/Interceptors/http-error-interceptor
     NgxEditorModule,
     AngularFontAwesomeModule,
     MDBBootstrapModule.forRoot(),
+    ToastrModule.forRoot(), // ToastrModule added
     CoreModule,
     CompETcertifModule
   ],

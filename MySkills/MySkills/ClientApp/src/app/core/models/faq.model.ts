@@ -3,7 +3,6 @@ import { Adapter } from '../utilities/adapter';
 import { Deserializable } from '../utilities/deserializable';
 
 export class Faq implements Deserializable {
-    
     _Question: String;
     _Response: String;
 

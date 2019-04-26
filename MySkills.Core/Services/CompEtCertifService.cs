@@ -23,7 +23,9 @@ namespace MySkills.Core.Services
         {
             List<string> validValues = new List<string>() { "Soft skills", "Service Management & Support" };
             Expression<Func<Skills, bool>> isTechnoExp = s => s.Parent.ParentId == null && !validValues.Contains(s.Parent.Title) && s.Parent.SkillId == s.ParentId;
-            IEnumerable<SkillsDTO> skillsQuery = _unitOfWork.SkillsRepository.Get(isTechnoExp).Select(s => new SkillsDTO { SkillId = s.SkillId, Title = s.Title });
+            IEnumerable<SkillsDTO> skillsQuery = _unitOfWork.SkillsRepository.Get(isTechnoExp)
+                .Select(s => new SkillsDTO { SkillId = s.SkillId, Title = s.Title })
+                .Distinct();
             return skillsQuery;
         }
 
@@ -63,11 +65,24 @@ namespace MySkills.Core.Services
             return res;
         }
 
-       /* public IEnumerable<SkillsDTO> PostUserSkill(SkillsDTO userSkill, string appUserId)
+        public void PostUserSkill(SkillsDTO userSkill)
         {
-            var us = new UserSkills { SkillId = userSkill.SkillId, ApplicationUserId = appUserId, DateCreation = DateTime.Now, Etat=1, NoteId =1 }; 
-            _unitOfWork.UserSkillsRepository.Add(us);
-            return null;
-        }*/
+            var userSkillDb = new UserSkills()
+            {
+                SkillId = userSkill.SkillId,
+                ApplicationUserId = userSkill.ApplicationUserId,
+                NoteId = 1,
+                DateCreation = DateTime.Now,
+                Etat = 1
+            };
+
+            _unitOfWork.UserSkillsRepository.Add(userSkillDb);
+            _unitOfWork.Commit();
+        }
+
+        public void d()
+        {
+
+        }
     }
 }

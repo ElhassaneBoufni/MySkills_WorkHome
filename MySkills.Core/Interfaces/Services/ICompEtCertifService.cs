@@ -11,5 +11,6 @@ namespace MySkills.Core.Interfaces.Services
         IEnumerable<SkillsDTO> GetTechno();
         IEnumerable<SkillsDTO> GetSkills(int parentId, string userId, bool? islvl3);
         IEnumerable<SkillsDTO> GetUserSkills(string appUserId);
+        void PostUserSkill(SkillsDTO userSkill);
     }
 }

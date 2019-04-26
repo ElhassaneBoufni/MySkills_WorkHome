@@ -25,10 +25,15 @@ namespace MySkills.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<SkillsDTO> GetTechno()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetTechno()
         {
             var res = _service.GetTechno();
-            return res;
+            if (res.Count() > 0)
+                return Ok(res);
+            else
+                return NotFound();
         }
 
         [HttpGet]
@@ -48,10 +53,33 @@ namespace MySkills.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostSkills([FromBody] SkillsDTO s)
+        public IActionResult PostSkills([FromBody] SkillsDTO userSkill)
         {
-            _logger.LogWarning("====> {appUserID} <=====", s.Title);
-            return Ok(s.SkillId);
+            if (ModelState.IsValid && userSkill.ApplicationUserId != null)
+            {
+                _logger.LogWarning("====> {appUserID} <=====", userSkill.ApplicationUserId);
+
+                try
+                {
+                    _service.PostUserSkill(userSkill);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Erreur d'insertion : ");
+                }
+                return Ok(userSkill.SkillId);
+            }
+            else
+            {
+                return new JsonResult(BadRequest(ModelState));
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUserSkill(int id)
+        {
+            _logger.LogWarning("====> ID : {id} <=====", id);
+            return Ok(id);
         }
     }
 }
